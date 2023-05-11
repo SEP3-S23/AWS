@@ -19,9 +19,6 @@ public class UserService
       return false;
     }
 
-    String password = user.getPasswordHash();
-    user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
-
     userRepository.save(user);
     return true;
   }
@@ -34,12 +31,8 @@ public class UserService
       return null;
     }
 
-    //The hashedPassword is different from the one stored in the database.
-    String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
     if(BCrypt.checkpw(password, user.getPasswordHash()))
     {
-      System.out.println("Stored password hash: " + user.getPasswordHash());
-      System.out.println("Expected password hash: " + hashedPassword);
       return user;
     } else
     {

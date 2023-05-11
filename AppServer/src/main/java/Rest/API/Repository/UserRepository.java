@@ -15,9 +15,6 @@ public interface UserRepository extends JpaRepository<User, Long>
       return false;
     }
 
-    String password = user.getPasswordHash();
-    user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
-
     save(user);
 
     return true;

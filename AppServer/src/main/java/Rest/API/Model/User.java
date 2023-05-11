@@ -28,8 +28,7 @@ public class User
   private String passwordHash;
 
   public void setPassword(String password) {
-    String salt = BCrypt.gensalt();
-    this.passwordHash = BCrypt.hashpw(password, salt);
+    this.passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
   }
 
   public boolean checkPassword(String password) {
