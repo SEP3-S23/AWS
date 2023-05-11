@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d205bed5-dd42-41a9-a846-a2fe0c9a2055" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../WSServer/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/CollectorApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/configuration/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/model/QueueData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/model/SensorData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/repository/SensorDataRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/service/ListenerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/java/com/group3/collector/service/RabbitMQListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WSServer/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/AWS (Advanced Weather Station).iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/CollectorApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/configuration/RabbitMQConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/model/QueueData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/model/SensorData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/repository/SensorDataRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/service/ListenerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/group3/collector/service/RabbitMQListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2LsaZM3QZTkcLmclHHtxG1gveXK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fdepalma/Library/CloudStorage/OneDrive-ViaUC/Semester 3/SEP/Project/AWS (Advanced Weather Station)/Collector&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8fc330d76e990ab6964af08ea1e47d2e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Docker.docker-compose.yaml.collector: Compose Deployment">
+    <configuration name="DataServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <envs>
+        <env name="RABBITMQ_QUEUES" value="temperature,humidity,feel like" />
+        <env name="RABBITMQ_EXCHANGE" value="ws1" />
+      </envs>
+      <module name="WSServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.group3.collector.CollectorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile: Compose Deployment" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="MongoDB+RabbitMQ" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml.collector: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="collector" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yaml.collector: Compose Deployment" />
+      <item itemvalue="Docker.MongoDB+RabbitMQ" />
+      <item itemvalue="Docker.Dockerfile: Compose Deployment" />
+      <item itemvalue="Spring Boot.DataServerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yaml.collector: Compose Deployment" />
+        <item itemvalue="Docker.MongoDB+RabbitMQ" />
+        <item itemvalue="Docker.Dockerfile: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d205bed5-dd42-41a9-a846-a2fe0c9a2055" name="Changes" comment="" />
+      <created>1676662301171</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676662301171</updated>
+      <workItem from="1676662302448" duration="9562000" />
+      <workItem from="1676683583435" duration="10851000" />
+      <workItem from="1676785869982" duration="28020000" />
+      <workItem from="1676914986394" duration="21092000" />
+      <workItem from="1677079506402" duration="65000" />
+      <workItem from="1677137407809" duration="3652000" />
+      <workItem from="1677492495399" duration="641000" />
+      <workItem from="1677962303940" duration="644000" />
+      <workItem from="1683554532288" duration="4294000" />
+      <workItem from="1683635727606" duration="1130000" />
+      <workItem from="1683796109590" duration="24000" />
+      <workItem from="1683796681693" duration="116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
