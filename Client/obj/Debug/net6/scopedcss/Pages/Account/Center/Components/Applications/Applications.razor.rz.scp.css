@@ -1,0 +1,49 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.filterCardList[b-sxnr07ekrm] {
+  margin-bottom: -24px;
+}
+.filterCardList :global .ant-card-meta-content[b-sxnr07ekrm] {
+  margin-top: 0;
+}
+.filterCardList :global .ant-card-meta-avatar[b-sxnr07ekrm] {
+  font-size: 0;
+}
+.filterCardList :global .ant-list .ant-list-item-content-single[b-sxnr07ekrm] {
+  max-width: 100%;
+}
+.filterCardList .cardInfo[b-sxnr07ekrm] {
+  margin-top: 16px;
+  margin-left: 40px;
+  zoom: 1;
+}
+.filterCardList .cardInfo[b-sxnr07ekrm]::before,
+.filterCardList .cardInfo[b-sxnr07ekrm]::after {
+  display: table;
+  content: ' ';
+}
+.filterCardList .cardInfo[b-sxnr07ekrm]::after {
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+}
+.filterCardList .cardInfo > div[b-sxnr07ekrm] {
+  position: relative;
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.filterCardList .cardInfo > div p[b-sxnr07ekrm] {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+}
+.filterCardList .cardInfo > div p:first-child[b-sxnr07ekrm] {
+  margin-bottom: 4px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  line-height: 20px;
+}
