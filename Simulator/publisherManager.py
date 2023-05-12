@@ -9,7 +9,7 @@ class PublisherManager:
         self.lock = Lock()
         self.EXCHANGE = exchange
         self.publishers = []
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
         self.channel = self.connection.channel()
         self.channel.exchange_declare(
             exchange=self.EXCHANGE,
@@ -20,16 +20,13 @@ class PublisherManager:
 
         self.lock.acquire()
         publisher = next((x for x in self.publishers if x.name == data.name), None)
-        print(publisher)
 
         if publisher is None:
-            print("new publisher " + data.name)
             publisher = Publisher(self.EXCHANGE, data.name, self.connection)
             self.publishers.append(publisher)
             self.lock.release()
             notify(data.name, self.EXCHANGE)
         else:
             self.lock.release()
-            print("using again " + data.name)
             publisher.publish(data)
 

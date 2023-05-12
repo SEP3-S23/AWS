@@ -19,7 +19,6 @@ class Publisher:
         )
 
     def __del__(self):
-        print('close channel ' + self.name)
         self.channel.close()
 
     def publish(self, data):
@@ -29,4 +28,3 @@ class Publisher:
             routing_key=data.name,
             body=json_data
         )
-        print(json_data)

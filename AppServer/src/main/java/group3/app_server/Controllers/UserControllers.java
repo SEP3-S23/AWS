@@ -1,6 +1,6 @@
 package group3.app_server.Controllers;
 
-import group3.app_server.Model.LoginDto;
+import group3.app_server.dto.LoginDto;
 import group3.app_server.Model.User;
 import group3.app_server.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

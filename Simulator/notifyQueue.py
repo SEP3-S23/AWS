@@ -1,6 +1,5 @@
 import requests
 
-
 def notify(queue, exchange):
     url = 'http://localhost:8080/api/queue'
     payload = {
