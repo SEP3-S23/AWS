@@ -1,6 +1,10 @@
-﻿namespace BackEnd.UserMethodCalls;
+﻿using BackEnd.Dtos;
+using BackEnd.Model;
+
+namespace BackEnd.UserMethodCalls;
 
 public interface IUserService
 {
-    Task<string> Login(string username, string password);
+    Task<User> LoginAsync(string email, string password);
+    Task<string> GetPageAsync();
 }

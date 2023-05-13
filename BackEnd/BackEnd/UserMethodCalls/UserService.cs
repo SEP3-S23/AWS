@@ -1,38 +1,58 @@
-﻿using System.Text;
-using System.Text.Json;
-
-namespace BackEnd.UserMethodCalls;
+﻿using System;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using BackEnd.Dtos;
+using BackEnd.Model;
+using BackEnd.UserMethodCalls;
 
 public class UserService : IUserService
 {
-    public async Task<string> Login(string username, string password)
+    private readonly HttpClient _httpClient;
+    private readonly string _baseUrl;
+
+    public UserService(string baseUrl)
     {
-        using (HttpClient httpClient = new HttpClient())
+        _httpClient = new HttpClient();
+        _baseUrl = baseUrl;
+    }
+
+    public async Task<User> LoginAsync(string email, string password)
+    {
+        var loginDto = new LoginDto { Email = email, Password = password };
+
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/login", loginDto);
+
+        if (response.IsSuccessStatusCode)
         {
-            string apiUrl = "http://localhost:8090/api/user/login";
+            var user = await response.Content.ReadFromJsonAsync<User>();
+            return user;
+        }
 
-            // create the data to send in the request body
-            var requestData = new {
-                username = username,
-                password = password
-            };
-            
-            var requestDataJson = JsonSerializer.Serialize(requestData);
-            var requestDataContent = new StringContent(requestDataJson, Encoding.UTF8, "application/json");
+        if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+        {
+            throw new Exception("Unauthorized access");
+        }
+        else
+        {
+            throw new Exception($"Request failed with status code {response.StatusCode}");
+        }
+    }
+    
+    public async Task<string> GetPageAsync()
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"{_baseUrl}/");
+            response.EnsureSuccessStatusCode();
 
-            // make the post request with the data in the request body
-            HttpResponseMessage response = await httpClient.PostAsync(apiUrl, requestDataContent);
-
-            if (response.IsSuccessStatusCode)
-            {
-                string responseBody = await response.Content.ReadAsStringAsync();
-                return responseBody;
-            }
-            else
-            {
-                // Handle error
-                return null;
-            }
+            var content = await response.Content.ReadAsStringAsync();
+            return content;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Request failed: {ex.Message}");
+            throw;
         }
     }
 }
