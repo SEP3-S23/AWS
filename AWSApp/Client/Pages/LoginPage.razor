@@ -1,5 +1,6 @@
 ﻿@page "/LoginPage"
 @using System.ComponentModel.DataAnnotations
+@using BackEnd.Services.Authentication
 
 @using MudBlazor
 
@@ -19,26 +20,27 @@
 <DataAnnotationsValidator/>
 <MudGrid>
     
-    <MudItem xs="3" sm="7" md="12" >
+    <MudItem xs="12" sm="12" md="12" >
         <MudCard class="custom-background">
             <MudCardContent>
                 <MudText Typo="Typo.h4" class="PageTitle">Login</MudText>
-                <MudTextField Label="Full Name" HelperText="Max. 8 characters"
+                <MudTextField Label="Username" HelperText="Max. 8 characters"
                               @bind-Value="model.Username" For="@(() => model.Username)"/>
                 <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
                               @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password"/>
                 <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
                               @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password"/>
             </MudCardContent>
-            <MudCardActions>
-                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Login</MudButton>
+            <MudCardActions Class="d-flex align-center flex-grow-1 gap-4" >
+                <MudButton Class="d-flex flex-1" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary">Login</MudButton>
+                <MudButton Class="d-flex flex-1" ButtonType="ButtonType.Button" Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.AppRegistration" Color="Color.Secondary" Href="RegisterPage">Register</MudButton>
             </MudCardActions>
         </MudCard>
     </MudItem>
     
     <MudBreakpoint Breakpoint="Breakpoint.Sm" />
     
-    <MudItem  xs="3" sm="7" md="12">
+    <MudItem  xs="12" sm="12" md="12">
         <MudPaper Class="pa-4 mud-height-full custom-background" >
             <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
             @if (success)
@@ -49,6 +51,7 @@
             {
                 <MudText Color="@Color.Error">
                     <ValidationSummary/>
+                    <p>@Error</p>
                 </MudText>
             }
         </MudPaper>
@@ -60,16 +63,14 @@
 @code {
     RegisterAccountForm model = new RegisterAccountForm();
     bool success;
+    string Error= "vuoto";
 
     public class RegisterAccountForm
     {
         [Required]
-        [StringLength(8, ErrorMessage = "Name length can't be more than 8.")]
+        [StringLength(32, ErrorMessage = "Name length can't be more than 32.")]
         public string Username { get; set; }
-
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
+        
 
         [Required]
         [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
@@ -80,11 +81,41 @@
         public string Password2 { get; set; }
 
     }
-
+    
+    
     private void OnValidSubmit(EditContext context)
     {
-        success = true;
-        StateHasChanged();
+        try
+        {
+            Submit(model.Username, model.Password);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
+    }
+
+
+    private async Task Submit(string email, string password)
+    {
+        IAuthService authService = new AuthService("http://localhost:8090/api/user");
+        try
+        {
+            var result = await authService.LoginAsync(email, password);
+            Console.WriteLine(result.ToString());
+            success = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            Console.WriteLine(e.Message, "MESSAGGIO");
+            Error = e.Message;
+            
+            throw;
+        }
+        
     }
 
 }
