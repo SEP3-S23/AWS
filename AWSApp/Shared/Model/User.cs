@@ -2,29 +2,26 @@
 
 public class User
 {
-    public User(string email, string name, string surname, string username, string passwordHash)
+    public User(string email, string username, string fullName, string passwordHash)
     {
         this.email = email;
-        this.name = name;
-        this.surname = surname;
         this.username = username;
+        this.fullName = fullName;
         this.passwordHash = passwordHash;
     }
 
     public long id { get; set; }
     public string email { get; set; }
-    public string name { get; set; }
-    public string surname { get; set; }
     public string username { get; set; }
+    public string fullName { get; set; }
     public string passwordHash { get; set; }
 
     public string ToString()
     {
         return $"id: {id}" +
                $" email: {email}" +
-               $" name: {name}" +
-               $" surname: {surname}" +
-               $" username: {username}" +
-               $" passwordHash: {passwordHash}";
+               $"username: {username}" +
+               $" full name: {fullName}" +
+               $" password hash: {passwordHash}";
     }
 }

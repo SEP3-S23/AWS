@@ -1,4 +1,6 @@
-﻿using Shared.DTOs;
+﻿using System.Net.Http;
+using System.Threading.Tasks;
+using Shared.DTOs;
 using Shared.Model;
 
 namespace BackEnd.Services.Authentication;
