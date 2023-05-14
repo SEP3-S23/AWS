@@ -1,0 +1,90 @@
+﻿@page "/LoginPage"
+@using System.ComponentModel.DataAnnotations
+
+@using MudBlazor
+
+<style>
+    
+     .custom-background {
+           background-color: #F0F0F0;
+       }
+       .PageTitle {
+           
+           font-weight: bold;
+       }
+</style>
+
+
+<EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+<DataAnnotationsValidator/>
+<MudGrid>
+    
+    <MudItem xs="3" sm="7" md="12" >
+        <MudCard class="custom-background">
+            <MudCardContent>
+                <MudText Typo="Typo.h4" class="PageTitle">Login</MudText>
+                <MudTextField Label="Full Name" HelperText="Max. 8 characters"
+                              @bind-Value="model.Username" For="@(() => model.Username)"/>
+                <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
+                              @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password"/>
+                <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
+                              @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password"/>
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Login</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    
+    <MudBreakpoint Breakpoint="Breakpoint.Sm" />
+    
+    <MudItem  xs="3" sm="7" md="12">
+        <MudPaper Class="pa-4 mud-height-full custom-background" >
+            <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
+            @if (success)
+            {
+                <MudText Color="Color.Success">Success</MudText>
+            }
+            else
+            {
+                <MudText Color="@Color.Error">
+                    <ValidationSummary/>
+                </MudText>
+            }
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+</EditForm>
+
+
+@code {
+    RegisterAccountForm model = new RegisterAccountForm();
+    bool success;
+
+    public class RegisterAccountForm
+    {
+        [Required]
+        [StringLength(8, ErrorMessage = "Name length can't be more than 8.")]
+        public string Username { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
+        public string Password { get; set; }
+
+        [Required]
+        [Compare(nameof(Password))]
+        public string Password2 { get; set; }
+
+    }
+
+    private void OnValidSubmit(EditContext context)
+    {
+        success = true;
+        StateHasChanged();
+    }
+
+}
