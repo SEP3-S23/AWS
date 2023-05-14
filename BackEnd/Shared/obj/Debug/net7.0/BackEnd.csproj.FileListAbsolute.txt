@@ -1,0 +1,12 @@
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\bin\Debug\net7.0\BackEnd.deps.json
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\bin\Debug\net7.0\BackEnd.dll
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\bin\Debug\net7.0\BackEnd.pdb
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.csproj.AssemblyReference.cache
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfoInputs.cache
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfo.cs
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.dll
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\refint\BackEnd.dll
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\BackEnd.pdb
+C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\BackEnd\BackEnd\obj\Debug\net7.0\ref\BackEnd.dll
