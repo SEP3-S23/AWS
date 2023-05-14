@@ -29,6 +29,15 @@ public class User
   @Column(name = "password", nullable = false)
   private String passwordHash;
 
+  public User(String email, String name, String surname, String username, String passwordHash)
+  {
+    this.email = email;
+    this.name = name;
+    this.surname = surname;
+    this.username = username;
+    this.passwordHash = passwordHash;
+  }
+
   public void setPassword(String password) {
     this.passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
   }

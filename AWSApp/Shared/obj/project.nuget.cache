@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "b6DeIxJo2j/3KKIxagAC11OTQMet7Msqu4e7vYchq7DtH/ordQSrvmGZOkZWZABDCzTgRFe3+KDwzstA+JdfkQ==",
+  "dgSpecHash": "GJqS4TVyqy4cyAF+N2VpE+J/q6Biu6GmRfuDmg8sTP1yT/dgNI4hJyKWoy3W79/BAOJbZ5llccNMXBw0QEsJUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\34654\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

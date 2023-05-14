@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yBXLfFfKZ2wHWONWcqRfjNUGm03rPwDU3XZ0al6RVUH088Du5L7VLcFzL3aA42CJXEtq98I/8JpT3NGK1o6EVw==",
+  "dgSpecHash": "YD9SDJFUYLXL3G68CUrodUga88c3zoq9Fvv+ZPmPN5xM9sY6wniqE1J2bpweug5SMn6ldT17ziSDDImyU7Iy9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\34654\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
