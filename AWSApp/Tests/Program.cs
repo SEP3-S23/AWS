@@ -7,13 +7,12 @@ IAuthService authService = new AuthService();
 //Console.WriteLine(result.ToString());
 /*RegisterDto exampleUser = new RegisterDto()
 {
-    email = "test@email.com",
-    name = "Name",
-    surname = "Surname",
-    password = "Password",
-    username = "username"
+    email = "test3@email.com",
+    fullName = "Full Name",
+    passwordHash = "Password",
+    username = "username3"
 };
 var registering = await authService.RegisterAsync(exampleUser);*/
 
-var result2 = await authService.LoginAsync("test@email.com", "Password");
+var result2 = await authService.LoginAsync("username3", "Password");
 Console.WriteLine(result2.ToString());

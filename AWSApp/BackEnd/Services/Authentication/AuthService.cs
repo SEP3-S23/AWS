@@ -39,9 +39,9 @@ public class AuthService : IAuthService
         return response;
     }
     
-    public async Task<User> LoginAsync(string email, string password)
+    public async Task<User> LoginAsync(string username, string password)
     {
-        var loginDto = new LoginDto { Email = email, Password = password };
+        var loginDto = new LoginDto { Username = username, Password = password };
 
         var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/login", loginDto);
 
