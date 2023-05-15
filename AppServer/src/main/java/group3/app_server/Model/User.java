@@ -1,14 +1,14 @@
 package group3.app_server.Model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="user_info", schema="app_info")
-@Data
-public class User
+@Data @NoArgsConstructor public class User
 {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,7 @@ public class User
   private String email;
 
   @Column
-  private String name;
-
-  @Column
-  private String surname;
+  private String fullName;
 
   @Column
   private String username;
@@ -29,11 +26,10 @@ public class User
   @Column(name = "password", nullable = false)
   private String passwordHash;
 
-  public User(String email, String name, String surname, String username, String passwordHash)
+  public User(String email, String fullName, String username, String passwordHash)
   {
     this.email = email;
-    this.name = name;
-    this.surname = surname;
+    this.fullName = fullName;
     this.username = username;
     this.passwordHash = passwordHash;
   }

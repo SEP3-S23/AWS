@@ -24,8 +24,8 @@ public class UserControllers
   @PostMapping("/register")
   public ResponseEntity<?> register(@RequestBody RegisterDto user)
   {
-    User registerUser = new User(user.getEmail(), user.getName(),user.getSurname(),user.getUsername(),
-        user.getPassword());
+    User registerUser = new User(user.getEmail(), user.getFullName(),user.getUsername(),
+        user.getPasswordHash());
     if(userService.register(registerUser))
     {
       return new ResponseEntity<>(HttpStatus.CREATED);
@@ -37,7 +37,7 @@ public class UserControllers
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody LoginDto loginDto)
   {
-    User loggedInUser = userService.login(loginDto.getEmail(), loginDto.getPassword());
+    User loggedInUser = userService.login(loginDto.getUsername(), loginDto.getPassword());
     if(loggedInUser != null)
     {
       return new ResponseEntity<>(loggedInUser,HttpStatus.OK);
