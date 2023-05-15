@@ -3,8 +3,10 @@ package com.group3.ws_server.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
+
 @Data
-public class SensorData {
+public class SensorData implements Serializable {
 
     @Id
     private String id;
@@ -12,5 +14,6 @@ public class SensorData {
     private String name;
     private Object value;
     private String unit;
+    private String wsName;
 
 }

@@ -1,5 +1,6 @@
 package com.group3.ws_server;
 
+import com.group3.ws_server.controller.LiveDataSocket;
 import com.group3.ws_server.service.ListenerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +16,9 @@ public class WSServer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WSServer.class, args);
+
+		LiveDataSocket socketServer = new LiveDataSocket();
+		socketServer.start();
 	}
 
 	@EventListener(ApplicationReadyEvent.class)

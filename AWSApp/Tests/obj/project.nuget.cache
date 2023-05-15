@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ar2Z3w41dVvXFJSWnRZCQ40AerPKaTNZNWnjxYglxFEEmVTIBCehiLpQVsvmNWIEaFnv+ZLuLITJsT7IV48Wzg==",
+  "dgSpecHash": "WbalWAyv2Q864k88jvu/IehPB5ORB0Fsw2R9/9BiX3ZtGBS18xycAlifS7i2KKGrP9yfYdSGcD8kL0F/Pe1bgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
+  "projectFilePath": "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
