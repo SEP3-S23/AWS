@@ -9,301 +9,301 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Client
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\walid\OneDrive - ViaUC\Project\AWS\Client\
+build_property.ProjectDir = C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\Client\
 build_property.RazorLangVersion = 3.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\walid\OneDrive - ViaUC\Project\AWS\Client
+build_property.MSBuildProjectDirectory = C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/App.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Components/GlobalHeader/RightContent.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Components/GlobalHeader/RightContent.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xHbG9iYWxIZWFkZXJcUmlnaHRDb250ZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Layouts/BasicLayout.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Layouts/BasicLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xCYXNpY0xheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/AvatarList/AvatarListItem.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/AvatarList/AvatarListItem.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBdmF0YXJMaXN0XEF2YXRhckxpc3RJdGVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/BindingView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/BindingView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEJpbmRpbmdWaWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/NotificationView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/NotificationView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXE5vdGlmaWNhdGlvblZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/SecurityView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/SecurityView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXFNlY3VyaXR5Vmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Bar/Bar.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Bar/Bar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEJhclxCYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Gauge/Gauge.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Gauge/Gauge.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEdhdWdlXEdhdWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniArea/MiniArea.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniArea/MiniArea.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlBcmVhXE1pbmlBcmVhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniBar/MiniBar.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniBar/MiniBar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlCYXJcTWluaUJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/PageLoading/PageLoading.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/PageLoading/PageLoading.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcUGFnZUxvYWRpbmdcUGFnZUxvYWRpbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/SalesCard.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/SalesCard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcU2FsZXNDYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Gauge/Gauge.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Gauge/Gauge.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcR2F1Z2VcR2F1Z2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Map/Map.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Map/Map.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcTWFwXE1hcC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Map/MiniArea.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Map/MiniArea.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcTWFwXE1pbmlBcmVhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Pie/Pie.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/Pie/Pie.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcUGllXFBpZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/TagCloud/TagCloud.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/TagCloud/TagCloud.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcVGFnQ2xvdWRcVGFnQ2xvdWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/WaterWave/WaterWave.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/Charts/WaterWave/WaterWave.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xDaGFydHNcV2F0ZXJXYXZlXFdhdGVyV2F2ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Workplace/Components/Radar/AutoHeight.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Workplace/Components/Radar/AutoHeight.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXFJhZGFyXEF1dG9IZWlnaHQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Exception/403/403.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Exception/403/403.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDQwM1w0MDMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Exception/404/404.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Exception/404/404.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDQwNFw0MDQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Exception/500/500.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Exception/500/500.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXB0aW9uXDUwMFw1MDAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Applications/Components/TagSelect/TagSelectOption.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Applications/Components/TagSelect/TagSelectOption.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcVGFnU2VsZWN0XFRhZ1NlbGVjdE9wdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Projects/Projects.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Projects/Projects.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcUHJvamVjdHNcUHJvamVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/SearchList.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/SearchList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcU2VhcmNoTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/_Imports.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Layouts/UserLayout.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Layouts/UserLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xVc2VyTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-3rd98vocd6
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/Applications/Applications.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/Applications/Applications.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcHBsaWNhdGlvbnNcQXBwbGljYXRpb25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-sxnr07ekrm
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/ArticleListContent/ArticleListContent.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/ArticleListContent/ArticleListContent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcnRpY2xlTGlzdENvbnRlbnRcQXJ0aWNsZUxpc3RDb250ZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-lgkr57i2cd
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/Articles/Articles.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/Articles/Articles.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBcnRpY2xlc1xBcnRpY2xlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-sn2728cndz
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/AvatarList/AvatarList.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/AvatarList/AvatarList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xBdmF0YXJMaXN0XEF2YXRhckxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ckjtpvwumw
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Components/Projects/Projects.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Components/Projects/Projects.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcQ29tcG9uZW50c1xQcm9qZWN0c1xQcm9qZWN0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-74v9dw8vdq
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Center/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Center/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDZW50ZXJcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-1txi8q0lpa
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/BaseView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/BaseView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEJhc2VWaWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-8jphmvytk3
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/GeographicView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/GeographicView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXEdlb2dyYXBoaWNWaWV3LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-ohvhm2i3ny
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Components/PhoneView.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Components/PhoneView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xDb21wb25lbnRzXFBob25lVmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-7hxlktk4jo
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Account/Settings/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Account/Settings/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTZXR0aW5nc1xJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-hrvl39v1s0
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/ChartCard/ChartCard.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/ChartCard/ChartCard.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXENoYXJ0Q2FyZFxDaGFydENhcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-qthjqgc2hr
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Field/Field.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Field/Field.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXEZpZWxkXEZpZWxkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-dp282jouqg
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniProgress/MiniProgress.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/MiniProgress/MiniProgress.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXE1pbmlQcm9ncmVzc1xNaW5pUHJvZ3Jlc3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-5d8osmie5j
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Pie/Pie.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/Pie/Pie.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFBpZVxQaWUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-3bkchqk156
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/TagCloud/TagCloud.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/TagCloud/TagCloud.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFRhZ0Nsb3VkXFRhZ0Nsb3VkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-7h8gitjing
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/TimelineChart/TimelineChart.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/TimelineChart/TimelineChart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFRpbWVsaW5lQ2hhcnRcVGltZWxpbmVDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-2yzqtgji4o
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/WaterWave/WaterWave.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Charts/WaterWave/WaterWave.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcQ2hhcnRzXFdhdGVyV2F2ZVxXYXRlcldhdmUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-v9gajfj2ks
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/NumberInfo/NumberInfo.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/NumberInfo/NumberInfo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcTnVtYmVySW5mb1xOdW1iZXJJbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-oatkpk90ne
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Components/Trend/Trend.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Components/Trend/Trend.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXENvbXBvbmVudHNcVHJlbmRcVHJlbmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-h1mzc7csv9
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Analysis/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Analysis/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXEFuYWx5c2lzXEluZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-11iqmj5vqn
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Components/ActiveChart/ActiveChart.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Components/ActiveChart/ActiveChart.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcQ29tcG9uZW50c1xBY3RpdmVDaGFydFxBY3RpdmVDaGFydC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-1wnsqb5z79
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Monitor/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Monitor/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vbml0b3JcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-rtgrawtgzj
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Workplace/Components/EditableLinkGroup/EditableLinkGroup.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Workplace/Components/EditableLinkGroup/EditableLinkGroup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXEVkaXRhYmxlTGlua0dyb3VwXEVkaXRhYmxlTGlua0dyb3VwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-cbpr3ppcj5
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Workplace/Components/Radar/Radar.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Workplace/Components/Radar/Radar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxDb21wb25lbnRzXFJhZGFyXFJhZGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-nuczr6vmhf
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Dashboard/Workplace/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Dashboard/Workplace/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXFdvcmtwbGFjZVxJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-77c21vanwn
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/AdvancedForm/AdvancedForm.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/AdvancedForm/AdvancedForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxBZHZhbmNlZEZvcm1cQWR2YW5jZWRGb3JtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-92urhr2lo6
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/BasicForm/BasicForm.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/BasicForm/BasicForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxCYXNpY0Zvcm1cQmFzaWNGb3JtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-rlg0ogw46m
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/StepForm/Components/Step1/Step1.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/StepForm/Components/Step1/Step1.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAxXFN0ZXAxLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-lyz7elfg9m
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/StepForm/Components/Step2/Step2.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/StepForm/Components/Step2/Step2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAyXFN0ZXAyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-z9tc7cwssy
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/StepForm/Components/Step3/Step3.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/StepForm/Components/Step3/Step3.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxDb21wb25lbnRzXFN0ZXAzXFN0ZXAzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-er7tt3qgm6
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Form/StepForm/StepForm.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Form/StepForm/StepForm.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ybVxTdGVwRm9ybVxTdGVwRm9ybS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-x13i1ypi3b
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/BasicList/BasicList.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/BasicList/BasicList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxCYXNpY0xpc3RcQmFzaWNMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-m4fbdgurcs
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/CardList/CardList.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/CardList/CardList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxDYXJkTGlzdFxDYXJkTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ld1fidapl6
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Applications/Applications.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Applications/Applications.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXEFwcGxpY2F0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-xqxtznj4nl
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Applications/Components/StandardFormRow/StandardFormRow.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Applications/Components/StandardFormRow/StandardFormRow.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcU3RhbmRhcmRGb3JtUm93XFN0YW5kYXJkRm9ybVJvdy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-qwwjbltplb
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Applications/Components/TagSelect/TagSelect.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Applications/Components/TagSelect/TagSelect.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXBwbGljYXRpb25zXENvbXBvbmVudHNcVGFnU2VsZWN0XFRhZ1NlbGVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-6bsag5nzuo
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/Search/Articles/Articles.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/Search/Articles/Articles.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxTZWFyY2hcQXJ0aWNsZXNcQXJ0aWNsZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-5ik0ov4zvt
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/List/TableList/TableList.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/List/TableList/TableList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFxUYWJsZUxpc3RcVGFibGVMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-8yfflh2q4c
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Profile/Advanced/Advanced.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Profile/Advanced/Advanced.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxBZHZhbmNlZFxBZHZhbmNlZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-bllrfmxvfq
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Profile/Basic/Basic.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Profile/Basic/Basic.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxCYXNpY1xCYXNpYy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-ybpyf2qlkw
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Result/Fail/Fail.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Result/Fail/Fail.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0XEZhaWxcRmFpbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-m9v9j0bcwj
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/Result/Success/Success.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/Result/Success/Success.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdWx0XFN1Y2Nlc3NcU3VjY2Vzcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-lr2pl1zkdv
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/User/Login/Login.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/User/Login/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMb2dpblxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-545p762slq
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/User/RegisterResult/RegisterResult.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/User/RegisterResult/RegisterResult.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZWdpc3RlclJlc3VsdFxSZWdpc3RlclJlc3VsdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-3irfk4iyaa
 
-[C:/Users/walid/OneDrive - ViaUC/Project/AWS/Client/Pages/User/Register/Register.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/Client/Pages/User/Register/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZWdpc3RlclxSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-cu2bkyk1v6
