@@ -4,24 +4,12 @@
 
 @using MudBlazor
 
-<style>
-    
-     .custom-background {
-           background-color: #F0F0F0;
-       }
-       .PageTitle {
-           
-           font-weight: bold;
-       }
-</style>
-
-
 <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
 <DataAnnotationsValidator/>
 <MudGrid>
     
     <MudItem xs="12" sm="12" md="12" >
-        <MudCard class="custom-background">
+        <MudCard Class="mud-elevation-8">
             <MudCardContent>
                 <MudText Typo="Typo.h4" class="PageTitle">Login</MudText>
                 <MudTextField Label="Username" HelperText="Max. 8 characters"

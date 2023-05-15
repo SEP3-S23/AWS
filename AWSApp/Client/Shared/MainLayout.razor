@@ -8,12 +8,12 @@
     <MudAppBar Elevation="0">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(e => DrawerToggle())"/>
         <MudSpacer/>
-        <MudIconButton Icon="@Icons.Custom.Brands.MudBlazor" Color="Color.Inherit" Link="https://mudblazor.com/" Target="_blank"/>
-        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/MudBlazor/MudBlazor/" Target="_blank"/>
+        <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Secondary"/>
+        <MudToggleIconButton @bind-Toggled="@IsDarkMode" ToggledIcon="@Icons.Material.Filled.WbSunny" Color="Color.Tertiary" Icon="@Icons.Material.Filled.NightlightRound" ToggledColor="@Color.Tertiary" @bind-Checked="@IsDarkMode"/>
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+    <MudDrawer @bind-Open="_drawerOpen" Elevation="1"> 
         <MudDrawerHeader>
-            <MudText Typo="Typo.h6" >WeatherApp</MudText>
+            <MudText Typo="Typo.h6" >WeatherApps</MudText>
         </MudDrawerHeader>
         <div>
             <NavMenu />
@@ -23,18 +23,23 @@
         <MudThemeProvider Theme="@MyTheme"/>
         
         <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+            <MudThemeProvider @bind-IsDarkMode="@IsDarkMode" Theme="_theme"/>
             @Body
         </MudContainer>
     </MudMainContent>
 </MudLayout>
 
 @code {
+    private MudTheme _theme = new();
+    public bool IsDarkMode { get; set;}
 
     MudTheme MyTheme = new MudTheme()
     {
         Palette = new Palette()
         {
-            Primary = Colors.DeepPurple.Darken4
+            Primary = Colors.DeepPurple.Darken4, 
+            BackgroundGrey = Colors.Grey.Darken3,
+
         },
     };
     
