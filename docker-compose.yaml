@@ -50,6 +50,7 @@ services:
       timeout: 15s
       retries: 1
 
+  #ws1
   ws1_simulator:
     container_name: WS1_simulator
     build:
@@ -61,6 +62,7 @@ services:
       - EXCHANGE=ws1
     restart: on-failure
 
+  #ws2
   ws2_simulator:
     container_name: WS2_simulator
     build:
@@ -80,8 +82,8 @@ services:
     ports:
       - 8100:8100
     environment:
-      RABBITMQ_EXCHANGES: ws1,ws2
-      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity
+      RABBITMQ_EXCHANGES: ws1,ws2 #add here all the ws you want to connect
+      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity 
     restart: on-failure
     depends_on:
       - rabbitmq
