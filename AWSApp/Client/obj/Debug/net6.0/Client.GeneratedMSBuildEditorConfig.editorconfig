@@ -9,41 +9,41 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Client
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\
+build_property.ProjectDir = C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\AWSApp\Client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client
+build_property.MSBuildProjectDirectory = C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\AWSApp\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/App.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Pages/FetchData.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Pages/Index.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Pages/LoginPage.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Pages/LoginPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Pages/RegisterPage.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Pages/RegisterPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Shared/MainLayout.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/Shared/NavMenu.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/walid/OneDrive - ViaUC/UNI/ViaUniversity/Semester03/SEP3/AWS/AWSApp/Client/_Imports.razor]
+[C:/Users/34654/Desktop/VIA Semesters/3rd Semester/SEP3/AWS/AWSApp/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

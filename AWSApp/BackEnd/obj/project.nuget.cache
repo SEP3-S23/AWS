@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "c0Y2hZvdlqE7ra/w52cXtFGB3XCX10wNGVQSXg2XvgmC0/BMtEU7pjMdpI34lIF2W3++O6+bmE3J2/FLPc/IFQ==",
+  "dgSpecHash": "bnABtMdHSNNY8u0qMLBk4QT0zYFZYfUJWpufq6p36C42lRWpI5g9swgT7IjeGvuOK3dO7L94JVednQBvT/gM0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\34654\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

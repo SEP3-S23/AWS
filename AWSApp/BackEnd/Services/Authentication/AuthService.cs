@@ -1,5 +1,10 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text;
+using System.Threading.Tasks;
 using Shared.DTOs;
 using Shared.Model;
 
@@ -10,15 +15,33 @@ public class AuthService : IAuthService
     private readonly string _baseUrl;
     private readonly HttpClient _httpClient;
 
-    public AuthService(string baseUrl)
+    public AuthService()
     {
         _httpClient = new HttpClient();
-        _baseUrl = baseUrl;
+        _baseUrl = "http://localhost:8090/api/user";
     }
 
-    public async Task<User> LoginAsync(string email, string password)
+    public async Task<HttpResponseMessage> RegisterAsync(RegisterDto user)
     {
-        var loginDto = new LoginDto { Email = email, Password = password };
+
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/register", user);
+
+        if (response.StatusCode == HttpStatusCode.Created)
+        {
+            return response;
+        }
+
+        if (response.StatusCode == HttpStatusCode.Conflict)
+        {
+            throw new Exception($"Not possible to register. Request failed with status code {response.StatusCode}");
+        }
+
+        return response;
+    }
+    
+    public async Task<User> LoginAsync(string username, string password)
+    {
+        var loginDto = new LoginDto { Username = username, Password = password };
 
         var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/login", loginDto);
 

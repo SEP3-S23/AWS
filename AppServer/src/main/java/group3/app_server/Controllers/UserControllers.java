@@ -3,6 +3,7 @@ package group3.app_server.Controllers;
 import group3.app_server.dto.LoginDto;
 import group3.app_server.Model.User;
 import group3.app_server.Service.UserService;
+import group3.app_server.dto.RegisterDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +22,11 @@ public class UserControllers
   }
 
   @PostMapping("/register")
-  public ResponseEntity<?> register(@RequestBody User user)
+  public ResponseEntity<?> register(@RequestBody RegisterDto user)
   {
-    if(userService.register(user))
+    User registerUser = new User(user.getEmail(), user.getFullName(),user.getUsername(),
+        user.getPasswordHash());
+    if(userService.register(registerUser))
     {
       return new ResponseEntity<>(HttpStatus.CREATED);
     } else {
@@ -34,7 +37,7 @@ public class UserControllers
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody LoginDto loginDto)
   {
-    User loggedInUser = userService.login(loginDto.getEmail(), loginDto.getPassword());
+    User loggedInUser = userService.login(loginDto.getUsername(), loginDto.getPassword());
     if(loggedInUser != null)
     {
       return new ResponseEntity<>(loggedInUser,HttpStatus.OK);
