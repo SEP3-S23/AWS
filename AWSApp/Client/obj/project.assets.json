@@ -1929,45 +1929,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\walid\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\marta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\obj\\",
+      "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\marta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Client\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\marta\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
+            "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+              "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
             },
-            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+            "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj"
             }
           }
         }
@@ -2010,7 +2000,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[7.0.5, 7.0.5]"
+            "version": "[7.0.2, 7.0.2]"
           }
         ],
         "frameworkReferences": {
@@ -2018,7 +2008,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

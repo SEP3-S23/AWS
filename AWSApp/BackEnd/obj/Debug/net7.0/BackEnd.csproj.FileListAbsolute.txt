@@ -13,3 +13,18 @@ C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Bac
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\refint\BackEnd.dll
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.pdb
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\ref\BackEnd.dll
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.deps.json
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.dll
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.pdb
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\bin\Debug\net7.0\Shared.dll
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\bin\Debug\net7.0\Shared.pdb
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.AssemblyReference.cache
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfoInputs.cache
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfo.cs
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CopyComplete
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.dll
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\refint\BackEnd.dll
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.pdb
+C:\Users\marta\Documents\AWS\AWSApp\BackEnd\obj\Debug\net7.0\ref\BackEnd.dll

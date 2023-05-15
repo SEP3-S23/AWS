@@ -28,8 +28,6 @@
                               @bind-Value="model.Username" For="@(() => model.Username)"/>
                 <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
                               @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password"/>
-                <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
-                              @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password"/>
             </MudCardContent>
             <MudCardActions Class="d-flex align-center flex-grow-1 gap-4" >
                 <MudButton Class="d-flex flex-1" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary">Login</MudButton>
@@ -76,10 +74,7 @@
         [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
         public string Password { get; set; }
 
-        [Required]
-        [Compare(nameof(Password))]
-        public string Password2 { get; set; }
-
+    
     }
     
     
