@@ -9,7 +9,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectOutputStream;
+import com.google.gson.Gson;
+import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
@@ -76,8 +77,11 @@ public class LiveDataSocket extends Thread {
     }
 
     public void sendData(Socket clientSocket, SensorData data) throws IOException {
-        ObjectOutputStream outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-        outputStream.writeObject(data);
+        OutputStream outputStream = clientSocket.getOutputStream();
+        Gson gson = new Gson();
+        String json = gson.toJson(data);
+        outputStream.write(json.getBytes());
+        outputStream.flush();
     }
 
     public void closeSocket(Socket clientSocket) throws IOException {
