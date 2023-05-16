@@ -18,78 +18,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class LiveDataSocket extends Thread {
+public class LiveDataSocket {
 
     @Autowired
     RabbitMQListener rabbitMQListener;
 
     private ServerSocket serverSocket;
 
-    private Map<Socket, String> clients = new HashMap<>();
-    private Map<Socket, PropertyChangeListener> listeners = new HashMap<>();
-
     public void start() {
         try {
             serverSocket = new ServerSocket(8100);
             System.out.println("Server socket started on port 8100.");
+
+            while (true) {
+                try {
+                    Socket clientSocket = serverSocket.accept();
+
+                    System.out.println("Client connected: " + clientSocket.getInetAddress().getHostAddress());
+
+                    new Thread(new SocketHandler(clientSocket)).start();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void run() {
-        while (true) {
-            try {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Client connected: " + clientSocket.getInetAddress().getHostAddress());
-
-                InputStream inputStream = clientSocket.getInputStream();
-
-                if (inputStream != null) {
-                    String ws = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
-
-                    if (ws.equals("close")) {
-                        System.out.println("Client close the connection");
-                        closeSocket(clientSocket);
-                    } else {
-                        System.out.println("Client connected to: " + ws);
-
-                        clients.put(clientSocket, ws);
-
-                        listeners.put(clientSocket,
-                                rabbitMQListener.addListener(ws, (PropertyChangeEvent evt) -> {
-                                            try {
-                                                this.sendData(clientSocket, (SensorData) evt.getNewValue());
-                                            } catch (IOException e) {
-                                                throw new RuntimeException(e);
-                                            }
-                                        }
-                                )
-                        );
-                    }
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void sendData(Socket clientSocket, SensorData data) throws IOException {
-        OutputStream outputStream = clientSocket.getOutputStream();
-        Gson gson = new Gson();
-        String json = gson.toJson(data);
-        outputStream.write(json.getBytes());
-        outputStream.flush();
-    }
-
-    public void closeSocket(Socket clientSocket) throws IOException {
-
-        rabbitMQListener.removeListener(clients.get(clientSocket), listeners.get(clientSocket));
-        clients.remove(clientSocket);
-        listeners.remove(clientSocket);
-
-        clientSocket.close();
     }
 }

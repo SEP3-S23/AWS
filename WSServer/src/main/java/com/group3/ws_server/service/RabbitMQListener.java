@@ -20,9 +20,8 @@ public class RabbitMQListener implements Subject {
 
     @RabbitListener(id="listener")
     public void receiveMessage(SensorData data) {
-        System.out.println("Consuming Message - " + data);
         sensorDataRepository.insert(data);
-        support.firePropertyChange(data.getWsName(), null, data);
+        this.support.firePropertyChange(data.getWsName(), null, data);
     }
 
     @Override
