@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\walid\\.nuget\\packages\\": {}
+    "/Users/fdepalma/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
-      "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\obj\\",
+      "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj",
+      "packagesPath": "/Users/fdepalma/.nuget/packages/",
+      "outputPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -51,8 +51,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+            "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
+              "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
             }
           }
         }
@@ -82,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

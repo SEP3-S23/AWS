@@ -15,30 +15,29 @@ public class ListenerService {
     @Autowired
     private RabbitListenerEndpointRegistry listenerEndpointRegistry;
 
-    @Value("${spring.data.mongodb.database}")
-    String exchange;
+    @Value("${rabbitmq.exchanges}")
+    String[] exchanges;
 
     @Value("${rabbitmq.queues}")
     String[] queues;
 
     static List<String> consumers = new ArrayList<>();
 
-    private void addListener(String queue) {
-        if (!consumers.contains(queue)) {
-            consumers.add(queue);
+    private void addListener(String exchange, String queue) {
+        String queueName = exchange + "." + queue;
+        if (!consumers.contains(queueName)) {
+            consumers.add(queueName);
             ((AbstractMessageListenerContainer) listenerEndpointRegistry.getListenerContainer("listener"))
-                    .addQueueNames(exchange + "." + queue);
-
-            System.out.println("Listener crater for queue: " + queue);
-
+                    .addQueueNames(queueName);
         }
     }
 
     public void addListeners() {
-        for (String queue : queues) {
-            addListener(queue);
+        for (String exchange : exchanges) {
+            System.out.println("exchange -> " + exchange);
+            for (String queue : queues) {
+                addListener(exchange, queue);
+            }
         }
     }
-
-
 }
