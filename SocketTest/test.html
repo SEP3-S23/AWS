@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Example</title>
+</head>
+<body>
+  <h1>WebSocket Example</h1>
+
+  <div id="messages"></div>
+
+  <script>
+    // Create a WebSocket connection
+    const socket = new WebSocket("ws://localhost:8080/ws");
+
+    // Handle socket open event
+    socket.onopen = function() {
+      const topicName = "ws1";
+    const subscriptionPath = topicName;
+  const subscribeMessage = {
+    type: "subscribe",
+    destination: subscriptionPath
+  };
+  socket.send(JSON.stringify(subscribeMessage));
+    };
+
+    // Handle socket message event
+    socket.onmessage = function(event) {
+      const message = event.data;
+      console.log("Received message from server:", message);
+
+      // Display the message on the web page
+      const messagesContainer = document.getElementById("messages");
+      const newMessage = document.createElement("p");
+      newMessage.textContent = message;
+      messagesContainer.appendChild(newMessage);
+    };
+
+    // Handle socket close event
+    socket.onclose = function(event) {
+      console.log("WebSocket connection closed with code:", event.code);
+    };
+
+    // Handle socket error event
+    socket.onerror = function(error) {
+      console.error("WebSocket error:", error);
+    };
+
+    // Send a message to the server
+    function sendMessage() {
+      const messageInput = document.getElementById("message-input");
+      const message = messageInput.value;
+      socket.send(message);
+      messageInput.value = "";
+    }
+  </script>
+  
+  <input type="text" id="message-input" placeholder="Enter a message">
+  <button onclick="sendMessage()">Send</button>
+</body>
+</html>
