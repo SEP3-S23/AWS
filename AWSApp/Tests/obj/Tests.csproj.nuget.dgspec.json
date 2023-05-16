@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj": {}
+    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj": {
+    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj",
-        "packagesPath": "/Users/fdepalma/.nuget/packages/",
-        "outputPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/obj/",
+        "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
-                "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
+              "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
               }
             }
           }
@@ -57,21 +57,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
+    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
+        "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
-        "packagesPath": "/Users/fdepalma/.nuget/packages/",
-        "outputPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/obj/",
+        "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -110,21 +110,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj": {
+    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj",
+        "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj",
-        "packagesPath": "/Users/fdepalma/.nuget/packages/",
-        "outputPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/obj/",
+        "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -136,11 +136,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj": {
-                "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj"
+              "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+                "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
               },
-              "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
-                "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
+              "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
               }
             }
           }
@@ -170,7 +170,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -38,7 +38,8 @@
 .idea_modules/
 
 #Debug Folder
-AWSApp/Client/bin/Debug
+/AWSApp/Client/bin/Debug
+/AWSApp/Client/obj/Debug
 
 # JIRA plugin
 atlassian-ide-plugin.xml
