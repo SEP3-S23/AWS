@@ -37,6 +37,9 @@
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
+#Debug Folder
+AWSApp/Client/bin/Debug
+
 # JIRA plugin
 atlassian-ide-plugin.xml
 
