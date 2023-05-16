@@ -83,7 +83,7 @@ services:
       - 8100:8100
     environment:
       RABBITMQ_EXCHANGES: ws1,ws2 #add here all the ws you want to connect
-      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity 
+      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity
     restart: on-failure
     depends_on:
       - rabbitmq
