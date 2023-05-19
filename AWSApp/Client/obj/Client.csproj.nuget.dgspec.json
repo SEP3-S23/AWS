@@ -141,6 +141,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[6.2.3, )"

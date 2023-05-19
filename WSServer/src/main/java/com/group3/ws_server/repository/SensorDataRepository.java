@@ -18,6 +18,8 @@ public class SensorDataRepository {
     }
 
     public void insert(SensorData data) {
-        this.mongoTemplateLoader.get(data.getWsName()).insert(data, data.getName());
+        synchronized(this) {
+            this.mongoTemplateLoader.get(data.getWsName()).insert(data, data.getName());
+        }
     }
 }

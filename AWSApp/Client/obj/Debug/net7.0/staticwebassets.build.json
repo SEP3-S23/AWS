@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "azpiNy6J9+eUGdaozx0NHoMQS5QvCyohTdR9c6m12ow=",
+  "Hash": "9rD3UHaExGfpllkZ2aamqEDoeFi3aZhduxoN6+RdrXM=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8243,6 +8243,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
+    },
+    {
+      "Identity": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\sse.js",
+      "SourceId": "Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "sse.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sse.js"
     }
   ]
 }

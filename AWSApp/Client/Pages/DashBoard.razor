@@ -109,8 +109,11 @@
         </MudCard>
     </MudItem>
     <MudItem Class="mud-elevation-1 rounded" xs="12">
-        <Button Color="Blazorise.Color.Primary" Clicked="@(async () => await HandleRedraw())">Redraw</Button>
-        <LineChart @ref="lineChart" TItem="double"/>
+        <LineChart @ref="horizontalLineChart" TItem="LiveDataPoint" OptionsObject="@horizontalLineChartOptions">
+            <ChartStreaming TItem="LiveDataPoint"
+                            Options="new ChartStreamingOptions { Delay = 2000 }"
+                            Refreshed="@OnHorizontalLineRefreshed" />
+        </LineChart>
     </MudItem>
     <MudItem Class="ma-5">
         <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
@@ -142,59 +145,95 @@
 </MudGrid>
 
 @code {
+    
+    
+    
+    
+    
+    
+    
+    
+    LineChart<LiveDataPoint> horizontalLineChart;
+    Random random = new Random( DateTime.Now.Millisecond );
 
+    string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
+    List<string> backgroundColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 0.2f ), ChartColor.FromRgba( 54, 162, 235, 0.2f ), ChartColor.FromRgba( 255, 206, 86, 0.2f ), ChartColor.FromRgba( 75, 192, 192, 0.2f ), ChartColor.FromRgba( 153, 102, 255, 0.2f ), ChartColor.FromRgba( 255, 159, 64, 0.2f ) };
+    List<string> borderColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 1f ), ChartColor.FromRgba( 54, 162, 235, 1f ), ChartColor.FromRgba( 255, 206, 86, 1f ), ChartColor.FromRgba( 75, 192, 192, 1f ), ChartColor.FromRgba( 153, 102, 255, 1f ), ChartColor.FromRgba( 255, 159, 64, 1f ) };
 
-    LineChart<double> lineChart;
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    public struct LiveDataPoint
     {
-        if (firstRender)
+        public object X { get; set; }
+        public object Y { get; set; }
+    }
+
+    object horizontalLineChartOptions = new
+    {
+        Scales = new
         {
-            await HandleRedraw();
+            Y = new
+            {
+                Title = new
+                {
+                    Display = true,
+                    Text = "Temperature"
+                }
+            }
+        },
+        Interaction = new
+        {
+            intersect = false
+        }
+    };
+
+    protected override async Task OnAfterRenderAsync( bool firstRender )
+    {
+        if ( firstRender )
+        {
+            await Task.WhenAll(
+                HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
         }
     }
 
-    async Task HandleRedraw()
+    async Task HandleRedraw<TDataSet, TItem, TOptions, TModel>( BaseChart<TDataSet, TItem, TOptions, TModel> chart, params Func<TDataSet>[] getDataSets )
+        where TDataSet : ChartDataset<TItem>
+        where TOptions : Blazorise.Charts.ChartOptions
+        where TModel : ChartModel
     {
-        await lineChart.Clear();
+        await chart.Clear();
 
-        await lineChart.AddLabelsDatasetsAndUpdate(Labels, GetLineChartDataset());
+        await chart.AddLabelsDatasetsAndUpdate( Labels, getDataSets.Select( x => x.Invoke() ).ToArray() );
     }
 
-    LineChartDataset<double> GetLineChartDataset()
+    LineChartDataset<LiveDataPoint> GetLineChartDataset1()
     {
-        return new LineChartDataset<double>
+        return new LineChartDataset<LiveDataPoint>
         {
-            Label = "# of randoms",
-            Data = RandomizeData(),
-            BackgroundColor = backgroundColors,
-            BorderColor = borderColors,
-            Fill = true,
-            PointRadius = 3,
-            CubicInterpolationMode = "monotone",
+            Data = new List<LiveDataPoint>(),
+            Label = "Dataset 1 (linear interpolation)",
+            BackgroundColor = backgroundColors[0],
+            BorderColor = borderColors[0],
+            Fill = false,
+            Tension = 0,
+            BorderDash = new List<int> { 8, 4 },
         };
     }
 
-    string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
-    List<string> backgroundColors = new List<string> { ChartColor.FromRgba(255, 99, 132, 0.2f), ChartColor.FromRgba(54, 162, 235, 0.2f), ChartColor.FromRgba(255, 206, 86, 0.2f), ChartColor.FromRgba(75, 192, 192, 0.2f), ChartColor.FromRgba(153, 102, 255, 0.2f), ChartColor.FromRgba(255, 159, 64, 0.2f) };
-    List<string> borderColors = new List<string> { ChartColor.FromRgba(255, 99, 132, 1f), ChartColor.FromRgba(54, 162, 235, 1f), ChartColor.FromRgba(255, 206, 86, 1f), ChartColor.FromRgba(75, 192, 192, 1f), ChartColor.FromRgba(153, 102, 255, 1f), ChartColor.FromRgba(255, 159, 64, 1f) };
-
-    List<double> RandomizeData()
+    Task OnHorizontalLineRefreshed( ChartStreamingData<LiveDataPoint> data )
     {
-        var r = new Random(DateTime.Now.Millisecond);
-
-        return new List<double>
+        data.Value = new LiveDataPoint
         {
-            r.Next(3, 50) * r.NextDouble(),
-            r.Next(3, 50) * r.NextDouble(),
-            r.Next(3, 50) * r.NextDouble(),
-            r.Next(3, 50) * r.NextDouble(),
-            r.Next(3, 50) * r.NextDouble(),
-            r.Next(3, 50) * r.NextDouble()
+            X = DateTime.Now,
+            Y = RandomScalingFactor(),
         };
+
+        return Task.CompletedTask;
     }
 
-
+    double RandomScalingFactor()
+    {
+        return ( random.NextDouble() > 0.5 ? 1.0 : -1.0 ) * Math.Round( random.NextDouble() * 100 );
+    }
+    
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
