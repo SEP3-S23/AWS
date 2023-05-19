@@ -1,0 +1,255 @@
+﻿@page "/Dashboard"
+@inject HttpClient Http
+@using Client.Shared
+@using ChartOptions = MudBlazor.ChartOptions
+@using ChartType = MudBlazor.ChartType
+@using System.Runtime.InteropServices.JavaScript
+@using System.Text
+@using System.Net.Sockets
+@using Blazorise
+@using Blazorise.Charts
+@using Blazorise.Charts.Streaming
+@using Blazorise.SpinKit
+@using Color = MudBlazor.Color
+@using SortDirection = MudBlazor.SortDirection
+
+
+<PageTitle>DashBoard</PageTitle>
+<MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
+<MudGrid Spacing="10" Class="ma-2" Justify="Justify.SpaceEvenly">
+    <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
+        <MudPaper >
+            <MudCardContent Class=" justify-center">
+                <div style="position: relative;
+                              text-align: center;
+                              color: white;"> <p style="position: absolute;
+                                                                                top: 90%;
+                                                                                left: 50%;
+                                                                                transform: translate(-50%, -50%);
+                                                                                color: tomato;
+                                                                                font-size: 1.8vh;
+                                                                                font-weight: bold">
+                      17 °C </p>
+                    <TemperatureIcon/>
+                </div>
+
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudPaper >
+    </MudItem>
+    <MudItem xs="2" lg="2"Style="min-width: 20vh; min-height: 20vh">
+        <MudCard >
+            <MudCardContent Class=" justify-center">
+                <WeatherIcon/>
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
+        <MudCard >
+            <MudCardContent Class="justify-center">
+                <UvIndexIcon/>
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
+        <MudCard >
+            <MudCardContent Class=" justify-center">
+                <WindIcon/>
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
+        <MudCard >
+            <MudCardContent Class="justify-center">
+                <TimeIcon/>
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
+        <MudCard >
+            <MudCardContent Class="justify-center">
+                 <div style="position: relative;
+                                              text-align: center;
+                                              color: white;">
+                     <p style="position: absolute;
+                                                top: 90%;
+                                                left: 50%;
+                                                transform: translate(-50%, -50%);
+                                                color: dodgerblue;
+                                                font-size: 1.8vh;
+                                                font-weight: bold"> 0 ml
+                         </p>
+                                   <RainDropMeasureIcon/>
+                                </div>
+                
+            </MudCardContent>
+            <MudCardActions Class="d-flex justify-space-around">
+                <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
+                <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+    <MudItem Class="mud-elevation-1 rounded" xs="12">
+        <Button Color="Blazorise.Color.Primary" Clicked="@(async () => await HandleRedraw())">Redraw</Button>
+        <LineChart @ref="lineChart" TItem="double"/>
+    </MudItem>
+    <MudItem Class="ma-5">
+        <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
+            <HeaderContent>
+                <MudTh>
+                    <MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x => x.Date)">Date</MudTableSortLabel>
+                </MudTh>
+                <MudTh>
+                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.TemperatureC)">Temp. (C)</MudTableSortLabel>
+                </MudTh>
+                <MudTh>
+                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.Weather)">Temp. (F)</MudTableSortLabel>
+                </MudTh>
+                <MudTh>
+                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.Summary!)">Summary</MudTableSortLabel>
+                </MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Date">@context.Date</MudTd>
+                <MudTd DataLabel="Temp. (C)">@context.TemperatureC</MudTd>
+                <MudTd DataLabel="Weather">@context.Weather</MudTd>
+                <MudTd DataLabel="Summary">@context.Summary</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager PageSizeOptions="new int[] { 50, 100 }"/>
+            </PagerContent>
+        </MudTable>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+
+    LineChart<double> lineChart;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await HandleRedraw();
+        }
+    }
+
+    async Task HandleRedraw()
+    {
+        await lineChart.Clear();
+
+        await lineChart.AddLabelsDatasetsAndUpdate(Labels, GetLineChartDataset());
+    }
+
+    LineChartDataset<double> GetLineChartDataset()
+    {
+        return new LineChartDataset<double>
+        {
+            Label = "# of randoms",
+            Data = RandomizeData(),
+            BackgroundColor = backgroundColors,
+            BorderColor = borderColors,
+            Fill = true,
+            PointRadius = 3,
+            CubicInterpolationMode = "monotone",
+        };
+    }
+
+    string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
+    List<string> backgroundColors = new List<string> { ChartColor.FromRgba(255, 99, 132, 0.2f), ChartColor.FromRgba(54, 162, 235, 0.2f), ChartColor.FromRgba(255, 206, 86, 0.2f), ChartColor.FromRgba(75, 192, 192, 0.2f), ChartColor.FromRgba(153, 102, 255, 0.2f), ChartColor.FromRgba(255, 159, 64, 0.2f) };
+    List<string> borderColors = new List<string> { ChartColor.FromRgba(255, 99, 132, 1f), ChartColor.FromRgba(54, 162, 235, 1f), ChartColor.FromRgba(255, 206, 86, 1f), ChartColor.FromRgba(75, 192, 192, 1f), ChartColor.FromRgba(153, 102, 255, 1f), ChartColor.FromRgba(255, 159, 64, 1f) };
+
+    List<double> RandomizeData()
+    {
+        var r = new Random(DateTime.Now.Millisecond);
+
+        return new List<double>
+        {
+            r.Next(3, 50) * r.NextDouble(),
+            r.Next(3, 50) * r.NextDouble(),
+            r.Next(3, 50) * r.NextDouble(),
+            r.Next(3, 50) * r.NextDouble(),
+            r.Next(3, 50) * r.NextDouble(),
+            r.Next(3, 50) * r.NextDouble()
+        };
+    }
+
+
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            TcpClient client = new TcpClient();
+            client.Connect("localhost", 8100);
+
+            NetworkStream stream = client.GetStream();
+
+    // Send a message to the server
+            string sendMessage = "ws1";
+            byte[] buffer1 = Encoding.ASCII.GetBytes(sendMessage);
+            stream.Write(buffer1, 0, buffer1.Length);
+            while (true)
+            {
+                byte[] buffer = new byte[1024];
+                int bytesRead = client.GetStream().Read(buffer, 0, buffer.Length);
+                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                Console.WriteLine("Received message from server: " + message);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
+    }
+
+
+    public class WeatherForecast
+    {
+        public DateTime Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int Weather => 32 + (int)(TemperatureC / 0.5556);
+    }
+
+    private int Index = -1; //default value cannot be 0 -> first selectedindex is 0.
+
+    public ChartOptions chartOptions = new ChartOptions();
+
+    public string[] XAxisLabels { get; set; }
+    public static double[] Data { get; set; }
+
+    public List<ChartSeries> Series = new List<ChartSeries>()
+    {
+        new ChartSeries()
+        {
+            Name = "Temperature", Data = Data
+        }
+    };
+
+}

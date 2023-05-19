@@ -2,7 +2,7 @@
 
 public class User
 {
-    public User(long id, string email, string name, string surname, string username, string passwordHash)
+    public User(long id, string email, string name, string surname, string username, string passwordHash, string token)
     {
         this.id = id;
         this.email = email;
@@ -10,6 +10,7 @@ public class User
         this.surname = surname;
         this.username = username;
         this.passwordHash = passwordHash;
+        this.token = token;
     }
 
     public long id { get; set; }
@@ -18,6 +19,7 @@ public class User
     public string surname { get; set; }
     public string username { get; set; }
     public string passwordHash { get; set; }
+    public string token { get; set; }
 
     public string ToString()
     {
@@ -26,6 +28,7 @@ public class User
                $" name: {name}" +
                $" surname: {surname}" +
                $" username: {username}" +
-               $" passwordHash: {passwordHash}";
+               $" passwordHash: {passwordHash}"+ 
+               $" token: {token}";
     }
 }

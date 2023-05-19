@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider/>
+<MudThemeProvider @bind-IsDarkMode="@IsDarkMode" Theme="@_theme"/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
@@ -19,11 +19,8 @@
             <NavMenu />
         </div>
     </MudDrawer>
-    <MudMainContent>
-        <MudThemeProvider Theme="@MyTheme"/>
-        
-        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
-            <MudThemeProvider @bind-IsDarkMode="@IsDarkMode" Theme="_theme"/>
+    <MudMainContent Color="Color.Primary">
+        <MudContainer Color="Color.Primary">
             @Body
         </MudContainer>
     </MudMainContent>

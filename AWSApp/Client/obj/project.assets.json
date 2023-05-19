@@ -27,27 +27,6 @@
           "buildMultiTargeting/Blazorise.props": {}
         }
       },
-      "Blazorise.Bootstrap/1.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Blazorise": "1.2.3",
-          "Microsoft.AspNetCore.Components": "7.0.5",
-          "Microsoft.AspNetCore.Components.Web": "7.0.5",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/Blazorise.Bootstrap.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/Blazorise.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Blazorise.Bootstrap.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Blazorise.Bootstrap.props": {}
-        }
-      },
       "Blazorise.Charts/1.2.3": {
         "type": "package",
         "dependencies": {
@@ -100,6 +79,26 @@
           "buildMultiTargeting/Blazorise.Charts.Streaming.props": {}
         }
       },
+      "Blazorise.Components/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Blazorise.Snackbar": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazorise.Icons.FontAwesome/1.2.3": {
         "type": "package",
         "dependencies": {
@@ -122,6 +121,77 @@
         },
         "runtime": {
           "lib/net7.0/Blazorise.Licensing.dll": {}
+        }
+      },
+      "Blazorise.Snackbar/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.Snackbar.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Snackbar.props": {}
+        }
+      },
+      "Blazorise.SpinKit/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.SpinKit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.SpinKit.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.SpinKit.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.SpinKit.props": {}
+        }
+      },
+      "Blazorise.Tailwind/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Tailwind.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Tailwind.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.Tailwind.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Tailwind.props": {}
         }
       },
       "Lambda2Js/3.1.4": {
@@ -638,6 +708,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "7.0.0",
           "Shared": "1.0.0"
         },
         "compile": {
@@ -682,27 +753,6 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/Blazorise.props": {}
-        }
-      },
-      "Blazorise.Bootstrap/1.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Blazorise": "1.2.3",
-          "Microsoft.AspNetCore.Components": "7.0.5",
-          "Microsoft.AspNetCore.Components.Web": "7.0.5",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
-        },
-        "compile": {
-          "lib/net7.0/Blazorise.Bootstrap.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/Blazorise.Bootstrap.dll": {}
-        },
-        "build": {
-          "buildTransitive/Blazorise.Bootstrap.props": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Blazorise.Bootstrap.props": {}
         }
       },
       "Blazorise.Charts/1.2.3": {
@@ -757,6 +807,26 @@
           "buildMultiTargeting/Blazorise.Charts.Streaming.props": {}
         }
       },
+      "Blazorise.Components/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Blazorise.Snackbar": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Components.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazorise.Icons.FontAwesome/1.2.3": {
         "type": "package",
         "dependencies": {
@@ -779,6 +849,77 @@
         },
         "runtime": {
           "lib/net7.0/Blazorise.Licensing.dll": {}
+        }
+      },
+      "Blazorise.Snackbar/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Snackbar.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.Snackbar.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Snackbar.props": {}
+        }
+      },
+      "Blazorise.SpinKit/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.SpinKit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.SpinKit.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazorise.SpinKit.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.SpinKit.props": {}
+        }
+      },
+      "Blazorise.Tailwind/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Blazorise": "1.2.3",
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Blazorise.Tailwind.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Blazorise.Tailwind.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazorise.Tailwind.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazorise.Tailwind.props": {}
         }
       },
       "Lambda2Js/3.1.4": {
@@ -1289,6 +1430,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Components.WebAssembly": "7.0.0",
           "Shared": "1.0.0"
         },
         "compile": {
@@ -1366,29 +1508,6 @@
         "staticwebassets/vendors/sha512.js"
       ]
     },
-    "Blazorise.Bootstrap/1.2.3": {
-      "sha512": "whFrhL5or13U9j0UD1w7ptL3EA4OmsaclLJYoTAmwDb8Xf2yAAJC7l1F30MSAU+I/73/x+TH9f82JZp0v3DNmQ==",
-      "type": "package",
-      "path": "blazorise.bootstrap/1.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Blazorise.png",
-        "LICENSE.md",
-        "blazorise.bootstrap.1.2.3.nupkg.sha512",
-        "blazorise.bootstrap.nuspec",
-        "build/Blazorise.Bootstrap.props",
-        "build/Microsoft.AspNetCore.StaticWebAssets.props",
-        "buildMultiTargeting/Blazorise.Bootstrap.props",
-        "buildTransitive/Blazorise.Bootstrap.props",
-        "lib/net6.0/Blazorise.Bootstrap.dll",
-        "lib/net7.0/Blazorise.Bootstrap.dll",
-        "staticwebassets/blazorise.bootstrap.css",
-        "staticwebassets/blazorise.bootstrap.min.css",
-        "staticwebassets/modal.js",
-        "staticwebassets/tooltip.js"
-      ]
-    },
     "Blazorise.Charts/1.2.3": {
       "sha512": "Bu6I0CaU3tjgNr1pQ+LVlkoy3gg/Wb+rK6G1ClyYVsGLQR8T2i+KHPR02GlOAlwpQ81o+pE9n5GrHHJTbCP2fg==",
       "type": "package",
@@ -1434,6 +1553,23 @@
         "staticwebassets/charts.streaming.js"
       ]
     },
+    "Blazorise.Components/1.2.3": {
+      "sha512": "fU1twfaCaUcIuBP98fCaxcDjbGDfpzIwkDJnKn1a165EWzgphSxTENSJarw858TVdacV+fdziZOY44JUh3ApqQ==",
+      "type": "package",
+      "path": "blazorise.components/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.components.1.2.3.nupkg.sha512",
+        "blazorise.components.nuspec",
+        "lib/net6.0/Blazorise.Components.dll",
+        "lib/net6.0/Blazorise.Components.xml",
+        "lib/net7.0/Blazorise.Components.dll",
+        "lib/net7.0/Blazorise.Components.xml"
+      ]
+    },
     "Blazorise.Icons.FontAwesome/1.2.3": {
       "sha512": "5dHiY44OepDXNg7xgFRmBr1EUIrdJv9pqcZilIqiEyesgPQ5s2u9BrHfwvRqM9AkRGIRC2aCea7zih83lltwQA==",
       "type": "package",
@@ -1462,6 +1598,76 @@
         "blazorise.licensing.nuspec",
         "lib/net6.0/Blazorise.Licensing.dll",
         "lib/net7.0/Blazorise.Licensing.dll"
+      ]
+    },
+    "Blazorise.Snackbar/1.2.3": {
+      "sha512": "r8M0u5rixe+PAOfA4e6QQe+TBZALVw3rTGtErvxl7ecEmrUgqSF6zBjCNHohZAZUHZwiFqg9xRv27FL6dbD9iw==",
+      "type": "package",
+      "path": "blazorise.snackbar/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.snackbar.1.2.3.nupkg.sha512",
+        "blazorise.snackbar.nuspec",
+        "build/Blazorise.Snackbar.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Snackbar.props",
+        "buildTransitive/Blazorise.Snackbar.props",
+        "lib/net6.0/Blazorise.Snackbar.dll",
+        "lib/net6.0/Blazorise.Snackbar.xml",
+        "lib/net7.0/Blazorise.Snackbar.dll",
+        "lib/net7.0/Blazorise.Snackbar.xml",
+        "staticwebassets/blazorise.snackbar.css",
+        "staticwebassets/blazorise.snackbar.min.css"
+      ]
+    },
+    "Blazorise.SpinKit/1.2.3": {
+      "sha512": "RI1Bc5GskdeigfPzypeGJnvEP6BV8TIGlCCBj7TAOLQGL115ub0ZoFxdrlSx9M8ZoLug4dOAzwX/3n5eztu5Ow==",
+      "type": "package",
+      "path": "blazorise.spinkit/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.spinkit.1.2.3.nupkg.sha512",
+        "blazorise.spinkit.nuspec",
+        "build/Blazorise.SpinKit.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.SpinKit.props",
+        "buildTransitive/Blazorise.SpinKit.props",
+        "lib/net6.0/Blazorise.SpinKit.dll",
+        "lib/net6.0/Blazorise.SpinKit.xml",
+        "lib/net7.0/Blazorise.SpinKit.dll",
+        "lib/net7.0/Blazorise.SpinKit.xml",
+        "staticwebassets/blazorise.spinkit.css",
+        "staticwebassets/blazorise.spinkit.min.css"
+      ]
+    },
+    "Blazorise.Tailwind/1.2.3": {
+      "sha512": "cfTQDn8aqxLJk/yNfv9/QMcYrZE7hjHZCvZN5Zt8jBtcR4hN6CpDzChtzW1SFpIFw02FyabAyK/39zYYgZvK+Q==",
+      "type": "package",
+      "path": "blazorise.tailwind/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Blazorise.png",
+        "LICENSE.md",
+        "blazorise.tailwind.1.2.3.nupkg.sha512",
+        "blazorise.tailwind.nuspec",
+        "build/Blazorise.Tailwind.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazorise.Tailwind.props",
+        "buildTransitive/Blazorise.Tailwind.props",
+        "lib/net6.0/Blazorise.Tailwind.dll",
+        "lib/net7.0/Blazorise.Tailwind.dll",
+        "staticwebassets/blazorise.tailwind.config.js",
+        "staticwebassets/blazorise.tailwind.css",
+        "staticwebassets/blazorise.tailwind.min.css",
+        "staticwebassets/modal.js",
+        "staticwebassets/tooltip.js"
       ]
     },
     "Lambda2Js/3.1.4": {
@@ -2364,11 +2570,12 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "BackEnd >= 1.0.0",
-      "Blazorise >= 1.2.3",
-      "Blazorise.Bootstrap >= 1.2.3",
       "Blazorise.Charts >= 1.2.3",
       "Blazorise.Charts.Streaming >= 1.2.3",
+      "Blazorise.Components >= 1.2.3",
       "Blazorise.Icons.FontAwesome >= 1.2.3",
+      "Blazorise.SpinKit >= 1.2.3",
+      "Blazorise.Tailwind >= 1.2.3",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.0",
       "MudBlazor >= 6.2.3",
@@ -2419,14 +2626,6 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Blazorise": {
-            "target": "Package",
-            "version": "[1.2.3, )"
-          },
-          "Blazorise.Bootstrap": {
-            "target": "Package",
-            "version": "[1.2.3, )"
-          },
           "Blazorise.Charts": {
             "target": "Package",
             "version": "[1.2.3, )"
@@ -2435,7 +2634,19 @@
             "target": "Package",
             "version": "[1.2.3, )"
           },
+          "Blazorise.Components": {
+            "target": "Package",
+            "version": "[1.2.3, )"
+          },
           "Blazorise.Icons.FontAwesome": {
+            "target": "Package",
+            "version": "[1.2.3, )"
+          },
+          "Blazorise.SpinKit": {
+            "target": "Package",
+            "version": "[1.2.3, )"
+          },
+          "Blazorise.Tailwind": {
             "target": "Package",
             "version": "[1.2.3, )"
           },

@@ -2,16 +2,16 @@
 
 public class LoginDto
 {
-    public LoginDto(string email, string password)
+    public LoginDto(string userName, string password)
     {
-        Email = email;
-        Password = password;
+        userName = userName;
+        password = password;
     }
 
     public LoginDto()
     {
     }
 
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string userName { get; set; }
+    public string password { get; set; }
 }

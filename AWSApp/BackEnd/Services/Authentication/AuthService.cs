@@ -16,14 +16,15 @@ public class AuthService : IAuthService
         _baseUrl = baseUrl;
     }
 
-    public async Task<User> LoginAsync(string email, string password)
+    public async Task<User> LoginAsync(string userName, string password)
     {
-        var loginDto = new LoginDto { Email = email, Password = password };
+        var loginDto = new LoginDto { userName = userName, password = password };
 
-        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/login", loginDto);
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:8080/api/v1/auth/authenticate", loginDto);
 
         if (response.IsSuccessStatusCode)
         {
+            Console.WriteLine(response.Content.ToString());
             var user = await response.Content.ReadFromJsonAsync<User>();
             return user;
         }
