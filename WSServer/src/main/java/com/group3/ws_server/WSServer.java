@@ -7,6 +7,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.codec.ServerSentEvent;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Flux;
 
 @SpringBootApplication
 public class WSServer {
@@ -16,9 +20,6 @@ public class WSServer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WSServer.class, args);
-
-		LiveDataSocket socketServer = new LiveDataSocket();
-		socketServer.start();
 	}
 
 	@EventListener(ApplicationReadyEvent.class)

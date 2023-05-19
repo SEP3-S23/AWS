@@ -2,6 +2,7 @@ package com.group3.ws_server.controller;
 
 import com.group3.ws_server.model.SensorData;
 import com.group3.ws_server.service.RabbitMQListener;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -9,41 +10,40 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import java.io.InputStream;
-import com.google.gson.Gson;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 
-@Controller
+import com.google.gson.Gson;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+@RestController
+@RequestMapping("/ws")
 public class LiveDataSocket {
 
     @Autowired
     RabbitMQListener rabbitMQListener;
 
-    private ServerSocket serverSocket;
+    @GetMapping("/{name}")
+    public SseEmitter stream(@PathVariable String name) {
+        SseEmitter emitter = new SseEmitter();
 
-    public void start() {
-        try {
-            serverSocket = new ServerSocket(8100);
-            System.out.println("Server socket started on port 8100.");
+        ExecutorService executor = Executors.newSingleThreadExecutor();
 
-            while (true) {
+        executor.execute(() -> {
+            rabbitMQListener.addListener(name, (PropertyChangeEvent evt) -> {
                 try {
-                    Socket clientSocket = serverSocket.accept();
-
-                    System.out.println("Client connected: " + clientSocket.getInetAddress().getHostAddress());
-
-                    new Thread(new SocketHandler(clientSocket)).start();
-
+                    Gson gson = new Gson();
+                    emitter.send(gson.toJson(evt.getNewValue()));
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            });
+        });
+        executor.shutdown();
+        return emitter;
     }
 }
