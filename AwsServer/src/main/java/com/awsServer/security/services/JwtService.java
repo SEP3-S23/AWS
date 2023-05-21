@@ -27,6 +27,13 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
+    public String extractTokenFromAuthorizationHeader(String authorizationHeader) {
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            return authorizationHeader.substring(7); // Extract token after "Bearer "
+        }
+        return null; // No token found or invalid authorization header
+    }
+
     public String generateToken(UserDetails userDetails){
         return generateToken(new HashMap<>(), userDetails);
     }
