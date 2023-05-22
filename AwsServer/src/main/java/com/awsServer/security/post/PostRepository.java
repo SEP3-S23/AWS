@@ -1,2 +1,6 @@
-package com.awsServer.security.post;public interface PostRepository {
+package com.awsServer.security.post;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PostRepository extends JpaRepository<Post, Integer> {
 }

@@ -1,5 +1,6 @@
 package com.awsServer.security.config;
 
+import com.awsServer.security.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
