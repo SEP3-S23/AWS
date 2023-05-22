@@ -9,9 +9,6 @@ services:
         POSTGRES_PASSWORD: postgres
         POSTGRES_USER: postgres
         POSTGRES_DB: app_server
-        PGDATA: /var/lib/postgresql/data/pgdata
-      volumes:
-        - ./AppDB:/var/lib/postgresql/data
       ports:
         - '5431:5432'
 
@@ -87,7 +84,3 @@ services:
     restart: on-failure
     depends_on:
       - rabbitmq
-
-
-volumes:
-  postgres-data:

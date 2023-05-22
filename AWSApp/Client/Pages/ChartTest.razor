@@ -2,6 +2,7 @@
 @using Blazorise.Charts
 @using Blazorise.Charts.Streaming
 @using ChartOptions = MudBlazor.ChartOptions
+@using System.Xml
 
 @inject IJSRuntime JSRuntime
 
@@ -11,24 +12,36 @@
                     Refreshed="@OnHorizontalLineRefreshed" />
 </LineChart>
 
+
 @code{
     
-    protected override async Task OnAfterRenderAsync( bool firstRender )
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if ( firstRender )
+        if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("establishSSEConnection", DotNetObjectReference.Create(this));
-            await Task.WhenAll(
-                HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
+            await JSRuntime.InvokeVoidAsync("import", "/js/sse.js");
         }
     }
 
-    [JSInvokable]
-    public void HandleSSEEvent(string eventData)
+    private async Task SetupSseConnection()
     {
-        Console.WriteLine(eventData);
-    // Handle the incoming SSE event data
-    // Update your Blazor component's state or perform necessary actions
+        await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/ws1");
+    }
+
+    [JSInvokable]
+    public void HandleSseMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    [JSInvokable]
+    public void HandleSseError()
+    {
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SetupSseConnection();
     }
     
     LineChart<LiveDataPoint> horizontalLineChart;
