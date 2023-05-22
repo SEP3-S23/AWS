@@ -50,13 +50,44 @@ services:
       timeout: 15s
       retries: 1
 
-  simulator:
-    container_name: simulator
+  #ws1
+  ws1_simulator:
+    container_name: WS1_simulator
     build:
       context: ./Simulator
       dockerfile: Dockerfile
     depends_on:
       - rabbitmq
+    environment:
+      - EXCHANGE=ws1
+    restart: on-failure
+
+  #ws2
+  ws2_simulator:
+    container_name: WS2_simulator
+    build:
+      context: ./Simulator
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    environment:
+      - EXCHANGE=ws2
+    restart: on-failure
+
+  ws_server:
+    container_name: WSServer
+    build:
+      context: ./WSServer
+      dockerfile: Dockerfile
+    ports:
+      - 8100:8100
+    environment:
+      RABBITMQ_EXCHANGES: ws1,ws2 #add here all the ws you want to connect
+      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+
 
 volumes:
   postgres-data:

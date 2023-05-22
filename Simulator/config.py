@@ -1,1 +1,5 @@
-EXCHANGE = 'ws1'
+import os
+
+EXCHANGE = os.environ.get('EXCHANGE')
+
+print(EXCHANGE)

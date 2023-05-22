@@ -4,32 +4,18 @@
 
 @using MudBlazor
 
-<style>
-    
-     .custom-background {
-           background-color: #F0F0F0;
-       }
-       .PageTitle {
-           
-           font-weight: bold;
-       }
-</style>
-
-
 <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
 <DataAnnotationsValidator/>
 <MudGrid>
     
     <MudItem xs="12" sm="12" md="12" >
-        <MudCard class="custom-background">
+        <MudCard Class="mud-elevation-8">
             <MudCardContent>
                 <MudText Typo="Typo.h4" class="PageTitle">Login</MudText>
                 <MudTextField Label="Username" HelperText="Max. 8 characters"
                               @bind-Value="model.Username" For="@(() => model.Username)"/>
                 <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
                               @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password"/>
-                <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
-                              @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password"/>
             </MudCardContent>
             <MudCardActions Class="d-flex align-center flex-grow-1 gap-4" >
                 <MudButton Class="d-flex flex-1" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary">Login</MudButton>
@@ -63,7 +49,7 @@
 @code {
     RegisterAccountForm model = new RegisterAccountForm();
     bool success;
-    string Error= "vuoto";
+    string Error= "";
 
     public class RegisterAccountForm
     {
@@ -75,10 +61,6 @@
         [Required]
         [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
         public string Password { get; set; }
-
-        [Required]
-        [Compare(nameof(Password))]
-        public string Password2 { get; set; }
 
     }
     
@@ -100,7 +82,7 @@
 
     private async Task Submit(string email, string password)
     {
-        IAuthService authService = new AuthService("http://localhost:8090/api/user");
+        IAuthService authService = new AuthService("http://localhost:8080/api/v1/auth/authenticate");
         try
         {
             var result = await authService.LoginAsync(email, password);

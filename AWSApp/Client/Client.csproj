@@ -8,8 +8,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Blazorise.Charts" Version="1.2.3" />
+		<PackageReference Include="Blazorise.Charts.Streaming" Version="1.2.3" />
+		<PackageReference Include="Blazorise.Components" Version="1.2.3" />
+		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.2.3" />
+		<PackageReference Include="Blazorise.SpinKit" Version="1.2.3" />
+		<PackageReference Include="Blazorise.Tailwind" Version="1.2.3" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.JSInterop" Version="7.0.5" />
 		<PackageReference Include="MudBlazor" Version="6.2.3" />
 	</ItemGroup>
 

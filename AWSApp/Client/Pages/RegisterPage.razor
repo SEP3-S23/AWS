@@ -3,18 +3,6 @@
 
 @using MudBlazor
 
-<style>
-    
-     .custom-background {
-           background-color: #F0F0F0;
-       }
-       .PageTitle {
-           
-           font-weight: bold;
-       }
-</style>
-
-
 <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
 <DataAnnotationsValidator/>
 <MudGrid>
@@ -87,7 +75,7 @@
         public string Username { get; set; }
 
         [Required]
-        [StringLength(30, ErrorMessage = "Password must be at least 8 characters long.", MinimumLength = 8)]
+        [StringLength(30, ErrorMessage = "Password must be at least 32 characters long.", MinimumLength = 8)]
         public string Password { get; set; }
 
         [Required]

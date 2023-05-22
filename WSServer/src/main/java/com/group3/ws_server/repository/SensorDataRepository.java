@@ -1,21 +1,25 @@
 package com.group3.ws_server.repository;
 
+import com.group3.ws_server.configuration.MongoTemplateLoader;
 import com.group3.ws_server.model.SensorData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Repository;
+
+import java.util.Map;
 
 @Repository
 public class SensorDataRepository {
 
-    private MongoOperations mongoOperations;
+    private MongoTemplateLoader mongoTemplateLoader;
 
     @Autowired
-    public SensorDataRepository(MongoOperations mongoOperations) {
-        this.mongoOperations = mongoOperations;
+    public SensorDataRepository(MongoTemplateLoader mongoTemplateLoader) {
+        this.mongoTemplateLoader = mongoTemplateLoader;
     }
 
     public void insert(SensorData data) {
-        this.mongoOperations.insert(data, data.getName());
+        synchronized(this) {
+            this.mongoTemplateLoader.get(data.getWsName()).insert(data, data.getName());
+        }
     }
 }

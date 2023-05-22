@@ -2,26 +2,31 @@
   {
     "date": "2018-05-06",
     "temperatureC": 1,
+    "weather" : "Sunny",
     "summary": "Freezing"
   },
   {
     "date": "2018-05-07",
     "temperatureC": 14,
+    "weather" : "Wind",
     "summary": "Bracing"
   },
   {
     "date": "2018-05-08",
     "temperatureC": -13,
+    "weather" : "Cloud",
     "summary": "Freezing"
   },
   {
     "date": "2018-05-09",
     "temperatureC": -16,
+    "weather" : "Cloud",
     "summary": "Balmy"
   },
   {
     "date": "2018-05-10",
     "temperatureC": -2,
+    "weather" : "Rain",
     "summary": "Chilly"
   }
 ]
