@@ -1,4 +1,4 @@
-package com.awsServer.security.config;
+package com.awsServer.security.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
