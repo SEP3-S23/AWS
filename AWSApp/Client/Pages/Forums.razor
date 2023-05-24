@@ -1,8 +1,8 @@
 ﻿@page "/Forums"
-@using Backend.Services
-@using BackEnd.Services.Authentication
+
+@*@using BackEnd.Services.Authentication*@
 @using global::Shared.Model
-@inject ForumService ForumService
+@*@inject ForumService ForumService*@
 @inject NavigationManager NavigationManager
 
 <h3>Forums</h3>
@@ -30,16 +30,14 @@ else
 @code {
     List<Forum> forums;
 
-    protected override void OnInitialized()
-    {
-        RefreshForums();
-    }
+   // protected override void OnInitialized()
+    //{RefreshForums();}
 
-    private void RefreshForums()
-    {
+    //private void RefreshForums()
+    //{
     // Retrieve the list of forums from ForumService
-        forums = ForumService.GetAllForums();
-    }
+      //  forums = ForumService.GetAllForums();
+    //}
 
     private void CreateForum()
     {
