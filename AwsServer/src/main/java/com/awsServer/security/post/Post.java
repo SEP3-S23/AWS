@@ -2,6 +2,7 @@ package com.awsServer.security.post;
 
 import com.awsServer.security.forum.Forum;
 import com.awsServer.security.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,5 +32,6 @@ public class Post
 
     @ManyToOne
     @JoinColumn(name = "forum_id")
+    @JsonIgnore
     private Forum forum;
 }

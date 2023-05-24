@@ -1,5 +1,6 @@
 package com.awsServer.security.user;
 
+import com.awsServer.security.forum.Forum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,6 +31,14 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_forum",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "forum_id")
+    )
+    private List<Forum> followedForums;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
