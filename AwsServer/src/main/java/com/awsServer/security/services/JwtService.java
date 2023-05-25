@@ -1,5 +1,6 @@
 package com.awsServer.security.services;
 
+import com.awsServer.security.user.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -34,14 +35,17 @@ public class JwtService {
         return null; // No token found or invalid authorization header
     }
 
-    public String generateToken(UserDetails userDetails){
+    public String generateToken(User userDetails){
         return generateToken(new HashMap<>(), userDetails);
     }
 
 public String generateToken(
-        Map<String, Objects> extraClaims,
-        UserDetails userDetails
+        Map<String, Object> extraClaims,
+        User userDetails
 ){
+        extraClaims.put("userId", userDetails.getId());
+        extraClaims.put("role", userDetails.getRole());
+
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
