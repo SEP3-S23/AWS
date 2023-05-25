@@ -17,7 +17,7 @@ public class PostHttpClient : IPostService
     
     public async Task CreateAsync(CreatePostDto dto)
     {
-        HttpResponseMessage response = await client.PostAsJsonAsync("/todos",dto);
+        HttpResponseMessage response = await client.PostAsJsonAsync("/posts",dto);
         if (!response.IsSuccessStatusCode)
         {
             string content = await response.Content.ReadAsStringAsync();
@@ -27,14 +27,14 @@ public class PostHttpClient : IPostService
     
     public async Task<ICollection<Shared.Model.Post>> GetAsync(string? username, string? titleContains, string? body)
     {
-        HttpResponseMessage response = await client.GetAsync("/todos");
+        HttpResponseMessage response = await client.GetAsync("/posts");
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(content);
         }
 
-        ICollection<Post> posts = JsonSerializer.Deserialize<ICollection<Todo>>(content, new JsonSerializerOptions
+        ICollection<Shared.Model.Post> posts = JsonSerializer.Deserialize<ICollection<Shared.Model.Post>>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
         })!;
