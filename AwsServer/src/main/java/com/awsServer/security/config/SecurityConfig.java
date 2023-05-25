@@ -50,12 +50,11 @@ public class SecurityConfig {
         public void addCorsMappings(CorsRegistry registry) {
 
             registry.addMapping("/api/**")
-                    .allowedOrigins("http://localhost:5294/")
+                    .allowedOrigins("http://localhost:5294/", "http://localhost:7271/")
                     .allowedMethods("*")
                     .allowedHeaders("*")
                     .exposedHeaders("*")
                     .allowCredentials(true).maxAge(3600);
-
             // Add more mappings...
         }
     }

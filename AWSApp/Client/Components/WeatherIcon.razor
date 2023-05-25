@@ -1,0 +1,25 @@
+﻿<img   src="@GetWeatherImage(Weather)"  style="width: 10vh; height: 10vh;"/>
+
+@code {
+    [Parameter]
+    public WeatherCondition Weather { get; set; }
+    
+    private string GetWeatherImage(WeatherCondition weather)
+    {
+        switch (Weather)
+        {
+            case WeatherCondition.Sunny:
+                return "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/overcast-rain.svg";
+            case WeatherCondition.Rainy:
+                return "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/thunderstorms-rain.svg";
+            case WeatherCondition.Windy:
+                return "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/overcast-rain.svg";
+            case WeatherCondition.Snow:
+                return "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/overcast-rain.svg";
+            default:
+                return "";
+        }
+    }
+    
+    
+}
