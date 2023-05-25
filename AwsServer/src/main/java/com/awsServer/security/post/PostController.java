@@ -23,16 +23,21 @@ public class PostController {
     {
         String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
         String username = jwtService.extractUsername(token);
+        postService.createPost(username, postRequest);
+        return ResponseEntity.ok("Post successfully created");
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getAllPosts(HttpServletRequest request)
+    {
+        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
+        String username = jwtService.extractUsername(token);
         boolean isTokenValid = jwtService.isTokenValid(token, userDetailsService.loadUserByUsername(username));
 
         if(isTokenValid)
         {
-            if(postService.createPost(username, postRequest) == null)
-            {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("The forum you are trying to access does not exists.");
-            }
-            else return ResponseEntity.ok("Post successfully created.");
+            return ResponseEntity.ok(postService.getAllPosts());
         }
-        else return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again.");
+        else return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again");
     }
 }

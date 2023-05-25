@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PostRequest
 {
-    private String forumName;
+    private Integer id;
     private String title;
     private String body;
 }

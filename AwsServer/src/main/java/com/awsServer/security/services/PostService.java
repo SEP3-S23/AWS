@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,7 +26,7 @@ public class PostService {
     public Post createPost(String username, PostRequest postRequest)
     {
         Optional<User> createdBy = userRepository.findByUserName(username);
-        Optional<Forum> existingForum = forumRepository.findForumByName(postRequest.getForumName());
+        Optional<Forum> existingForum = forumRepository.findForumById(postRequest.getId());
 
         if(existingForum.isEmpty())
         {
@@ -43,5 +44,10 @@ public class PostService {
         newPost.setBody(postRequest.getBody());
 
         return postRepository.save(newPost);
+    }
+
+    public List<Post> getAllPosts()
+    {
+        return postRepository.findAll();
     }
 }

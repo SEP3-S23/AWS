@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ForumRequest {
+    private String username;
     private String name;
     private String category;
     private String description;

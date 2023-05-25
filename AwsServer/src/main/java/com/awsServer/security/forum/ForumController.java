@@ -35,34 +35,14 @@ public class ForumController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<?> getForumByName(HttpServletRequest request, @PathVariable("name") String name) {
-
-        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
-        String username = jwtService.extractUsername(token);
-        boolean isTokenValid = jwtService.isTokenValid(token, userDetailsService.loadUserByUsername(username));
-        if(isTokenValid)
-        {
+    public ResponseEntity<?> getForumByName(@PathVariable("name") String name) {
             ForumReturned forum = forumService.getForumByName(name);
-            if (forum != null) {
-                return ResponseEntity.ok(forum);
-            } else {
-                return ResponseEntity.notFound().build();
-            }
-        } else
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again.");
+            return ResponseEntity.ok(forum);
     }
 
     @GetMapping
-    public ResponseEntity<?> getAllForums(HttpServletRequest request)
+    public ResponseEntity<?> getAllForums()
     {
-        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
-        String username = jwtService.extractUsername(token);
-        boolean isTokenValid = jwtService.isTokenValid(token, userDetailsService.loadUserByUsername(username));
-
-        if(isTokenValid)
-        {
-            return ResponseEntity.ok(forumService.getAllForums());
-        }
-        else return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again");
+        return ResponseEntity.ok(forumService.getAllForums());
     }
 }
