@@ -44,6 +44,11 @@ public class ForumService : IForumService
 
     public  async Task CreateAsync(CreateForumDto dto)
     {
+        var forum = new Forum
+        {
+           Description = dto.Description;
+        }
+        
         HttpResponseMessage response = await _httpClient.PostAsJsonAsync("/forums", dto);
         if (!response.IsSuccessStatusCode)
         {
