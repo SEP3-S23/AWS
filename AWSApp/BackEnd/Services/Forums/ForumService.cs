@@ -46,7 +46,7 @@ public class ForumService : IForumService
     {
         var forum = new Forum
         {
-           Description = dto.Description;
+           
         }
         
         HttpResponseMessage response = await _httpClient.PostAsJsonAsync("/forums", dto);
