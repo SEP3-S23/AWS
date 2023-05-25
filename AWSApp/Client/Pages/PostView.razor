@@ -4,6 +4,21 @@
 <h3>PostView</h3>
 @inject IPostService postService;
 
+
+@if (posts == null)
+{
+    
+}
+else
+{
+    <MudCard>
+        <MudCardContent>
+            <MudText>Post</MudText>
+            
+        </MudCardContent>
+    </MudCard>
+}
+
 @code {
     private IEnumerable<Post>? posts;
     private string msg = "";

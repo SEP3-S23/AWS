@@ -5,6 +5,7 @@ using MudBlazor.Services;
 using Backend.Services;
 using BackEnd.Services.Authentication;
 using BackEnd.Services.Authentication.Post;
+using Backend.Services.Forums;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -14,7 +15,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddMudServices();
 
 // Register the ForumService
-builder.Services.AddScoped<ForumService>();
+builder.Services.AddScoped<IForumService, ForumService>();
 
 builder.Services.AddScoped<IPostService, PostHttpClient>();
 

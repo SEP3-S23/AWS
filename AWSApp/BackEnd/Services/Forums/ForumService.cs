@@ -1,60 +1,68 @@
 ﻿using System.Net;
-using System.Net.Http.Json;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using Backend.Services.Forums;
 using Shared.DTOs;
 using Shared.Model;
 
-namespace BackEnd.Services.Authentication;
-
-public class ForumService : IForumService
+namespace BackEnd.Services.Authentication
 {
-    private readonly string _baseUrl;
-    private readonly HttpClient _httpClient;
-
-    public ForumService(string baseUrl)
+    public class ForumService : IForumService
     {
-        _httpClient = new HttpClient();
-        _baseUrl = baseUrl;
-    }
+        private readonly string _baseUrl;
+        private readonly HttpClient _httpClient;
 
-  
-    
-    public async Task<string> GetPageAsync()
-    {
-        try
+        public ForumService(string baseUrl)
         {
-            var response = await _httpClient.GetAsync($"{_baseUrl}/");
-            response.EnsureSuccessStatusCode();
+            _httpClient = new HttpClient();
+            _baseUrl = baseUrl;
+        }
 
-            var content = await response.Content.ReadAsStringAsync();
-            return content;
-        }
-        catch (Exception ex)
+        public async Task<string> GetPageAsync()
         {
-            Console.WriteLine($"Request failed: {ex.Message}");
-            throw;
-        }
-    }
+            try
+            {
+                var response = await _httpClient.GetAsync($"{_baseUrl}/");
+                response.EnsureSuccessStatusCode();
 
-    public List<Forum> GetAllForums()
-    {
-        throw new NotImplementedException();
-    }
+                var content = await response.Content.ReadAsStringAsync();
+                return content;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Request failed: {ex.Message}");
+                throw;
+            }
+        }
 
-    public  async Task CreateAsync(CreateForumDto dto)
-    {
-        var forum = new Forum
+        public List<Forum> GetAllForums()
         {
-           
+            throw new NotImplementedException();
         }
-        
-        HttpResponseMessage response = await _httpClient.PostAsJsonAsync("/forums", dto);
-        if (!response.IsSuccessStatusCode)
+
+        public async Task CreateAsync(CreateForumDto dto)
         {
-            string content = await response.Content.ReadAsStringAsync();
-            throw new Exception(content);
+            try
+            {
+                var forum = new Forum
+                {
+                    Name = dto.ForumName,
+                    Description = dto.ForumDescription,
+                    Category = dto.ForumCategory
+                };
+
+               // var json = JsonSerializer.Serialize(forum);
+                // var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await _httpClient.PostAsync($"{_baseUrl}/forums", httpContent);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Request failed: {ex.Message}");
+                throw;
+            }
         }
-        
     }
 }

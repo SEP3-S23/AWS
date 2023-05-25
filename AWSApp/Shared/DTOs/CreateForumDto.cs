@@ -2,11 +2,11 @@
 
 public class CreateForumDto
 {
-    private string ForumName;
+    public string ForumName;
 
-    private string ForumDescription;
+    public string ForumDescription;
 
-    private string ForumCategory;
+    public string ForumCategory;
 
     public CreateForumDto(string name, string description, string cagetory)
     {

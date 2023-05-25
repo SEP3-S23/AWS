@@ -1,6 +1,62 @@
 ﻿@page "/CreatePost"
+@using global::Shared.Model
+@using global::Shared.DTOs
+@using BackEnd.Services.Authentication.Post
+@inject IPostService postService;
 <h3>CreatePost</h3>
 
+<MudTextField @bind-Value="postTitle" Label="Title" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="postBody" Label="Body" Variant="Variant.Outlined"></MudTextField>
+<MudButton OnClick="Create">Create</MudButton>
+
 @code {
+    private IEnumerable<User>? users;
+    private string username;
+    private string postTitle = "";
+    private string postBody = "";
+
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        msg = "";
+        try
+        {
+            users = await userService.GetUsers();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+
+    private async Task Create()
+    {
+        msg = "";
+        
+        if (string.IsNullOrEmpty(postTitle))
+        {
+            msg = "Title cannot be empty!";
+            return;
+        }
+        if (string.IsNullOrEmpty(postBody))
+        {
+            msg = "Body cannot be empty!";
+            return;
+        }
+
+        try
+        {
+            CreatePostDto dto = new(username, postTitle, postBody);
+            await postService.CreateAsync(dto);
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
     
 }
