@@ -1,0 +1,38 @@
+﻿@page "/PostView"
+@using BackEnd.Services.Authentication.Post
+@using global::Shared.Model
+<h3>PostView</h3>
+@inject IPostService postService;
+
+
+@if (posts == null)
+{
+    
+}
+else
+{
+    <MudCard>
+        <MudCardContent>
+            <MudText>Post</MudText>
+            
+        </MudCardContent>
+    </MudCard>
+}
+
+@code {
+    private IEnumerable<Post>? posts;
+    private string msg = "";
+
+    private async Task LoadPosts()
+    {
+        try
+        {
+            posts = await postService.GetAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }    
+}

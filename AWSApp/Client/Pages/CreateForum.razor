@@ -1,0 +1,76 @@
+﻿@page "/CreateForum"
+@*@using Backend.Services*@
+
+@*@using BackEnd.Services.Authentication*@
+@using global::Shared.Model
+@* @inject ForumService ForumService *@
+@using MudBlazor
+@using Post = global::Shared.Model.Post
+@inject IForumService forumService;
+@using global::Shared.DTOs
+@using Backend.Services.Forums
+<MudText Typo="Typo.h4" Style="margin-bottom: 30px">Create Forum</MudText>
+
+
+
+<MudTextField @bind-Value="forumTitle" Label="Forum Name" Required="true" RequiredError="Forum name is required!" HelperText="Insert the Forum Name" Variant="Variant.Outlined" Style="margin-bottom: 20px" />
+
+<MudTextField @bind-Value="forumDescription" T="string" Counter="25" HelperText="Insert Forum Description - max. 25 characters" Immediate="true" Validation="@(new Func<string, IEnumerable<string>>(MaxCharacters))" Label="Forum Description" Variant="Variant.Outlined" Style="margin-bottom: 20px"  />
+
+<MudText Typo="Typo.subtitle1" style="margin-top: 40px;">Choose a Category</MudText>
+<MudTextField @bind-Value="category" Label="Outlined" Variant="Variant.Outlined"></MudTextField>
+
+<MudButton Class="d-flex flex-1" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary" Style="margin-top: 40px"  >Create</MudButton>
+<Post/>
+    
+
+@code {
+    string forumTitle = "";
+    string forumDescription = "";
+    
+    
+    
+    private IEnumerable<string> MaxCharacters(string value)
+    {
+        const int MaxLength = 25;
+        if (!string.IsNullOrEmpty(value) && value.Length > MaxLength)
+        {
+            yield return $"The value cannot exceed {MaxLength} characters.";
+        }
+    }
+
+    public string category { get; set; }
+
+    /*private async Task CreateForums()
+    {
+        CreateForumDto dto = new(forumTitle, forumDescription, category);
+        await forumService.CreateAsync(dto);
+        
+    }*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   // private async Task CreateForums()
+   // {
+    // Call the CreateForum method of the ForumService to create the forum
+        //Forum createdForum = await ForumService.CreateForum(forumTitle, forumDescription, category);
+
+        //if (createdForum != null)
+      //  {
+    // Forum creation successful
+    // Perform any necessary actions, such as displaying a success message or redirecting to another page
+       // }
+      //  else
+       // {
+    // Forum creation failed
+    // Display an error message or handle the failure scenario accordingly
+       // }
+    //}
+}

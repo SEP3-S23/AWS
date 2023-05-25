@@ -1,8 +1,8 @@
 spring:
     datasource:
-      url: jdbc:postgresql://localhost:5432/aws_test
+      url: jdbc:postgresql://localhost:5432/aws_db
       username: postgres
-      password : Santiago32411
+      password : martasoftware
       driver-class-name: org.postgresql.Driver
     jpa:
       hibernate:

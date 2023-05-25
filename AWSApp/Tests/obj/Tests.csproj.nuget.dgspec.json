@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {}
+    "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+    "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\obj\\",
+        "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
+        "packagesPath": "C:\\Users\\marta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\marta\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+              "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj"
               }
             }
           }
@@ -67,17 +67,17 @@
         }
       }
     },
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+    "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\marta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\marta\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -120,17 +120,17 @@
         }
       }
     },
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {
+    "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\marta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\marta\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -142,11 +142,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
+              "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+                "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
               },
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+              "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj"
               }
             }
           }

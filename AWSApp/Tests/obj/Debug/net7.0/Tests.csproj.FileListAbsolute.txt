@@ -18,3 +18,46 @@ C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Tes
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.pdb
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.genruntimeconfig.cache
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Tests\obj\Debug\net7.0\ref\Tests.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Tests.exe
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Tests.deps.json
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Tests.runtimeconfig.json
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Tests.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Tests.pdb
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.JSInterop.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\System.IO.Pipelines.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\BackEnd.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Shared.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\BackEnd.pdb
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Shared.pdb
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.csproj.AssemblyReference.cache
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.AssemblyInfoInputs.cache
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.AssemblyInfo.cs
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.csproj.CoreCompileInputs.cache
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.csproj.CopyComplete
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\refint\Tests.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.pdb
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.genruntimeconfig.cache
+C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\ref\Tests.dll

@@ -1,0 +1,48 @@
+﻿@page "/Forums"
+
+@*@using BackEnd.Services.Authentication*@
+@using global::Shared.Model
+@*@inject ForumService ForumService*@
+@inject NavigationManager NavigationManager
+
+<h3>Forums</h3>
+
+@if (forums != null && forums.Any())
+{
+    <ul>
+        @foreach (var forum in forums)
+        {
+            <li>
+                <strong>@forum.Name</strong>
+                <p>@forum.Description</p>
+                <p>Created by: @forum.Category</p>
+            </li>
+           
+        }
+    </ul>
+}
+else
+{
+    <p>No forums found.</p>
+}
+
+<MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="CreateForum">Create Forum</MudButton>
+
+@code {
+    List<Forum> forums;
+
+   // protected override void OnInitialized()
+    //{RefreshForums();}
+
+    //private void RefreshForums()
+    //{
+    // Retrieve the list of forums from ForumService
+      //  forums = ForumService.GetAllForums();
+    //}
+
+    private void CreateForum()
+    {
+    // Navigate to the CreateForum page
+        NavigationManager.NavigateTo("/CreateForum");
+    }
+}
