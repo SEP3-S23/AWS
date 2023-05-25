@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlRm9ydW0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marta/Documents/AWS/AWSApp/Client/Pages/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUG9zdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marta/Documents/AWS/AWSApp/Client/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marta/Documents/AWS/AWSApp/Client/Pages/PostView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marta/Documents/AWS/AWSApp/Client/Pages/RegisterPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,8 +60,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/marta/Documents/AWS/AWSApp/Client/Shared/Post.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBvc3QucmF6b3I=
+[C:/Users/marta/Documents/AWS/AWSApp/Client/Shared/PostComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBvc3RDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marta/Documents/AWS/AWSApp/Client/_Imports.razor]

@@ -2,14 +2,15 @@
 
 public class CreatePostDto
 {
-    private string Username { get;}
-    private DateTime Date { get;  }
+    private string Title { get;}
+
+    private string Username { get; }
     private string Body { get; }
 
-    public CreatePostDto(string username, DateTime date, string body)
+    public CreatePostDto(string username, string title, string body)
     {
         Username = username;
-        Date = date;
+        Title = title;
         Body = body;
     }
 }

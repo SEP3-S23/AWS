@@ -8,11 +8,11 @@
     private IEnumerable<Post>? posts;
     private string msg = "";
 
-    private async Task LoadTodos()
+    private async Task LoadPosts()
     {
         try
         {
-            posts = await postService.GetAsync(null, null, null);
+            posts = await postService.GetAsync();
         }
         catch (Exception e)
         {

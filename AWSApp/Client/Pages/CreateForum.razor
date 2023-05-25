@@ -6,6 +6,9 @@
 @* @inject ForumService ForumService *@
 @using MudBlazor
 @using Post = global::Shared.Model.Post
+@inject IForumService forumService;
+@using global::Shared.DTOs
+@using Backend.Services.Forums
 <MudText Typo="Typo.h4" Style="margin-bottom: 30px">Create Forum</MudText>
 
 
@@ -15,7 +18,7 @@
 <MudTextField @bind-Value="forumDescription" T="string" Counter="25" HelperText="Insert Forum Description - max. 25 characters" Immediate="true" Validation="@(new Func<string, IEnumerable<string>>(MaxCharacters))" Label="Forum Description" Variant="Variant.Outlined" Style="margin-bottom: 20px"  />
 
 <MudText Typo="Typo.subtitle1" style="margin-top: 40px;">Choose a Category</MudText>
-<MudTextField @bind-Value="TextValue" Label="Outlined" Variant="Variant.Outlined"></MudTextField>
+<MudTextField @bind-Value="category" Label="Outlined" Variant="Variant.Outlined"></MudTextField>
 
 <MudButton Class="d-flex flex-1" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary" Style="margin-top: 40px" >Create</MudButton>
 <Post/>
@@ -24,6 +27,7 @@
 @code {
     string forumTitle = "";
     string forumDescription = "";
+    
     
     
     private IEnumerable<string> MaxCharacters(string value)
@@ -35,7 +39,14 @@
         }
     }
 
-    public string TextValue { get; set; }
+    public string category { get; set; }
+
+    private async Task CreateForums()
+    {
+        CreateForumDto dto = new(forumTitle, forumDescription, category);
+        await forumService.CreateAsync(dto);
+        
+    }
    // private async Task CreateForums()
    // {
     // Call the CreateForum method of the ForumService to create the forum

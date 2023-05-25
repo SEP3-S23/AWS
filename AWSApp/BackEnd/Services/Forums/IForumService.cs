@@ -1,9 +1,11 @@
-﻿using Shared.Model;
+﻿using Shared.DTOs;
+using Shared.Model;
 
 namespace Backend.Services.Forums;
 
 public interface IForumService
 {
-    Task<Forum> CreateForum(string title, string description, string category);
-    Task<string> GetPageAsync();
+    
+    Task CreateAsync(CreateForumDto dto);
+    //Task<string> GetPageAsync();
 }
