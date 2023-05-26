@@ -11,8 +11,6 @@ services:
         POSTGRES_DB: app_server
       ports:
         - '5431:5432'
-      networks:
-        - aws
 
   mongodb:
     image: mongo
@@ -22,8 +20,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
-    networks:
-        - aws
 
   mongo-express:
     image: mongo-express
@@ -35,8 +31,6 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
-    networks:
-        - aws
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -52,8 +46,6 @@ services:
       interval: 5s
       timeout: 15s
       retries: 1
-    networks:
-        - aws
 
   ws-server:
     container_name: WSServer
@@ -66,8 +58,6 @@ services:
     restart: on-failure
     depends_on:
       - rabbitmq
-    networks:
-        - aws
 
   #ws1
   ws1-simulator:
@@ -80,9 +70,9 @@ services:
       - rabbitmq
     environment:
       - EXCHANGE=ws1
+      - NOTIFY_URL=http://ws-server:8101/api/init
+      - RABBITMQ_HOST=rabbitmq
     restart: on-failure
-    networks:
-        - aws
 
   #ws2
   ws2_simulator:
@@ -92,11 +82,8 @@ services:
       - ws1-simulator
     environment:
       - EXCHANGE=ws2
+      - NOTIFY_URL=http://ws-server:8101/api/init
+      - RABBITMQ_HOST=rabbitmq
     restart: on-failure
-    networks:
-        - aws
 
-networks:
-  aws:
-    name: aws
     
