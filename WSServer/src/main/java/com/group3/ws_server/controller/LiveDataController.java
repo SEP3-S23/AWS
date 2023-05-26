@@ -26,7 +26,6 @@ public class LiveDataController {
     private final List<SseEmitter> emitters = new ArrayList<>();
     ExecutorService executor = null;
 
-    @CrossOrigin
     @GetMapping(value= "/{name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter sseEndpoint(@PathVariable String name) {
         SseEmitter emitter = new SseEmitter();

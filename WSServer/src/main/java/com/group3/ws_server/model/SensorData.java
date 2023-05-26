@@ -4,13 +4,14 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 @Data
 public class SensorData implements Serializable {
 
     @Id
     private String id;
-    private String date_time;
+    private long date_time;
     private String name;
     private Object value;
     private String unit;

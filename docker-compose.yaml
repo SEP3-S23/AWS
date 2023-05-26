@@ -11,6 +11,8 @@ services:
         POSTGRES_DB: app_server
       ports:
         - '5431:5432'
+      networks:
+        - aws
 
   mongodb:
     image: mongo
@@ -20,6 +22,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+    networks:
+        - aws
 
   mongo-express:
     image: mongo-express
@@ -31,6 +35,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
+    networks:
+        - aws
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -46,41 +52,51 @@ services:
       interval: 5s
       timeout: 15s
       retries: 1
+    networks:
+        - aws
+
+  ws-server:
+    container_name: WSServer
+    build:
+      context: ./WSServer
+      dockerfile: Dockerfile
+    image: ws-server
+    ports:
+      - 8101:8101
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+    networks:
+        - aws
 
   #ws1
-  ws1_simulator:
+  ws1-simulator:
     container_name: WS1_simulator
     build:
       context: ./Simulator
       dockerfile: Dockerfile
+    image: simulator
     depends_on:
       - rabbitmq
     environment:
       - EXCHANGE=ws1
     restart: on-failure
+    networks:
+        - aws
 
   #ws2
   ws2_simulator:
     container_name: WS2_simulator
-    build:
-      context: ./Simulator
-      dockerfile: Dockerfile
+    image: simulator
     depends_on:
-      - rabbitmq
+      - ws1-simulator
     environment:
       - EXCHANGE=ws2
     restart: on-failure
+    networks:
+        - aws
 
-  ws_server:
-    container_name: WSServer
-    build:
-      context: ./WSServer
-      dockerfile: Dockerfile
-    ports:
-      - 8100:8100
-    environment:
-      RABBITMQ_EXCHANGES: ws1,ws2 #add here all the ws you want to connect
-      RABBITMQ_QUEUES: humidity,temperature,heat index,wind speed,wind direction,pressure,day,rain quantity
-    restart: on-failure
-    depends_on:
-      - rabbitmq
+networks:
+  aws:
+    name: aws
+    

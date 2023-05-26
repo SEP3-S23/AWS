@@ -19,7 +19,7 @@ public class WSServer {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() {
-		listenerService.addListeners();
+		listenerService.loadListener();
 	}
 
 }

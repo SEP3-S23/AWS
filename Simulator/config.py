@@ -1,5 +1,5 @@
 import os
 
 EXCHANGE = os.environ.get('EXCHANGE')
-
-print(EXCHANGE)
+NOTIFY_URL = os.environ.get('NOTIFY_URL')
+RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST')
