@@ -9,6 +9,8 @@
 @inject IForumService forumService;
 @using global::Shared.DTOs
 @using Backend.Services.Forums
+@using BackEnd.Services.Authentication
+@inject IAuthService authService
 <MudText Typo="Typo.h4" Style="margin-bottom: 30px">Create Forum</MudText>
 
 
@@ -27,6 +29,7 @@
 @code {
     string forumTitle = "";
     string forumDescription = "";
+    string token = "";
     
     
     
@@ -39,25 +42,25 @@
         }
     }
 
-    public string category { get; set; }
+    public string category { get; set; } // i quit this dumb degree
 
-    /*private async Task CreateForums()
+    private async Task CreateForums()
     {
+        token = authService.GetToken();
         CreateForumDto dto = new(forumTitle, forumDescription, category);
-        await forumService.CreateAsync(dto);
+        await forumService.CreateAsync(dto, token);
         
-    }*/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   // private async Task CreateForums()
+    }
+
+
+
+
+
+
+
+
+
+    // private async Task CreateForums()
    // {
     // Call the CreateForum method of the ForumService to create the forum
         //Forum createdForum = await ForumService.CreateForum(forumTitle, forumDescription, category);

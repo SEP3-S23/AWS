@@ -1,9 +1,11 @@
 ﻿using Shared.Model;
+using Shared.Token;
 
 namespace BackEnd.Services.Authentication;
 
 public interface IAuthService
 {
-    Task<User> LoginAsync(string email, string password);
+    Task<string> LoginAsync(string username, string password);
+    string GetToken();
     Task<string> GetPageAsync();
 }

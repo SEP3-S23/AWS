@@ -2,6 +2,7 @@
 using System.Net.Http.Json;
 using Shared.DTOs;
 using Shared.Model;
+using Shared.Token;
 
 namespace BackEnd.Services.Authentication;
 
@@ -9,6 +10,7 @@ public class AuthService : IAuthService
 {
     private readonly string _baseUrl;
     private readonly HttpClient _httpClient;
+    public string _jwtToken;
 
     public AuthService(string baseUrl)
     {
@@ -16,24 +18,30 @@ public class AuthService : IAuthService
         _baseUrl = baseUrl;
     }
 
-    public async Task<User> LoginAsync(string userName, string password)
+    public async Task<string> LoginAsync(string userName, string password)
     {
         var loginDto = new LoginDto { userName = userName, password = password };
 
-        var response = await _httpClient.PostAsJsonAsync("http://localhost:8080/api/v1/auth/authenticate", loginDto);
+        var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/authenticate", loginDto);
 
         if (response.IsSuccessStatusCode)
         {
-            Console.WriteLine(response.Content.ToString());
-            var user = await response.Content.ReadFromJsonAsync<User>();
-            return user;
+            var authenticationResponse = await response.Content.ReadFromJsonAsync<AuthenticationResponse>();
+            _jwtToken = authenticationResponse.token;
+            return _jwtToken;
         }
 
         if (response.StatusCode == HttpStatusCode.Unauthorized)
             throw new Exception("Unauthorized access");
+
         throw new Exception($"Request failed with status code {response.StatusCode}");
     }
 
+    public string GetToken()
+    {
+        return _jwtToken;
+    }
+    
     public async Task<string> GetPageAsync()
     {
         try
