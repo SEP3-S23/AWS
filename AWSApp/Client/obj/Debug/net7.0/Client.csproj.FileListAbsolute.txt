@@ -1772,3 +1772,7 @@ C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Cli
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\obj\Debug\net7.0\refint\Client.dll
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\obj\Debug\net7.0\Client.pdb
 C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\obj\Debug\net7.0\ref\Client.dll
+C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
+C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
+C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\Client\obj\Debug\net7.0\build-gz\tlGvEa6V.gz

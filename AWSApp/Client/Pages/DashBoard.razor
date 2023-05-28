@@ -3,6 +3,12 @@
 @using Client.Shared
 @using Client.Components
 @using BackEnd.Services.Data
+@using global::Shared.DTOs
+@using global::Shared.Model
+@using Newtonsoft.Json
+@using System.ComponentModel.DataAnnotations
+
+@inject IDialogService DialogService
 
 
 <PageTitle>DashBoard</PageTitle>
@@ -113,39 +119,154 @@
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
                 <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+
             </MudCardActions>
         </MudCard>
     </MudItem>
     <MudItem Class="mud-elevation-1 rounded" xs="12">
-        <LiveChart/>
-        <MudIconButton Icon=@Icons.Material.Filled.AccessTime/>
-        <MudIconButton Icon=@Icons.Material.Filled.AccessTime/>
-        <MudSelect MultiSelection="true" @bind-Value="value" @bind-SelectedValues="options" T="string" Label="US States" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
-            @foreach (var choich in WeatheChoice)
+        @if (!LiveDataIsSelected)
+        {
+            <HistoricalChart changedSelection="changedSelection" selectedValue="@value" temperatureData="temperatureData"/>
+            <MudButton OnClick="@(() => LiveDataIsSelected = true)" Variant="Variant.Filled" Color="Color.Secondary">
+                View Live Data
+            </MudButton>
+            <MudButton OnClick="GenerateHistoricalData" Variant="Variant.Filled" Color="Color.Secondary">
+                Confirm Data
+            </MudButton>
+            <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Secondary">
+                Edit Filter
+            </MudButton>
+            <MudText Color="@Color.Error">
+                @ValidationMessage
+            </MudText>
+        }
+        @if (LiveDataIsSelected)
+        {
+            <LiveChart selectedValue="@value" changedSelection="@changedSelection"/>
+            <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
+                View historical Data
+            </MudButton>
+        }
+        <MudDialog @bind-IsVisible="visible" Options="dialogOptions">
+            <TitleContent>
+                <MudText Typo="Typo.h6">
+                    <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3"/> Select Day range
+                </MudText>
+            </TitleContent>
+            <DialogContent>
+
+                <MudGrid>
+                    <MudItem xs="12" sm="12" md="12">
+                        <MudDateRangePicker Label="Select date range" @bind-DateRange="_dateRange"/>
+                    </MudItem>
+
+                </MudGrid>
+            </DialogContent>
+            <DialogActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Close</MudButton>
+            </DialogActions>
+        </MudDialog>
+        <MudSelect ValueChanged="value => Changed(value)" MultiSelection="false" @bind-SelectedValues="options" T="string" Label="Select Data to view" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+            @foreach (var choich in WeatherChoice.Choices)
             {
                 <MudSelectItem T="string" Value="@choich">@choich</MudSelectItem>
             }
         </MudSelect>
     </MudItem>
-
 </MudGrid>
 
 @code {
-    WeatherData data = new WeatherData();
-
-    private string value { get; set; } = "Nothing selected";
+    
+    private string value { get; set; } = WeatherChoice.WindSpeed;
     private IEnumerable<string> options { get; set; }
+    private bool changedSelection { get; set; }
+    private bool LiveDataIsSelected { get; set; } = true;
+    private MudDateRangePicker _picker;
+    private DateRange _dateRange = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(5).Date);
+    private bool _autoClose;
+    private string ValidationMessage { get; set; }
+    HystoricalWeatherDataDto temperatureData;
+    private DialogOptions dialogOptions = new() { FullWidth = true };
+    private bool visible;
+    private int rating;
+    private void OpenDialog() => visible = true;
 
-    private string[] WeatheChoice =
+    void Submit()
     {
-        "Temperature",
-        "Humidity",
-        "Heat",
-        "WindSpeed",
-        "WindDirection",
-        "Pressure",
-        "Day",
-        "RainQuantity",
-    };
+        visible = false;
+        LiveDataIsSelected = false;
+    }
+
+
+
+
+    public void GenerateHistoricalData()
+    {
+        ValidationMessage = "";
+        if (_dateRange.Start > DateTime.Now)
+        {
+            ValidationMessage = "Select a Valid date Range";
+            return;
+        }
+    //TODO generate the data 
+        temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
+    }
+
+    void Changed(string value)
+    {
+        changedSelection = true;
+        this.value = value;
+    }
+    
+    static string json = @"{
+    ""name"": ""temperature"",
+    ""wsName"": ""ws1"",
+    ""data"": [
+        {
+            ""value"": 19.400000000000002,
+            ""date"": 1685123670
+        },
+        {
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },
+    ],
+    ""unit"": ""°C""
+}";
+
+
 
 }
