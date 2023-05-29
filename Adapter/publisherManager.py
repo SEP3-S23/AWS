@@ -1,6 +1,7 @@
 import pika
 from publisher import Publisher
 from threading import Lock
+from config import RABBITMQ_HOST
 
 
 class PublisherManager:
@@ -9,7 +10,7 @@ class PublisherManager:
         self.lock = Lock()
         self.EXCHANGE = exchange
         self.publishers = []
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(RABBITMQ_HOST))
         self.channel = self.connection.channel()
         self.channel.exchange_declare(
             exchange=self.EXCHANGE,

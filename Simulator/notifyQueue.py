@@ -8,9 +8,3 @@ def notify(queue, exchange):
         print('notified -> ' + exchange + '.' + queue)
     except requests.exceptions.RequestException as e:
         print(e)
-
-
-class Payload:
-    def __init__(self, name, sensor):
-        self.name = name
-        self.sensor = sensor

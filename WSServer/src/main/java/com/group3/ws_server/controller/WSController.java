@@ -13,6 +13,7 @@ public class WSController {
 
     @Autowired
     private WSService wsService;
+
     @GetMapping("/list")
     public ResponseEntity<List<String>> getWSList() {
         return ResponseEntity.ok(wsService.getWSList());
