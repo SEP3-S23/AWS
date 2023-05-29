@@ -40,6 +40,7 @@
       "Microsoft.JSInterop.dll": "sha256-OBt2YgODs1L5bJWrDjUFgcgGMUjDfmFTHCt9t69RxgU=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-LS1TECEw0D6FskWRcaDt51suj930x2zRQySVGe2mJ3o=",
       "MudBlazor.dll": "sha256-oxkaN\/5Gj2R52cf\/msOeJcHp9uLcFnDoHRcG8Z1pwzQ=",
+      "Newtonsoft.Json.dll": "sha256-IsZJ91\/OW+fHzNqIgEc7Y072ns8z9dGritiSyvR9Wgc=",
       "System.IO.Pipelines.dll": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
       "Microsoft.CSharp.dll": "sha256-6Y1rN8knL1K5x5lsZ2tEVDND2h4LtDSuVgCg1N8ghkA=",
       "Microsoft.VisualBasic.Core.dll": "sha256-LRJ4hN7opopr3bsogxcz7uyVjh4bNZOdMbVbIIQ9z+8=",
@@ -209,17 +210,17 @@
       "mscorlib.dll": "sha256-qqpKd+W+AFb6UxudEYEKzrz7ma81p5LrWUwPBVvHV4U=",
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
-      "BackEnd.dll": "sha256-LLVjCvkaM0CCXrncYgoYBu1wkjRetWod2BYa789m36s=",
-      "Shared.dll": "sha256-rEQ7iL9fiEXXOLfYhxRaSriSubRgvJqJ+qAwF7eJJlo=",
-      "Client.dll": "sha256-hTobSqVMAmGK\/GNJ5\/14xS2WVw9ILHE8oflN+Axbd5U="
+      "BackEnd.dll": "sha256-SgK\/i\/eoS4Qxo3d\/O5RwO2+NsjiBCzGdCTHHF0Sj71o=",
+      "Shared.dll": "sha256-KChnOqJtqIyecijCVk0X2mI\/jHOFSCkmywnRUZcxSRQ=",
+      "Client.dll": "sha256-bXlnQEKTvjTTmWj6fpWM3Kxv3GO5Z4Sflp7AzryPJ94="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "BackEnd.pdb": "sha256-Yxx9rhj0PjqwXMQLzUoWzO2q6EccvgdZv7fP8cdcvbU=",
-      "Shared.pdb": "sha256-Qxf24JxEMqhVMpnSKKjToOEtNwqrb25dA7Y2h1YkEzQ=",
-      "Client.pdb": "sha256-t5i5uYbH1+1Qz6mXD7ueSQlCss8\/9gnwvhaQ8NmbSf0="
+      "BackEnd.pdb": "sha256-KH0Vfesp8aJ3QBK6FQI+sP1m8LoPVTqi6XGZ2MrAFNI=",
+      "Shared.pdb": "sha256-zTCfV856+fsVTdo8FeuqLXJoiEnP9Uabsvd5YVTS3T0=",
+      "Client.pdb": "sha256-rTdDqEjkcxs6thqRDuWbiBHgH7jmv7rf1Vab+6evEfo="
     },
     "runtime": {
       "dotnet.7.0.5.crzmli17th.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",

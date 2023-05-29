@@ -1,0 +1,74 @@
+﻿@using Blazorise.Charts
+@using global::Shared.Model
+@using global::Shared.DTOs
+@using Microsoft.AspNetCore.Components
+
+
+<LineChart @ref="lineChart" TItem="double" />
+
+@code{
+    
+    //TODO : CREATE A SERVICE TO RESTIVE HISTORICAL DATA and use the next code to create the data 
+    //HystoricalWeatherDataDto temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
+    
+    [Parameter] 
+    public string selectedValue { get; set;}
+    [Parameter]
+    public bool changedSelection { get; set; }
+    [Parameter]
+    public HystoricalWeatherDataDto temperatureData { get; set; }
+    
+    LineChart<double> lineChart;
+
+    protected override async Task OnAfterRenderAsync( bool firstRender )
+    {
+        
+        if (firstRender || changedSelection)
+        {
+            await HandleRedraw();
+            changedSelection = false;
+        }
+    }
+    
+
+    async Task HandleRedraw()
+    {
+        await lineChart.Clear();
+
+        await lineChart.AddLabelsDatasetsAndUpdate( temperatureData.GetDates(), GetLineChartDataset() );
+    }
+
+    LineChartDataset<double> GetLineChartDataset()
+    {
+        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedValue));
+        return new LineChartDataset<double>
+        {
+            Label = "# of randoms",
+            Data = temperatureData.GetValues(),
+            BackgroundColor = backgroundColors[index],
+            BorderColor = borderColors[index],
+            Fill = true,
+            PointRadius = 1,
+            CubicInterpolationMode = "monotone",
+        };
+    }
+    
+    List<string> backgroundColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 0.2f ), ChartColor.FromRgba( 54, 162, 235, 0.2f ), ChartColor.FromRgba( 255, 206, 86, 0.2f ), ChartColor.FromRgba( 75, 192, 192, 0.2f ), ChartColor.FromRgba( 153, 102, 255, 0.2f ), ChartColor.FromRgba( 255, 159, 64, 0.2f ), ChartColor.FromRgba( 110, 99, 132, 0.2f), ChartColor.FromRgba( 255, 110, 255, 0.2f)  };
+    List<string> borderColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 1f ), ChartColor.FromRgba( 54, 162, 235, 1f ), ChartColor.FromRgba( 255, 206, 86, 1f ), ChartColor.FromRgba( 75, 192, 192, 1f ), ChartColor.FromRgba( 153, 102, 255, 1f ), ChartColor.FromRgba( 255, 159, 64, 1f ), ChartColor.FromRgba( 110, 99, 132, 1f), ChartColor.FromRgba( 255, 110, 255, 1f)  };
+
+    
+    
+    
+    
+  
+
+    
+    
+    
+    
+    
+    
+    
+   
+
+}

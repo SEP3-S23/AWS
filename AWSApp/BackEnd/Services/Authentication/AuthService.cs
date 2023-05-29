@@ -16,7 +16,7 @@ public class AuthService : IAuthService
         _baseUrl = baseUrl;
     }
 
-    public async Task<User> LoginAsync(string userName, string password)
+    public async Task<Token> LoginAsync(string userName, string password)
     {
         var loginDto = new LoginDto { userName = userName, password = password };
 
@@ -25,8 +25,28 @@ public class AuthService : IAuthService
         if (response.IsSuccessStatusCode)
         {
             Console.WriteLine(response.Content.ToString());
-            var user = await response.Content.ReadFromJsonAsync<User>();
-            return user;
+            var token = await response.Content.ReadFromJsonAsync<Token>();
+            return token;
+        }
+
+        if (response.StatusCode == HttpStatusCode.Unauthorized)
+            throw new Exception("Unauthorized access");
+        throw new Exception($"Request failed with status code {response.StatusCode}");
+    }
+
+    public async Task<Token> RegisterAsync(string fullName, string email, DateTime? birthdate, string username, string password)
+    {
+        
+        var registerDto = new RegisterDto { FullName = fullName, Email = email, Birthdate = birthdate, Username = username, Password = password};
+        
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:8080/api/v1/auth/register", registerDto);
+        
+
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine(response.Content.ToString());
+            var token = await response.Content.ReadFromJsonAsync<Token>();
+            return token;
         }
 
         if (response.StatusCode == HttpStatusCode.Unauthorized)
