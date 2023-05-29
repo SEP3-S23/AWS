@@ -10,7 +10,7 @@ public class AuthService : IAuthService
 {
     private readonly string _baseUrl;
     private readonly HttpClient _httpClient;
-    public string _jwtToken;
+    public AuthenticationResponse _jwtToken;
 
     public AuthService(string baseUrl)
     {
@@ -18,7 +18,7 @@ public class AuthService : IAuthService
         _baseUrl = baseUrl;
     }
 
-    public async Task<string> LoginAsync(string userName, string password)
+    public async Task<AuthenticationResponse> LoginAsync(string userName, string password)
     {
         var loginDto = new LoginDto { userName = userName, password = password };
 
@@ -27,7 +27,7 @@ public class AuthService : IAuthService
         if (response.IsSuccessStatusCode)
         {
             var authenticationResponse = await response.Content.ReadFromJsonAsync<AuthenticationResponse>();
-            _jwtToken = authenticationResponse.token;
+            _jwtToken = authenticationResponse;
             return _jwtToken;
         }
 
@@ -39,7 +39,7 @@ public class AuthService : IAuthService
 
     public string GetToken()
     {
-        return _jwtToken;
+        return _jwtToken.token;
     }
     
     public async Task<string> GetPageAsync()

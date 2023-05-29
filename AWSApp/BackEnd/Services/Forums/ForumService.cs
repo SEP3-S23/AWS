@@ -15,12 +15,17 @@ namespace BackEnd.Services.Authentication
         private readonly string _baseUrl;
         private readonly HttpClient _httpClient;
         private IForumService _forumServiceImplementation;
+        private IAuthService authservice;
+        private string JwtToken;
 
-        public ForumService(string baseUrl)
+        public ForumService(string baseUrl, IAuthService authService)
         {
             _httpClient = new HttpClient();
             _baseUrl = baseUrl;
+            authservice = authService;
+            JwtToken = authservice.GetToken();
         }
+
 
         public async Task<string> GetPageAsync()
         {
@@ -39,9 +44,31 @@ namespace BackEnd.Services.Authentication
             }
         }
 
-        public List<Forum> GetAllForums()
+        public async Task <List<ForumListDto>> GetAllForumsAsync() 
         {
-            throw new NotImplementedException();
+            List<ForumListDto> forums = null;
+            
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", JwtToken);
+            
+            try
+            {
+                HttpResponseMessage response = await _httpClient.GetAsync($"{_baseUrl}");
+                if (response.IsSuccessStatusCode)
+                {
+                    forums = await response.Content.ReadFromJsonAsync<List<ForumListDto>>();
+                }
+                else
+                {
+                    Console.WriteLine($"AN errror occured");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+            return forums;
         }
 
         public async Task<string> CreateAsync(CreateForumDto forumRequest,string token)

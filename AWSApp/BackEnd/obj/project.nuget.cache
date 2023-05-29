@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LDOWHJJHZwtqz2CGJTJfTfBRttafXmh16wfK1/yVNJU/hZdcsDuHxa/F7f5PCMXy8FhpsOQrlOrR3e2FY7XeRw==",
+  "dgSpecHash": "ikbuxn146tWhwLtzzevD8pOrCWFHE8Sh5DbCNcjpPZQwBBll9kUTXbBb3AbWmTnWhd9Qd8+pWURClqs1VHqvYA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\marta\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\microsoft.jsinterop\\7.0.0\\microsoft.jsinterop.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.0\\microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
+    "C:\\Users\\marta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"

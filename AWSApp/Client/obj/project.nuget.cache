@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9h6YejSarDuhmNcTqOOKBGZaMxHTmLm3ph/bj0hK72iLSYI8yP4bljZ2nvEh0t/MdS/EU29nAXuW/MOr4HnSlA==",
+  "dgSpecHash": "CoggQlHdBxJFR/UXHFG6QUJoR+KoPCLfAcvMeK2WS5KAZWZ3o+t3myk1h2zUFgu3OKolSwoL9KTIuREKIMsAjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Client\\Client.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\marta\\.nuget\\packages\\microsoft.jsinterop\\7.0.5\\microsoft.jsinterop.7.0.5.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.0\\microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\mudblazor\\6.2.3\\mudblazor.6.2.3.nupkg.sha512",
+    "C:\\Users\\marta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\marta\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

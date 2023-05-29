@@ -61,3 +61,4 @@ C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\refint\Tests.dll
 C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.pdb
 C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\Tests.genruntimeconfig.cache
 C:\Users\marta\Documents\AWS\AWSApp\Tests\obj\Debug\net7.0\ref\Tests.dll
+C:\Users\marta\Documents\AWS\AWSApp\Tests\bin\Debug\net7.0\Newtonsoft.Json.dll
