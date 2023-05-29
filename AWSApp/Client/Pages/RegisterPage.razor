@@ -1,5 +1,6 @@
 ﻿@page "/RegisterPage"
 @using System.ComponentModel.DataAnnotations
+@using BackEnd.Services.Authentication
 
 @using MudBlazor
 
@@ -99,10 +100,36 @@
     }
 
 
-    private void OnValidSubmit(EditContext context)
+    private async void OnValidSubmit(EditContext context)
     {
-        success = true;
+        try
+        {
+            await Submit();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
 
+
+    private async Task Submit()
+    {
+        IAuthService authService = new AuthService("http://localhost:8080/api/v1/auth/authenticate");
+        try
+        {
+            var result = await authService.RegisterAsync(model.FullName, model.Email, model.Birthdate, model.Username, model.Password);
+            Console.WriteLine(result.ToString());
+            success = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            Console.WriteLine(e.Message, "MESSAGGIO");
+            success = false;
+            throw;
+        }
     }
 
 }

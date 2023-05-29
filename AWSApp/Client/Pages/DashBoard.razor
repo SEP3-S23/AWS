@@ -1,17 +1,14 @@
 ﻿@page "/Dashboard"
 @inject HttpClient Http
 @using Client.Shared
-@using ChartOptions = MudBlazor.ChartOptions
-@using ChartType = MudBlazor.ChartType
-@using System.Runtime.InteropServices.JavaScript
-@using System.Text
-@using System.Net.Sockets
-@using Blazorise
-@using Blazorise.Charts
-@using Blazorise.Charts.Streaming
-@using Blazorise.SpinKit
-@using Color = MudBlazor.Color
-@using SortDirection = MudBlazor.SortDirection
+@using Client.Components
+@using BackEnd.Services.Data
+@using global::Shared.DTOs
+@using global::Shared.Model
+@using Newtonsoft.Json
+@using System.ComponentModel.DataAnnotations
+
+@inject IDialogService DialogService
 
 
 <PageTitle>DashBoard</PageTitle>
@@ -22,14 +19,16 @@
             <MudCardContent Class=" justify-center">
                 <div style="position: relative;
                               text-align: center;
-                              color: white;"> <p style="position: absolute;
+                              color: white;">
+                    <p style="position: absolute;
                                                                                 top: 90%;
                                                                                 left: 50%;
                                                                                 transform: translate(-50%, -50%);
                                                                                 color: tomato;
                                                                                 font-size: 1.8vh;
                                                                                 font-weight: bold">
-                      17 °C </p>
+                        17 °C
+                    </p>
                     <TemperatureIcon/>
                 </div>
 
@@ -43,7 +42,7 @@
     <MudItem xs="2" lg="2"Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class=" justify-center">
-                <WeatherIcon/>
+                <WeatherIcon Weather="WeatherCondition.Rainy"/>
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
@@ -76,7 +75,21 @@
     <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class="justify-center">
-                <TimeIcon/>
+                <div style="position: relative;
+                                                              text-align: center;
+                                                              color: white;">
+                    <p style="position: absolute;
+                                                                top: 90%;
+                                                                left: 50%;
+                                                                transform: translate(-50%, -50%);
+                                                                color: dodgerblue;
+                                                                font-size: 1.8vh;
+                                                                font-weight: bold">
+                        25 %
+                    </p>
+                    <HumidityMeasureIcon/>
+                </div>
+
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
@@ -87,208 +100,173 @@
     <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class="justify-center">
-                 <div style="position: relative;
+                <div style="position: relative;
                                               text-align: center;
                                               color: white;">
-                     <p style="position: absolute;
+                    <p style="position: absolute;
                                                 top: 90%;
                                                 left: 50%;
                                                 transform: translate(-50%, -50%);
                                                 color: dodgerblue;
                                                 font-size: 1.8vh;
-                                                font-weight: bold"> 0 ml
-                         </p>
-                                   <RainDropMeasureIcon/>
-                                </div>
-                
+                                                font-weight: bold">
+                        0 ml
+                    </p>
+                    <RainDropMeasureIcon/>
+                </div>
+
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
                 <MudIconButton Icon="@Icons.Material.Filled.Info" aria-label="share"/>
+
             </MudCardActions>
         </MudCard>
     </MudItem>
     <MudItem Class="mud-elevation-1 rounded" xs="12">
-        <LineChart @ref="horizontalLineChart" TItem="LiveDataPoint" OptionsObject="@horizontalLineChartOptions">
-            <ChartStreaming TItem="LiveDataPoint"
-                            Options="new ChartStreamingOptions { Delay = 2000 }"
-                            Refreshed="@OnHorizontalLineRefreshed" />
-        </LineChart>
-    </MudItem>
-    <MudItem Class="ma-5">
-        <MudTable Items="forecasts" Hover="true" SortLabel="Sort By" Elevation="0">
-            <HeaderContent>
-                <MudTh>
-                    <MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<WeatherForecast, object>(x => x.Date)">Date</MudTableSortLabel>
-                </MudTh>
-                <MudTh>
-                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.TemperatureC)">Temp. (C)</MudTableSortLabel>
-                </MudTh>
-                <MudTh>
-                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.Weather)">Temp. (F)</MudTableSortLabel>
-                </MudTh>
-                <MudTh>
-                    <MudTableSortLabel SortBy="new Func<WeatherForecast, object>(x => x.Summary!)">Summary</MudTableSortLabel>
-                </MudTh>
-            </HeaderContent>
-            <RowTemplate>
-                <MudTd DataLabel="Date">@context.Date</MudTd>
-                <MudTd DataLabel="Temp. (C)">@context.TemperatureC</MudTd>
-                <MudTd DataLabel="Weather">@context.Weather</MudTd>
-                <MudTd DataLabel="Summary">@context.Summary</MudTd>
-            </RowTemplate>
-            <PagerContent>
-                <MudTablePager PageSizeOptions="new int[] { 50, 100 }"/>
-            </PagerContent>
-        </MudTable>
+        @if (!LiveDataIsSelected)
+        {
+            <HistoricalChart changedSelection="changedSelection" selectedValue="@value" temperatureData="temperatureData"/>
+            <MudButton OnClick="@(() => LiveDataIsSelected = true)" Variant="Variant.Filled" Color="Color.Secondary">
+                View Live Data
+            </MudButton>
+            <MudButton OnClick="GenerateHistoricalData" Variant="Variant.Filled" Color="Color.Secondary">
+                Confirm Data
+            </MudButton>
+            <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Secondary">
+                Edit Filter
+            </MudButton>
+            <MudText Color="@Color.Error">
+                @ValidationMessage
+            </MudText>
+        }
+        @if (LiveDataIsSelected)
+        {
+            <LiveChart selectedValue="@value" changedSelection="@changedSelection"/>
+            <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
+                View historical Data
+            </MudButton>
+        }
+        <MudDialog @bind-IsVisible="visible" Options="dialogOptions">
+            <TitleContent>
+                <MudText Typo="Typo.h6">
+                    <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3"/> Select Day range
+                </MudText>
+            </TitleContent>
+            <DialogContent>
+
+                <MudGrid>
+                    <MudItem xs="12" sm="12" md="12">
+                        <MudDateRangePicker Label="Select date range" @bind-DateRange="_dateRange"/>
+                    </MudItem>
+
+                </MudGrid>
+            </DialogContent>
+            <DialogActions>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" Class="px-10">Close</MudButton>
+            </DialogActions>
+        </MudDialog>
+        <MudSelect ValueChanged="value => Changed(value)" MultiSelection="false" @bind-SelectedValues="options" T="string" Label="Select Data to view" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+            @foreach (var choich in WeatherChoice.Choices)
+            {
+                <MudSelectItem T="string" Value="@choich">@choich</MudSelectItem>
+            }
+        </MudSelect>
     </MudItem>
 </MudGrid>
 
 @code {
     
-    
-    
-    
-    
-    
-    
-    
-    LineChart<LiveDataPoint> horizontalLineChart;
-    Random random = new Random( DateTime.Now.Millisecond );
+    private string value { get; set; } = WeatherChoice.WindSpeed;
+    private IEnumerable<string> options { get; set; }
+    private bool changedSelection { get; set; }
+    private bool LiveDataIsSelected { get; set; } = true;
+    private MudDateRangePicker _picker;
+    private DateRange _dateRange = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(5).Date);
+    private bool _autoClose;
+    private string ValidationMessage { get; set; }
+    HystoricalWeatherDataDto temperatureData;
+    private DialogOptions dialogOptions = new() { FullWidth = true };
+    private bool visible;
+    private int rating;
+    private void OpenDialog() => visible = true;
 
-    string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
-    List<string> backgroundColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 0.2f ), ChartColor.FromRgba( 54, 162, 235, 0.2f ), ChartColor.FromRgba( 255, 206, 86, 0.2f ), ChartColor.FromRgba( 75, 192, 192, 0.2f ), ChartColor.FromRgba( 153, 102, 255, 0.2f ), ChartColor.FromRgba( 255, 159, 64, 0.2f ) };
-    List<string> borderColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 1f ), ChartColor.FromRgba( 54, 162, 235, 1f ), ChartColor.FromRgba( 255, 206, 86, 1f ), ChartColor.FromRgba( 75, 192, 192, 1f ), ChartColor.FromRgba( 153, 102, 255, 1f ), ChartColor.FromRgba( 255, 159, 64, 1f ) };
-
-    public struct LiveDataPoint
+    void Submit()
     {
-        public object X { get; set; }
-        public object Y { get; set; }
+        visible = false;
+        LiveDataIsSelected = false;
     }
 
-    object horizontalLineChartOptions = new
+
+
+
+    public void GenerateHistoricalData()
     {
-        Scales = new
+        ValidationMessage = "";
+        if (_dateRange.Start > DateTime.Now)
         {
-            Y = new
-            {
-                Title = new
-                {
-                    Display = true,
-                    Text = "Temperature"
-                }
-            }
+            ValidationMessage = "Select a Valid date Range";
+            return;
+        }
+    //TODO generate the data 
+        temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
+    }
+
+    void Changed(string value)
+    {
+        changedSelection = true;
+        this.value = value;
+    }
+    
+    static string json = @"{
+    ""name"": ""temperature"",
+    ""wsName"": ""ws1"",
+    ""data"": [
+        {
+            ""value"": 19.400000000000002,
+            ""date"": 1685123670
         },
-        Interaction = new
         {
-            intersect = false
-        }
-    };
-
-    protected override async Task OnAfterRenderAsync( bool firstRender )
-    {
-        if ( firstRender )
-        {
-            await Task.WhenAll(
-                HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
-        }
-    }
-
-    async Task HandleRedraw<TDataSet, TItem, TOptions, TModel>( BaseChart<TDataSet, TItem, TOptions, TModel> chart, params Func<TDataSet>[] getDataSets )
-        where TDataSet : ChartDataset<TItem>
-        where TOptions : Blazorise.Charts.ChartOptions
-        where TModel : ChartModel
-    {
-        await chart.Clear();
-
-        await chart.AddLabelsDatasetsAndUpdate( Labels, getDataSets.Select( x => x.Invoke() ).ToArray() );
-    }
-
-    LineChartDataset<LiveDataPoint> GetLineChartDataset1()
-    {
-        return new LineChartDataset<LiveDataPoint>
-        {
-            Data = new List<LiveDataPoint>(),
-            Label = "Dataset 1 (linear interpolation)",
-            BackgroundColor = backgroundColors[0],
-            BorderColor = borderColors[0],
-            Fill = false,
-            Tension = 0,
-            BorderDash = new List<int> { 8, 4 },
-        };
-    }
-
-    Task OnHorizontalLineRefreshed( ChartStreamingData<LiveDataPoint> data )
-    {
-        data.Value = new LiveDataPoint
-        {
-            X = DateTime.Now,
-            Y = RandomScalingFactor(),
-        };
-
-        return Task.CompletedTask;
-    }
-
-    double RandomScalingFactor()
-    {
-        return ( random.NextDouble() > 0.5 ? 1.0 : -1.0 ) * Math.Round( random.NextDouble() * 100 );
-    }
-    
-    private WeatherForecast[]? forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            TcpClient client = new TcpClient();
-            client.Connect("localhost", 8100);
-
-            NetworkStream stream = client.GetStream();
-
-    // Send a message to the server
-            string sendMessage = "ws1";
-            byte[] buffer1 = Encoding.ASCII.GetBytes(sendMessage);
-            stream.Write(buffer1, 0, buffer1.Length);
-            while (true)
-            {
-                byte[] buffer = new byte[1024];
-                int bytesRead = client.GetStream().Read(buffer, 0, buffer.Length);
-                string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
-                Console.WriteLine("Received message from server: " + message);
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error: " + e.Message);
-        }
-    }
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },{
+            ""value"": 17.200000000000014,
+            ""date"": 1685123778
+        },
+    ],
+    ""unit"": ""°C""
+}";
 
 
-    public class WeatherForecast
-    {
-        public DateTime Date { get; set; }
-
-        public int TemperatureC { get; set; }
-
-        public string? Summary { get; set; }
-
-        public int Weather => 32 + (int)(TemperatureC / 0.5556);
-    }
-
-    private int Index = -1; //default value cannot be 0 -> first selectedindex is 0.
-
-    public ChartOptions chartOptions = new ChartOptions();
-
-    public string[] XAxisLabels { get; set; }
-    public static double[] Data { get; set; }
-
-    public List<ChartSeries> Series = new List<ChartSeries>()
-    {
-        new ChartSeries()
-        {
-            Name = "Temperature", Data = Data
-        }
-    };
 
 }
