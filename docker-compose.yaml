@@ -55,6 +55,10 @@ services:
     image: ws-server
     ports:
       - 8101:8101
+    environment:
+      - MONGODB_HOST=mongodb
+      - RABBITMQ_HOST=rabbitmq
+      - POSTGRES_BASEURL=appDB
     restart: on-failure
     depends_on:
       - rabbitmq

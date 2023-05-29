@@ -2,6 +2,8 @@
 @using global::Shared.Model
 @using global::Shared.DTOs
 @using Microsoft.AspNetCore.Components
+@using Newtonsoft.Json
+@using BackEnd.Services.Authentication
 
 
 <LineChart @ref="lineChart" TItem="double" />
@@ -9,14 +11,17 @@
 @code{
     
     //TODO : CREATE A SERVICE TO RESTIVE HISTORICAL DATA and use the next code to create the data 
-    //HystoricalWeatherDataDto temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
     
     [Parameter] 
-    public string selectedValue { get; set;}
+    public string selectedSensor { get; set;}
+    [Parameter] 
+    public string selectedWS { get; set;}
     [Parameter]
     public bool changedSelection { get; set; }
     [Parameter]
     public HystoricalWeatherDataDto temperatureData { get; set; }
+
+    public HistoricalDataService HistoricalDataService = new HistoricalDataService();
     
     LineChart<double> lineChart;
 
@@ -27,6 +32,14 @@
         {
             await HandleRedraw();
             changedSelection = false;
+            try
+            {
+                temperatureData = await HistoricalDataService.GetData(selectedWS, selectedSensor);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
     

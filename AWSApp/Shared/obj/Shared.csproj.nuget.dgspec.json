@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {}
+    "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+    "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
+        "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\obj\\",
+        "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
+        "packagesPath": "/Users/fdepalma/.nuget/packages/",
+        "outputPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

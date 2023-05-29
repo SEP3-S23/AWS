@@ -126,7 +126,7 @@
     <MudItem Class="mud-elevation-1 rounded" xs="12">
         @if (!LiveDataIsSelected)
         {
-            <HistoricalChart changedSelection="changedSelection" selectedValue="@value" temperatureData="temperatureData"/>
+            <HistoricalChart changedSelection="changedSelection" selectedSensor="@value" selectedWS="ws1"/>
             <MudButton OnClick="@(() => LiveDataIsSelected = true)" Variant="Variant.Filled" Color="Color.Secondary">
                 View Live Data
             </MudButton>
