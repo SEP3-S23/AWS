@@ -25,9 +25,9 @@
     [Parameter]
     public bool changedSelection { get; set; }
     
-    double temp { get; set; }
-    WeatherDataDTO WeatherDataDto { get; set; }
-    DateTime time { get; set; }
+    double Value { get; set; }
+    WeatherDataDTO? WeatherDataDto { get; set; }
+    DateTime Date { get; set; }
     
     LineChart<LiveDataPoint> horizontalLineChart;
     string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
@@ -52,21 +52,20 @@
         await SetupSseConnection();
     }
     
-
+    
     private async Task SetupSseConnection()
     {
         await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/ws1");
     }
-
+    
     [JSInvokable]
     public void HandleSseMessage(string message)
     {
         WeatherDataDto = JsonConvert.DeserializeObject<WeatherDataDTO>(message);
-        Console.WriteLine(message);
         if (WeatherDataDto.name == selectedValue)
         {
-            temp = Convert.ToDouble(WeatherDataDto.value);
-            time = WeatherDataDto.getDateFormat();
+            Value = Convert.ToDouble(WeatherDataDto.value);
+            Date = WeatherDataDto.getDateFormat();
         }
     }
     
@@ -133,10 +132,10 @@
     {
         data.Value = new LiveDataPoint
         {
-            Y = temp,
+            Y = Value,
             X = DateTime.Now
         };
-        Console.WriteLine(time);
+        Console.WriteLine(Date);
         return Task.CompletedTask;
     }
 }

@@ -38,8 +38,6 @@ public class AuthService : IAuthService
     {
         
         var registerDto = new RegisterDto { FullName = fullName, Email = email, Birthdate = birthdate, Username = username, Password = password};
-
-        Console.WriteLine(registerDto.ToString()  + "REGISTER DAOOOOOO");
         
         var response = await _httpClient.PostAsJsonAsync("http://localhost:8080/api/v1/auth/register", registerDto);
         

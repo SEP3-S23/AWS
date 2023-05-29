@@ -16,6 +16,16 @@ public class WeatherDataDTO
     {
         return DateTime.ParseExact(date_time, format, CultureInfo.InvariantCulture); 
     }
+
+    public double GetValueByame(string valueName)
+    {
+        if (valueName == name)
+        {
+            return Math.Round(Convert.ToDouble(this.value), 1);
+        }
+
+        return 0.0;
+    }
     
     
 }

@@ -9,6 +9,7 @@
 @using System.ComponentModel.DataAnnotations
 
 @inject IDialogService DialogService
+@inject IJSRuntime JSRuntime
 
 
 <PageTitle>DashBoard</PageTitle>
@@ -21,13 +22,13 @@
                               text-align: center;
                               color: white;">
                     <p style="position: absolute;
-                                                                                top: 90%;
+                                                                                top: 100%;
                                                                                 left: 50%;
                                                                                 transform: translate(-50%, -50%);
                                                                                 color: tomato;
-                                                                                font-size: 1.8vh;
+                                                                                font-size: 1.5vh;
                                                                                 font-weight: bold">
-                        17 °C
+                        @Temperature °C
                     </p>
                     <TemperatureIcon/>
                 </div>
@@ -42,7 +43,7 @@
     <MudItem xs="2" lg="2"Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class=" justify-center">
-                <WeatherIcon Weather="WeatherCondition.Rainy"/>
+                <WeatherIcon Weather="@WeatherCondition"/>
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
@@ -53,7 +54,7 @@
     <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class="justify-center">
-                <UvIndexIcon/>
+                <UvIndexIcon HeatIndex="@HeatIndex"/>
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
@@ -64,7 +65,7 @@
     <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
         <MudCard >
             <MudCardContent Class=" justify-center">
-                <WindIcon/>
+                <WindIcon WindSpeed="WindSpeed"/>
             </MudCardContent>
             <MudCardActions Class="d-flex justify-space-around">
                 <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"/>
@@ -79,13 +80,13 @@
                                                               text-align: center;
                                                               color: white;">
                     <p style="position: absolute;
-                                                                top: 90%;
+                                                                top: 100%;
                                                                 left: 50%;
                                                                 transform: translate(-50%, -50%);
                                                                 color: dodgerblue;
-                                                                font-size: 1.8vh;
+                                                                font-size: 1.5vh;
                                                                 font-weight: bold">
-                        25 %
+                        @Humidity %
                     </p>
                     <HumidityMeasureIcon/>
                 </div>
@@ -104,13 +105,13 @@
                                               text-align: center;
                                               color: white;">
                     <p style="position: absolute;
-                                                top: 90%;
+                                                top: 100%;
                                                 left: 50%;
                                                 transform: translate(-50%, -50%);
                                                 color: dodgerblue;
-                                                font-size: 1.8vh;
+                                                font-size: 1.5vh;
                                                 font-weight: bold">
-                        0 ml
+                        @Rain ml
                     </p>
                     <RainDropMeasureIcon/>
                 </div>
@@ -126,7 +127,7 @@
     <MudItem Class="mud-elevation-1 rounded" xs="12">
         @if (!LiveDataIsSelected)
         {
-            <HistoricalChart changedSelection="changedSelection" selectedValue="@value" temperatureData="temperatureData"/>
+            <HistoricalChart changedSelection="changedSelection" selectedValue="@SelectedSensor" temperatureData="temperatureData"/>
             <MudButton OnClick="@(() => LiveDataIsSelected = true)" Variant="Variant.Filled" Color="Color.Secondary">
                 View Live Data
             </MudButton>
@@ -142,7 +143,7 @@
         }
         @if (LiveDataIsSelected)
         {
-            <LiveChart selectedValue="@value" changedSelection="@changedSelection"/>
+            <LiveChart selectedValue="@SelectedSensor" changedSelection="@changedSelection"  />
             <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
                 View historical Data
             </MudButton>
@@ -177,7 +178,7 @@
 
 @code {
     
-    private string value { get; set; } = WeatherChoice.WindSpeed;
+    private string SelectedSensor { get; set; } = WeatherChoice.WindSpeed;
     private IEnumerable<string> options { get; set; }
     private bool changedSelection { get; set; }
     private bool LiveDataIsSelected { get; set; } = true;
@@ -190,16 +191,83 @@
     private bool visible;
     private int rating;
     private void OpenDialog() => visible = true;
+    private WeatherDataDTO? WeatherData { get; set; }
+    private WeatherDataDTO SelectedWeatherData { get; set; }
+    private double Temperature { get; set; } = 0.0;
+    private double Humidity { get; set; } = 0.0;
+    private double Rain { get; set; } = 0.0;
+    private double WindSpeed { get; set; } = 0.0;
+    private double HeatIndex { get; set; } = 0;
+    private string WeatherCondition { get; set; } = "partly-cloudy-day-hail";
+   
+    
 
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("import", "/js/sse.js");
+        }
+    }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await SetupSseConnection();
+    }
+    
+    
+    private async Task SetupSseConnection()
+    {
+        await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/ws1");
+    }
+    
+    [JSInvokable]
+    public void HandleSseMessage(string message)
+    {
+        
+        WeatherData = JsonConvert.DeserializeObject<WeatherDataDTO>(message);
+        if (WeatherData.name == WeatherChoice.Temperature)
+        {
+            Temperature = WeatherData.GetValueByame(WeatherChoice.Temperature);
+        }
+        if (WeatherData.name == WeatherChoice.Humidity)
+        {
+            Humidity = WeatherData.GetValueByame(WeatherChoice.Humidity);
+        }
+        if (WeatherData.name == WeatherChoice.RainQuantity)
+        {
+            Rain = WeatherData.GetValueByame(WeatherChoice.RainQuantity);
+        }
+        if (WeatherData.name == WeatherChoice.WindSpeed)
+        {
+            WindSpeed = WeatherData.GetValueByame(WeatherChoice.WindSpeed);
+        }
+        if (WeatherData.name == WeatherChoice.Heat)
+        {
+            HeatIndex =WeatherData.GetValueByame(WeatherChoice.Heat);
+        }
+        if (WeatherData.name == "weather condition")
+        {
+            WeatherCondition = WeatherData.value;
+        }
+        StateHasChanged();
+    }
+    
+    [JSInvokable]
+    public void HandleSseError()
+    {
+       
+    }
+    
+    
     void Submit()
     {
         visible = false;
         LiveDataIsSelected = false;
     }
-
-
-
-
+    
+    
     public void GenerateHistoricalData()
     {
         ValidationMessage = "";
@@ -215,7 +283,7 @@
     void Changed(string value)
     {
         changedSelection = true;
-        this.value = value;
+        this.SelectedSensor = value;
     }
     
     static string json = @"{
