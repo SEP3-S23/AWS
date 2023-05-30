@@ -27,4 +27,16 @@ public class HistoricalDataService : IHistoricalDataService
         }
         throw new Exception($"Request failed with status code {response.StatusCode}");
     }
+
+    public async Task<String[]> GetWSList()
+    {
+        var response = await _httpClient.GetAsync("http://localhost:8101/api/ws/list");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var data = await response.Content.ReadFromJsonAsync<String[]>();
+            return data;
+        }
+        throw new Exception($"Request failed with status code {response.StatusCode}");
+    }
 }

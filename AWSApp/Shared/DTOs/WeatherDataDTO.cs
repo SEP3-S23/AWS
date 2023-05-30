@@ -12,10 +12,7 @@ public class WeatherDataDTO
     public string wsName { get; set; }
     private string format = "dd-MM-yyyy HH.mm.ss";
 
-    public DateTime getDateFormat()
-    {
-        return DateTime.ParseExact(date_time, format, CultureInfo.InvariantCulture); 
-    }
+    
 
     public double GetValueByName(string valueName)
     {
