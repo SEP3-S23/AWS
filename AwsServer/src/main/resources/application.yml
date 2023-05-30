@@ -1,12 +1,12 @@
 spring:
     datasource:
-      url: jdbc:postgresql://localhost:5432/postgres
+      url: jdbc:postgresql://localhost:5431/postgres
       username: postgres
-      password : Santiago32411
+      password : postgres
       driver-class-name: org.postgresql.Driver
     jpa:
       hibernate:
-        ddl-auto: create-drop
+        ddl-auto: update
 #        ddl-auto: update TODO use this after test
       show-sql: true
       properties:
