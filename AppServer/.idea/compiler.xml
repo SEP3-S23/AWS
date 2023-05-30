@@ -10,12 +10,9 @@
         <module name="AppServer" />
       </profile>
     </annotationProcessing>
-<<<<<<< HEAD
-=======
     <bytecodeTargetLevel>
       <module name="AppServer" target="17" />
     </bytecodeTargetLevel>
->>>>>>> origin/main
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

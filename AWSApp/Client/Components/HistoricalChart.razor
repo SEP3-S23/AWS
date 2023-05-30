@@ -53,7 +53,7 @@
 
     LineChartDataset<double> GetLineChartDataset()
     {
-        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedValue));
+        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedSensor));
         return new LineChartDataset<double>
         {
             Label = "# of randoms",

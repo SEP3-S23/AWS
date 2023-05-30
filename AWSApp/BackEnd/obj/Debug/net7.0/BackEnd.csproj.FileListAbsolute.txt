@@ -13,18 +13,3 @@
 /Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/obj/Debug/net7.0/refint/BackEnd.dll
 /Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/obj/Debug/net7.0/BackEnd.pdb
 /Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/obj/Debug/net7.0/ref/BackEnd.dll
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.deps.json
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.dll
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\bin\Debug\net7.0\BackEnd.pdb
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\bin\Debug\net7.0\Shared.dll
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\bin\Debug\net7.0\Shared.pdb
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.AssemblyReference.cache
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfoInputs.cache
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfo.cs
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CoreCompileInputs.cache
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CopyComplete
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.dll
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\refint\BackEnd.dll
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\BackEnd.pdb
-C:\Users\walid\OneDrive - ViaUC\UNI\ViaUniversity\Semester03\SEP3\AWS\AWSApp\BackEnd\obj\Debug\net7.0\ref\BackEnd.dll

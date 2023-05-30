@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "/Users/fdepalma/Desktop/AWS/AWSApp/Tests/Tests.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
-=======
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
-        "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> origin/main
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -43,13 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-<<<<<<< HEAD
               "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
                 "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
-=======
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
->>>>>>> origin/main
               }
             }
           }
@@ -85,7 +63,6 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
@@ -101,23 +78,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
-        "projectName": "Shared",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> origin/main
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -156,7 +116,6 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
@@ -172,23 +131,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
-        "projectName": "Tests",
-        "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> origin/main
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -200,19 +142,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-<<<<<<< HEAD
               "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj": {
                 "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj"
               },
               "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
                 "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
-=======
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
-              },
-              "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
->>>>>>> origin/main
               }
             }
           }
@@ -242,11 +176,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
->>>>>>> origin/main
         }
       }
     }
