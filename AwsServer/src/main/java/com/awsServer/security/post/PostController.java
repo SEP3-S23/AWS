@@ -23,7 +23,11 @@ public class PostController {
     {
         String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
         String username = jwtService.extractUsername(token);
-        postService.createPost(username, postRequest);
+        if(postService.createPost(username, postRequest)==null)
+        {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Unable to create a post. You must first follow the forum");
+        }
+
         return ResponseEntity.ok("Post successfully created");
     }
 

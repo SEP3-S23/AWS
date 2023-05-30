@@ -50,6 +50,36 @@ public class ForumService {
         return forums.stream().map(forum -> modelMapper.map(forum, ForumListDto.class)).collect(Collectors.toList());
     }
 
+    public void addForumToUser(String username, Integer forumId) {
+        Optional<User> userOptional = userRepository.findByUserName(username);
+        Optional<Forum> forumOptional = forumRepository.findById(forumId);
+
+        if (userOptional.isPresent() && forumOptional.isPresent()) {
+            User user = userOptional.get();
+            Forum forum = forumOptional.get();
+
+            List<Forum> followedForums = user.getFollowedForums();
+            if (!followedForums.contains(forum)) {
+                user.addForum(forum);
+                userRepository.save(user);
+            }
+        }
+    }
+
+    public void removeForumFromUser(String username, Integer forumId) {
+        Optional<User> userOptional = userRepository.findByUserName(username);
+        Optional<Forum> forumOptional = forumRepository.findById(forumId);
+
+        if (userOptional.isPresent() && forumOptional.isPresent()) {
+            User user = userOptional.get();
+            Forum forum = forumOptional.get();
+
+            List<Forum> followedForums = user.getFollowedForums();
+            followedForums.remove(forum);
+            userRepository.save(user);
+        }
+    }
+
     public ForumReturned getForumByName(String name) {
         Optional<Forum> forum = forumRepository.findForumByName(name);
         return forum.map(this::convertToForumDto).orElse(null);
