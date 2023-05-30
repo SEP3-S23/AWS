@@ -3,13 +3,13 @@ package com.awsServer.security.services;
 import com.awsServer.security.auth.AuthenticationRequest;
 import com.awsServer.security.auth.AuthenticationResponse;
 import com.awsServer.security.auth.RegisterRequest;
-import com.awsServer.security.config.JwtService;
 import com.awsServer.security.user.Role;
 import com.awsServer.security.user.User;
 import com.awsServer.security.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +23,15 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
+
+        if (repository.findByUserName(request.getUserName()).isPresent()) {
+            throw new IllegalArgumentException("Username already exists");
+        }
+
+        if (repository.findUserByEmail(request.getEmail()).isPresent()) {
+            throw new IllegalArgumentException("Email already exists");
+        }
+
         var user = User.builder()
                 .fullName(request.getFullName())
                 .birthDate(request.getBirthDate())
@@ -41,7 +50,11 @@ public class AuthenticationService {
 
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUserName(), request.getPassword()));
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUserName(), request.getPassword()));
+        } catch (AuthenticationException e) {
+            throw new IllegalArgumentException("Invalid username or password");
+        }
         var user = repository.findByUserName(request.getUserName()).orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder().token(jwtToken).build();

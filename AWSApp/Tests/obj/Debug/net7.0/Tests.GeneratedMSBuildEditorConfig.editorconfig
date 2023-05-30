@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tests
+<<<<<<< HEAD
 build_property.ProjectDir = /Users/fdepalma/Desktop/AWS/AWSApp/Tests/
+=======
+build_property.ProjectDir = C:\Users\34654\Desktop\VIA Semesters\3rd Semester\SEP3\AWS\AWSApp\Tests\
+>>>>>>> origin/main

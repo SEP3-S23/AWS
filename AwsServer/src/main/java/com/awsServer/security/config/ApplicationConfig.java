@@ -2,6 +2,7 @@ package com.awsServer.security.config;
 
 import com.awsServer.security.user.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,6 +26,10 @@ public class ApplicationConfig {
         return username -> repository.findByUserName(username).orElseThrow(()-> new UsernameNotFoundException("User Not Found!"));
     }
 
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();

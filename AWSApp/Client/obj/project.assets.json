@@ -2641,11 +2641,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/Users/fdepalma/.nuget/packages/": {}
+=======
+    "C:\\Users\\34654\\.nuget\\packages\\": {}
+>>>>>>> origin/main
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/Client.csproj",
       "projectName": "Client",
       "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/Client.csproj",
@@ -2654,6 +2659,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/fdepalma/.nuget/NuGet/NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
+      "projectName": "Client",
+      "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> origin/main
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2665,11 +2680,19 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+<<<<<<< HEAD
             "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj": {
               "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj"
             },
             "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj": {
               "projectPath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj"
+=======
+            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
+            },
+            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+>>>>>>> origin/main
             }
           }
         }
@@ -2744,7 +2767,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+<<<<<<< HEAD
             "version": "[7.0.1, 7.0.1]"
+=======
+            "version": "[7.0.2, 7.0.2]"
+>>>>>>> origin/main
           }
         ],
         "frameworkReferences": {
@@ -2752,7 +2779,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "/Users/fdepalma/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/main
       }
     },
     "runtimes": {

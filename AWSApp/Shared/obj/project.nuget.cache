@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "9CZfZOAQau+AtuNn0qTUSE7GS4ea1DWDEAoS5WT9sBbzjU3zBs2/yUUUuQAq7HCqMRkwCEik2eLEXZZD0jrhbA==",
   "success": true,
   "projectFilePath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
+=======
+  "dgSpecHash": "b6DeIxJo2j/3KKIxagAC11OTQMet7Msqu4e7vYchq7DtH/ordQSrvmGZOkZWZABDCzTgRFe3+KDwzstA+JdfkQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
+>>>>>>> origin/main
   "expectedPackageFiles": [],
   "logs": []
 }
