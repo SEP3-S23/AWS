@@ -1,0 +1,73 @@
+﻿@page "/CreateForum"
+
+
+@using BackEnd.Services.Authentication
+@using Backend.Services.Forums
+@using global::Shared.DTOs
+@using global::Shared.Model
+<MudText Typo="Typo.h4" Style="margin-bottom: 30px">Create Forum</MudText>
+
+
+
+<MudTextField @bind-Value="forumTitle" Label="Forum Name" Required="true" RequiredError="Forum name is required!" HelperText="Insert the Forum Name" Variant="Variant.Outlined" Style="margin-bottom: 20px" />
+
+<MudTextField @bind-Value="forumDescription" T="string" Counter="25" HelperText="Insert Forum Description - max. 25 characters" Immediate="true" Validation="@(new Func<string, IEnumerable<string>>(MaxCharacters))" Label="Forum Description" Variant="Variant.Outlined" Style="margin-bottom: 20px"  />
+
+<MudText Typo="Typo.subtitle1" style="margin-top: 40px;">Choose a Category</MudText>
+<MudTextField @bind-Value="category" Label="Outlined" Variant="Variant.Outlined"></MudTextField>
+
+<MudButton Class="d-flex flex-1" OnClick="CreateForums" ButtonType="ButtonType.Submit" Variant="Variant.Outlined" Color="Color.Primary" Style="margin-top: 40px"  >Create</MudButton>
+<Post/>
+    
+
+@code {
+    string forumTitle = "";
+    string forumDescription = "";
+    string token = "";
+    
+    
+    
+    private IEnumerable<string> MaxCharacters(string value)
+    {
+        const int MaxLength = 25;
+        if (!string.IsNullOrEmpty(value) && value.Length > MaxLength)
+        {
+            yield return $"The value cannot exceed {MaxLength} characters.";
+        }
+    }
+
+    public string category { get; set; } 
+
+    // private async Task CreateForums()
+    // {
+    //     token = authService.GetToken();
+    //     CreateForumDto dto = new(forumTitle, forumDescription, category);
+    //     await forumService.CreateAsync(dto, token);
+    //     
+    // }
+
+
+    private async Task CreateForums()
+    {
+        token = "";
+        CreateForumDto dto = new(forumTitle, forumDescription, category);
+        IForumService forumService = new ForumService("http://localhost:8080/api/v1/forums");
+        try
+        {
+            
+            var result = await forumService.CreateAsync(dto);
+            Console.WriteLine(result.ToString());
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            Console.WriteLine(e.Message, "MESSAGGIO");
+            throw;
+        }
+    }
+
+
+
+
+}

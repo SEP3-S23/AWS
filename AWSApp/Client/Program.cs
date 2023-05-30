@@ -22,4 +22,5 @@ builder.Services
     .AddFontAwesomeIcons();
 
 
+
 await builder.Build().RunAsync();
