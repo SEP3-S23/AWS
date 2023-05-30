@@ -413,6 +413,19 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.IO.Pipelines/7.0.0": {
         "type": "package",
         "compile": {
@@ -487,6 +500,9 @@
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },
@@ -1074,6 +1090,36 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.IO.Pipelines/7.0.0": {
       "sha512": "jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
       "type": "package",
@@ -1221,19 +1267,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\34654\\.nuget\\packages\\": {}
+    "C:\\Users\\walid\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1245,11 +1291,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
+            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
             },
-            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
             }
           }
         }
@@ -1279,7 +1325,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

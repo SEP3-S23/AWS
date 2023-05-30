@@ -734,6 +734,9 @@
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },
@@ -1469,6 +1472,9 @@
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },
@@ -2641,19 +2647,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\34654\\.nuget\\packages\\": {}
+    "C:\\Users\\walid\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\34654\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Client\\obj\\",
+      "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\walid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\34654\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\walid\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2665,11 +2671,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
-              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
+            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj": {
+              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\BackEnd\\BackEnd.csproj"
             },
-            "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
+            "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj"
             }
           }
         }
@@ -2744,7 +2750,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[7.0.2, 7.0.2]"
+            "version": "[7.0.5, 7.0.5]"
           }
         ],
         "frameworkReferences": {
@@ -2752,7 +2758,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -35,6 +35,7 @@ public class AuthenticationController {
     ) {
         try {
             AuthenticationResponse response = service.authenticate(request);
+            System.out.println(response);
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());

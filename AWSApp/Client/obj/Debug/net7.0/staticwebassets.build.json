@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iOnSLTugCcsz9PWsu05yqdXvslf4/hWpaq+ZfJg1Q4w=",
+  "Hash": "Wc3jlXge3AYV4P9WHEaoVQm5hFtApw/bv6HPXwCoy4g=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8260,6 +8260,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\js\\localstorage.js",
+      "SourceId": "Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/localstorage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\localstorage.js"
     },
     {
       "Identity": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\js\\sse.js",
