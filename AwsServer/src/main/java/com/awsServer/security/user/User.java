@@ -28,6 +28,7 @@ public class User implements UserDetails {
     private String userName;
     private String password;
     private String birthDate;
+    private Boolean banned;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -67,6 +68,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return banned;
     }
 }
