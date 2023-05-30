@@ -2,107 +2,85 @@
 @using Blazorise.Charts
 @using Blazorise.Charts.Streaming
 @using ChartOptions = MudBlazor.ChartOptions
+@using System.Xml
+@using global::Shared.Model
+@using Newtonsoft.Json
+@using System.Globalization
+@using System.Reflection
+@using System.Text
+@using Newtonsoft.Json.Linq
+@using Blazorise.Charts
+@using global::Shared.DTOs
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
 
-@inject IJSRuntime JSRuntime
 
-<LineChart @ref="horizontalLineChart" TItem="LiveDataPoint" OptionsObject="@horizontalLineChartOptions">
-    <ChartStreaming TItem="LiveDataPoint"
-                    Options="new ChartStreamingOptions { Delay = 2000 }"
-                    Refreshed="@OnHorizontalLineRefreshed" />
-</LineChart>
+<Button Color="Color.Primary" Clicked="@(async () => await HandleRedraw())">Redraw</Button>
+
+<LineChart @ref="lineChart" TItem="double" />
 
 @code{
     
+    //TODO : CREATE A SERVICE TO RESTIVE HISTORICAL DATA and use the next code to create the data 
+    //HystoricalWeatherDataDto temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
+    
+    [Parameter] 
+    public string selectedValue { get; set;}
+    [Parameter]
+    public bool changedSelection { get; set; }
+    [Parameter]
+    public HystoricalWeatherDataDto temperatureData { get; set; }
+    LineChart<double> lineChart;
+
     protected override async Task OnAfterRenderAsync( bool firstRender )
     {
-        if ( firstRender )
+        
+        if (firstRender || changedSelection)
         {
-            await JSRuntime.InvokeVoidAsync("establishSSEConnection", DotNetObjectReference.Create(this));
-            await Task.WhenAll(
-                HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
+            await HandleRedraw();
+            changedSelection = false;
         }
-    }
-
-    [JSInvokable]
-    public void HandleSSEEvent(string eventData)
-    {
-        Console.WriteLine(eventData);
-    // Handle the incoming SSE event data
-    // Update your Blazor component's state or perform necessary actions
     }
     
-    LineChart<LiveDataPoint> horizontalLineChart;
-    Random random = new Random( DateTime.Now.Millisecond );
 
-    string[] Labels = { "Red", "Blue", "Yellow", "Green", "Purple", "Orange" };
-    List<string> backgroundColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 0.2f ), ChartColor.FromRgba( 54, 162, 235, 0.2f ), ChartColor.FromRgba( 255, 206, 86, 0.2f ), ChartColor.FromRgba( 75, 192, 192, 0.2f ), ChartColor.FromRgba( 153, 102, 255, 0.2f ), ChartColor.FromRgba( 255, 159, 64, 0.2f ) };
-    List<string> borderColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 1f ), ChartColor.FromRgba( 54, 162, 235, 1f ), ChartColor.FromRgba( 255, 206, 86, 1f ), ChartColor.FromRgba( 75, 192, 192, 1f ), ChartColor.FromRgba( 153, 102, 255, 1f ), ChartColor.FromRgba( 255, 159, 64, 1f ) };
-
-    public struct LiveDataPoint
+    async Task HandleRedraw()
     {
-        public object X { get; set; }
+        await lineChart.Clear();
 
-        public object Y { get; set; }
+        await lineChart.AddLabelsDatasetsAndUpdate( temperatureData.GetDates(), GetLineChartDataset() );
     }
 
-    object horizontalLineChartOptions = new
+    LineChartDataset<double> GetLineChartDataset()
     {
-        Scales = new
+        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedValue));
+        return new LineChartDataset<double>
         {
-            Y = new
-            {
-                Title = new
-                {
-                    Display = true,
-                    Text = "Value"
-                }
-            }
-        },
-        Interaction = new
-        {
-            intersect = false
-        }
-    };
+            Label = "# of randoms",
+            Data = temperatureData.GetValues(),
+            BackgroundColor = backgroundColors[index],
+            BorderColor = borderColors[index],
+            Fill = true,
+            PointRadius = 1,
+            CubicInterpolationMode = "monotone",
+        };
+    }
+    
+    List<string> backgroundColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 0.2f ), ChartColor.FromRgba( 54, 162, 235, 0.2f ), ChartColor.FromRgba( 255, 206, 86, 0.2f ), ChartColor.FromRgba( 75, 192, 192, 0.2f ), ChartColor.FromRgba( 153, 102, 255, 0.2f ), ChartColor.FromRgba( 255, 159, 64, 0.2f ), ChartColor.FromRgba( 110, 99, 132, 0.2f), ChartColor.FromRgba( 255, 110, 255, 0.2f)  };
+    List<string> borderColors = new List<string> { ChartColor.FromRgba( 255, 99, 132, 1f ), ChartColor.FromRgba( 54, 162, 235, 1f ), ChartColor.FromRgba( 255, 206, 86, 1f ), ChartColor.FromRgba( 75, 192, 192, 1f ), ChartColor.FromRgba( 153, 102, 255, 1f ), ChartColor.FromRgba( 255, 159, 64, 1f ), ChartColor.FromRgba( 110, 99, 132, 1f), ChartColor.FromRgba( 255, 110, 255, 1f)  };
 
+    
+    
+    
+    
+  
+
+    
+    
+    
+    
+    
+    
+    
    
 
-    async Task HandleRedraw<TDataSet, TItem, TOptions, TModel>( BaseChart<TDataSet, TItem, TOptions, TModel> chart, params Func<TDataSet>[] getDataSets )
-        where TDataSet : ChartDataset<TItem>
-        where TOptions : Blazorise.Charts.ChartOptions
-        where TModel : ChartModel
-    {
-        await chart.Clear();
-
-        await chart.AddLabelsDatasetsAndUpdate( Labels, getDataSets.Select( x => x.Invoke() ).ToArray() );
-    }
-
-    LineChartDataset<LiveDataPoint> GetLineChartDataset1()
-    {
-        return new LineChartDataset<LiveDataPoint>
-        {
-            Data = new List<LiveDataPoint>(),
-            Label = "Dataset 1 (linear interpolation)",
-            BackgroundColor = backgroundColors[0],
-            BorderColor = borderColors[0],
-            Fill = false,
-            Tension = 0,
-            BorderDash = new List<int> { 8, 4 },
-        };
-    }
-
-    Task OnHorizontalLineRefreshed( ChartStreamingData<LiveDataPoint> data )
-    {
-        data.Value = new LiveDataPoint
-        {
-            X = DateTime.Now,
-            Y = RandomScalingFactor(),
-        };
-
-        return Task.CompletedTask;
-    }
-
-    double RandomScalingFactor()
-    {
-        return ( random.NextDouble() > 0.5 ? 1.0 : -1.0 ) * Math.Round( random.NextDouble() * 100 );
-    }
 }

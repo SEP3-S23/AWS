@@ -39,7 +39,6 @@ public class MongoTemplateLoader {
             MongoDatabaseFactory dbFactory = new SimpleMongoClientDatabaseFactory(mongoClient, ws);
             MongoTemplate mongoTemplate = new MongoTemplate(dbFactory);
             mongoTemplates.put(ws, mongoTemplate);
-            System.out.println(ws + mongoTemplate);
         }
 
         return mongoTemplates;

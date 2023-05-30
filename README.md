@@ -1,4 +1,5 @@
 <h1>AWS</h1>
+<img src=".\Media\AdvancedWeatherStation.gif">
 <hr>
 <h6>Advanced Weather Station</h6>
 
