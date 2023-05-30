@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="e9687a2b-0f5a-43b9-a5df-fa6f4f39b203" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../AWSApp/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../AWSApp/BackEnd/obj/BackEnd.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AWSApp/BackEnd/obj/BackEnd.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../AWSApp/BackEnd/obj/BackEnd.csproj.nuget.g.props" afterDir="false" />
@@ -191,15 +192,21 @@
 =======
     <list default="true" id="b13169e4-fb6d-46ce-8feb-f9fc09563ac9" name="Changes" comment="Login and Register" />
 >>>>>>> origin/main
+=======
+    <list default="true" id="b13169e4-fb6d-46ce-8feb-f9fc09563ac9" name="Changes" comment="Login and Register" />
+>>>>>>> origin/main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
 =======
+=======
+>>>>>>> origin/main
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -232,6 +239,9 @@
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
   </component>
   <component name="MarkdownSettingsMigration">
@@ -240,6 +250,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
@@ -293,6 +304,8 @@
       <module name="AppServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="group3.app_server.AppServer" />
 =======
+=======
+>>>>>>> origin/main
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -326,6 +339,9 @@
     <configuration name="AppServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="group3.app_server.AppServer" />
       <module name="AppServer" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
       <extension name="coverage">
         <pattern>
@@ -338,10 +354,13 @@
       </method>
     </configuration>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.AppServer" />
 =======
+=======
+>>>>>>> origin/main
     <configuration name="AppServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rest.API.AppServer" />
       <module name="AppServer" />
@@ -362,6 +381,9 @@
         <item itemvalue="Application.AppServer" />
         <item itemvalue="Application.AppServer (1)" />
         <item itemvalue="Application.AppServer" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
       </list>
     </recent_temporary>
@@ -369,6 +391,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <changelist id="e9687a2b-0f5a-43b9-a5df-fa6f4f39b203" name="Changes" comment="" />
       <created>1683824608991</created>
@@ -383,6 +406,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
 =======
+=======
+>>>>>>> origin/main
       <changelist id="b13169e4-fb6d-46ce-8feb-f9fc09563ac9" name="Changes" comment="" />
       <created>1683825309173</created>
       <option name="number" value="Default" />
@@ -439,6 +464,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login and Register" />
     <option name="LAST_COMMIT_MESSAGE" value="Login and Register" />
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
   </component>
 </project>

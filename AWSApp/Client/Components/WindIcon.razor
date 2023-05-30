@@ -1,5 +1,28 @@
-﻿<img src="https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/wind-beaufort-4.svg" style="width: 10vh; height: 10vh;"/>
+﻿<img src=@src style="width: 10vh; height: 10vh;"/>
 
 @code {
+
+    [Parameter]
+    public double WindSpeed { get; set; } = 0;
+    [Parameter]
+    public bool changed { get; set; }
+    private string src { get; set; }
     
+    
+    
+    protected override void OnAfterRender(bool firstRender)
+    {
+        GetPath();
+    }
+    
+    
+    private void GetPath()
+    {
+        int windSpeedInt = Convert.ToInt32(WindSpeed);
+        
+        windSpeedInt = windSpeedInt % 12;
+        windSpeedInt++;
+
+        src = "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/wind-beaufort-"+System.Math.Abs(windSpeedInt)+".svg";
+    }
 }

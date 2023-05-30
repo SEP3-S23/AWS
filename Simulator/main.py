@@ -39,9 +39,9 @@ class Simulator:
         self.humidity += self.random.randrange(-10, 10, 1)/10
         return Data("humidity", self.humidity, "%")
 
-    def get_feel_like(self):
-        value = self.temperature + self.random.randrange(-5, 5, 1)
-        return Data("heat index", value, "°C")
+    def get_UV_index(self):
+        value = self.random.randrange(1, 11, 1)
+        return Data("UV index", value, "")
 
     def get_wind_speed(self):
         self.wind_speed += self.random.randrange(-20, 20, 1)/10
@@ -79,7 +79,7 @@ class Simulator:
     def publish(self):
         self.publisherManager.publish(self.get_temperature(), notify)
         self.publisherManager.publish(self.get_humidity(), notify)
-        self.publisherManager.publish(self.get_feel_like(), notify)
+        self.publisherManager.publish(self.get_UV_index(), notify)
         self.publisherManager.publish(self.get_wind_speed(), notify)
         self.publisherManager.publish(self.get_wind_direction(), notify)
         self.publisherManager.publish(self.get_rain_quantity(), notify)
