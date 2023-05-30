@@ -17,10 +17,6 @@
     private void GetPath()
     {
         int heatIndexInt = Convert.ToInt32(HeatIndex);
-        
-        heatIndexInt %= 11;
-        heatIndexInt++;
-        
         src = "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/uv-index-"+System.Math.Abs(heatIndexInt)+".svg";
     }
 

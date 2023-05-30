@@ -17,7 +17,7 @@ public class WeatherDataDTO
         return DateTime.ParseExact(date_time, format, CultureInfo.InvariantCulture); 
     }
 
-    public double GetValueByame(string valueName)
+    public double GetValueByName(string valueName)
     {
         if (valueName == name)
         {

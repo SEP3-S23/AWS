@@ -1,9 +1,10 @@
 package com.group3.ws_server.service;
 
+import com.group3.ws_server.model.WeatherStation;
+import com.group3.ws_server.repository.WeatherStationRepository;
 import org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,16 +16,13 @@ public class ListenerService {
     @Autowired
     private RabbitListenerEndpointRegistry listenerEndpointRegistry;
 
-    @Value("${rabbitmq.exchanges}")
-    String[] exchanges;
+    @Autowired
+    private WeatherStationRepository weatherStationRepository;
 
-    @Value("${rabbitmq.queues}")
-    String[] queues;
+    private static List<String> consumers = new ArrayList<>();
 
-    static List<String> consumers = new ArrayList<>();
-
-    private void addListener(String exchange, String queue) {
-        String queueName = exchange + "." + queue;
+    public void addListener(WeatherStation ws) {
+        String queueName = ws.getName() + "." + ws.getSensor();
         if (!consumers.contains(queueName)) {
             consumers.add(queueName);
             ((AbstractMessageListenerContainer) listenerEndpointRegistry.getListenerContainer("listener"))
@@ -32,12 +30,19 @@ public class ListenerService {
         }
     }
 
-    public void addListeners() {
-        for (String exchange : exchanges) {
-            System.out.println("exchange -> " + exchange);
-            for (String queue : queues) {
-                addListener(exchange, queue);
-            }
+    public void removeListener(String name) {
+        List<String> toDelete = consumers.stream().filter((String queueName) -> queueName.startsWith(name)).toList();
+        for (String queueName : toDelete) {
+            consumers.remove(queueName);
+            ((AbstractMessageListenerContainer) listenerEndpointRegistry.getListenerContainer("listener"))
+                    .removeQueueNames(queueName);
+        }
+    }
+
+    public void loadListener() {
+        List<WeatherStation> allSensors = weatherStationRepository.findAll();
+        for (WeatherStation ws : allSensors) {
+            addListener(ws);
         }
     }
 }

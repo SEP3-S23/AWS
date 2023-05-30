@@ -229,23 +229,23 @@
         WeatherData = JsonConvert.DeserializeObject<WeatherDataDTO>(message);
         if (WeatherData.name == WeatherChoice.Temperature)
         {
-            Temperature = WeatherData.GetValueByame(WeatherChoice.Temperature);
+            Temperature = WeatherData.GetValueByName(WeatherChoice.Temperature);
         }
         if (WeatherData.name == WeatherChoice.Humidity)
         {
-            Humidity = WeatherData.GetValueByame(WeatherChoice.Humidity);
+            Humidity = WeatherData.GetValueByName(WeatherChoice.Humidity);
         }
         if (WeatherData.name == WeatherChoice.RainQuantity)
         {
-            Rain = WeatherData.GetValueByame(WeatherChoice.RainQuantity);
+            Rain = WeatherData.GetValueByName(WeatherChoice.RainQuantity);
         }
         if (WeatherData.name == WeatherChoice.WindSpeed)
         {
-            WindSpeed = WeatherData.GetValueByame(WeatherChoice.WindSpeed);
+            WindSpeed = WeatherData.GetValueByName(WeatherChoice.WindSpeed);
         }
-        if (WeatherData.name == WeatherChoice.Heat)
+        if (WeatherData.name == WeatherChoice.UVIndex)
         {
-            HeatIndex =WeatherData.GetValueByame(WeatherChoice.Heat);
+            HeatIndex =WeatherData.GetValueByName(WeatherChoice.UVIndex);
         }
         if (WeatherData.name == "weather condition")
         {
