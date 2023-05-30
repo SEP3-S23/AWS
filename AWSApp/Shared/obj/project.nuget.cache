@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DC5BzlF+TsmiN9HLOApEUhTXk887Y51KKVeKJbE4nfTwuvLBMMJ2TM9osJDiMdGoh8Xx0N/t6ydORElM1hapFg==",
+  "dgSpecHash": "g1nXysZDu19kY+gCDb69V5i88FeqvIY8XLLQYv4kxyD3ggPQCqmgQJQQsM0G9wQnVvs676ARnc/FaENY0Jpn0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marta\\Documents\\AWS\\AWSApp\\Shared\\Shared.csproj",
+  "projectFilePath": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\walid\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
