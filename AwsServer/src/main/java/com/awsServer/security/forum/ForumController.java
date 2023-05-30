@@ -16,28 +16,42 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ForumController {
     private final ForumService forumService;
-    private final UserDetailsService userDetailsService;
     private final JwtService jwtService;
 
     @PostMapping("/create")
     public ResponseEntity<String> createForum(HttpServletRequest request,@RequestBody ForumRequest forumRequest) {
         String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
         String username = jwtService.extractUsername(token);
-        boolean isTokenValid = jwtService.isTokenValid(token, userDetailsService.loadUserByUsername(username));
-
-        if (isTokenValid) {
-            if (forumService.createForum(username, forumRequest) == null) {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("The forum name already exists. Please choose another name.");
-            } else return ResponseEntity.ok("Forum successfully created.");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again.");
+        if(forumService.createForum(username, forumRequest)==null)
+        {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Forum's name already exists. Please select another name.");
         }
+        return ResponseEntity.ok("Forum successfully created.");
+
     }
 
     @GetMapping("/{name}")
     public ResponseEntity<?> getForumByName(@PathVariable("name") String name) {
             ForumReturned forum = forumService.getForumByName(name);
             return ResponseEntity.ok(forum);
+    }
+
+    @PostMapping("/subscribe/{forumId}")
+    public ResponseEntity<Void> addForumToUser(HttpServletRequest request,@PathVariable Integer forumId)
+    {
+        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
+        String username = jwtService.extractUsername(token);
+        forumService.addForumToUser(username, forumId);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/unsubscribe/{forumId}")
+    public ResponseEntity<Void> deleteForumToUser(HttpServletRequest request,@PathVariable Integer forumId)
+    {
+        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
+        String username = jwtService.extractUsername(token);
+        forumService.removeForumFromUser(username, forumId);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping
