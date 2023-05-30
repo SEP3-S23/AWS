@@ -1,0 +1,25 @@
+﻿<img   src="@src"  style="width: 10vh; height: 10vh;"/>
+
+@code {
+    [Parameter]
+    public string Weather { get; set; }
+    private string src { get; set; }
+    
+    
+    protected override void OnAfterRender(bool firstRender)
+    {
+        GetPath();
+    }
+    
+    protected override void OnInitialized()
+    {
+        GetPath();
+    }
+    
+    private void GetPath()
+    {
+        
+        src = "https://bmcdn.nl/assets/weather-icons/v3.0/line/svg/"+Weather+".svg";
+        Console.WriteLine(src);
+    }
+}
