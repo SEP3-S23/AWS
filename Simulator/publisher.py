@@ -3,7 +3,6 @@ from threading import Lock
 
 class Publisher:
     def __init__(self, exchange, name, connection):
-        self.lock = Lock()
         self.channel = connection.channel()
         self.EXCHANGE = exchange
         self.name = name

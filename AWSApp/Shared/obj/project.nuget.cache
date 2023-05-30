@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "b6DeIxJo2j/3KKIxagAC11OTQMet7Msqu4e7vYchq7DtH/ordQSrvmGZOkZWZABDCzTgRFe3+KDwzstA+JdfkQ==",
+  "dgSpecHash": "9CZfZOAQau+AtuNn0qTUSE7GS4ea1DWDEAoS5WT9sBbzjU3zBs2/yUUUuQAq7HCqMRkwCEik2eLEXZZD0jrhbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\34654\\Desktop\\VIA Semesters\\3rd Semester\\SEP3\\AWS\\AWSApp\\Shared\\Shared.csproj",
+  "projectFilePath": "/Users/fdepalma/Desktop/AWS/AWSApp/Shared/Shared.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/fdepalma/Desktop/AWS/AWSApp/Shared/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

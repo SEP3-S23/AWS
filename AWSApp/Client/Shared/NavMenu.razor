@@ -1,5 +1,27 @@
-﻿<MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2"  >
+﻿@using global::Shared.Model
+@inject IJSRuntime JSRuntime
+
+<MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2"  >
     <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
     <MudNavLink Href="LoginPage" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.People">Login</MudNavLink>
     <MudNavLink Href="DashBoard" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>    
+    <MudNavLink Href="CreateForum" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Dashboard">Create Forum</MudNavLink>  
 </MudNavMenu>
+
+@code
+{
+    
+    private async Task<string> GetTokenFromLocalStorage()
+    {
+        return await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+    }
+    
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            LocalToken.Instance.token =  await GetTokenFromLocalStorage();
+        }
+    }
+}

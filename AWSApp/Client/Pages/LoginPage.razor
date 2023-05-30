@@ -1,8 +1,12 @@
 ﻿@page "/LoginPage"
 @using System.ComponentModel.DataAnnotations
 @using BackEnd.Services.Authentication
+@using global::Shared.Model
 
 @using MudBlazor
+@inject IJSRuntime JSRuntime
+
+
 
 <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
 <DataAnnotationsValidator/>
@@ -76,28 +80,32 @@
             Console.WriteLine(e);
             throw;
         }
-        
     }
 
 
+    private async Task SaveTokenToLocalStorage(string token)
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "token", token);
+    }
+    
+    
+    
+    
     private async Task Submit(string email, string password)
     {
         IAuthService authService = new AuthService("http://localhost:8080/api/v1/auth/authenticate");
         try
         {
             var result = await authService.LoginAsync(email, password);
-            Console.WriteLine(result.ToString());
+            await SaveTokenToLocalStorage(result.token);
             success = true;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            Console.WriteLine(e.Message, "MESSAGGIO");
+            Console.WriteLine(e.Message);
             Error = e.Message;
-            
+            StateHasChanged();
             throw;
         }
-        
     }
-
 }
