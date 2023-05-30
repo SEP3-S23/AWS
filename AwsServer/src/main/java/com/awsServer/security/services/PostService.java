@@ -28,7 +28,9 @@ public class PostService {
         Optional<User> createdBy = userRepository.findByUserName(username);
         Optional<Forum> existingForum = forumRepository.findForumById(postRequest.getId());
 
-        if(existingForum.isEmpty())
+        Forum forum = existingForum.get();
+        User user = createdBy.get();
+        if(!forum.getFollowedUsers().contains(user))
         {
             return null;
         }

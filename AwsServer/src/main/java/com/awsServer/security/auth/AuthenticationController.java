@@ -20,7 +20,7 @@ public class AuthenticationController {
     ) {
         try {
             AuthenticationResponse response = service.register(request);
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(response); // Return the token as the response body
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {

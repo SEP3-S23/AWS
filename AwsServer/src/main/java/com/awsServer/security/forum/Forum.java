@@ -32,4 +32,18 @@ public class Forum {
     @OneToOne
     @JoinColumn(name = "created_by")
     private User user;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_forum",
+            joinColumns = @JoinColumn(name = "forum_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> followedUsers;
+
+    public List<User> getFollowedUsers()
+    {
+        return followedUsers;
+    }
 }
+
