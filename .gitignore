@@ -38,8 +38,12 @@
 .idea_modules/
 
 #Debug Folder
-/AWSApp/Client/bin
-/AWSApp/Client/obj
+/AWSApp/Client/bin/
+/AWSApp/Client/obj/
+/AWSApp/BackEnd/bin/
+/AWSApp/BackEnd/obj/
+/AWSApp/Shared/bin/
+/AWSApp/Shared/obj/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
@@ -56,5 +60,5 @@ fabric.properties
 # *.iml
 # modules.xml
 
-/AppServer/.idea
-/AppServer/target
+/AppServer/.idea/
+/AppServer/target/
