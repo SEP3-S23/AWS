@@ -1,5 +1,9 @@
-package com.awsServer.group3.user;
+package com.awsServer.group3.services;
 
+import com.awsServer.group3.forum.Forum;
+import com.awsServer.group3.user.Status;
+import com.awsServer.group3.user.User;
+import com.awsServer.group3.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +36,14 @@ public class UserService {
 
     public List<User> getAllReportedUser() {
         return userRepository.findAllByStatus(Status.REPORTED);
+    }
+
+    public List<Forum> getSubscribedForum(String username) {
+        Optional<User> userOpt = userRepository.findByUserName(username);
+        if (userOpt.isPresent()) {
+            User user = userOpt.get();
+            return user.getFollowedForums();
+        }
+        return null;
     }
 }

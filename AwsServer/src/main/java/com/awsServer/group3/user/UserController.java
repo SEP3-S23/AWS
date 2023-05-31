@@ -1,6 +1,6 @@
 package com.awsServer.group3.user;
 
-import jakarta.annotation.security.RolesAllowed;
+import com.awsServer.group3.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

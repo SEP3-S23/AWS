@@ -2,17 +2,24 @@ package com.awsServer.group3.forum;
 
 import com.awsServer.group3.services.ForumService;
 import com.awsServer.group3.services.JwtService;
+import com.awsServer.group3.services.UserService;
+import com.awsServer.group3.user.User;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("api/v1/forums")
 @RequiredArgsConstructor
 public class ForumController {
     private final ForumService forumService;
+
+    private final UserService userService;
+
     private final JwtService jwtService;
 
     @PostMapping("/create")
@@ -55,5 +62,14 @@ public class ForumController {
     public ResponseEntity<?> getAllForums()
     {
         return ResponseEntity.ok(forumService.getAllForums());
+    }
+
+    @GetMapping("/subscribed")
+    public ResponseEntity<?> getSubscribedForums(HttpServletRequest request) {
+        String token = jwtService.extractTokenFromAuthorizationHeader(request.getHeader("Authorization"));
+        String username = jwtService.extractUsername(token);
+
+        return ResponseEntity.ok(userService.getSubscribedForum(username));
+
     }
 }
