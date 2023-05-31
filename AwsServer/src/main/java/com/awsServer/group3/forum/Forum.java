@@ -45,5 +45,6 @@ public class Forum {
     {
         return followedUsers;
     }
+
 }
 

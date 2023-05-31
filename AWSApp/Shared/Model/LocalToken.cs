@@ -1,5 +1,7 @@
 ﻿namespace Shared.Model;
 
+using System.IdentityModel.Tokens.Jwt;
+
 public class LocalToken
 {
     private static LocalToken instance = null;
@@ -13,8 +15,10 @@ public class LocalToken
     
     public static LocalToken Instance
     {
+        
         get
         {
+            
             if (instance == null)
             {
                 lock (padlock)
@@ -28,6 +32,14 @@ public class LocalToken
             return instance;
         }
     }
+    
+    
+    public string GetUser()
+    {
+        var deocdedToken = new JwtSecurityToken(jwtEncodedString: token);
+        return deocdedToken.Claims.First(c => c.Type == "sub").Value;
+    }
+    
     
 }
 

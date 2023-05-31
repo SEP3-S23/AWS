@@ -5,6 +5,6 @@ namespace BackEnd.Services.Authentication;
 
 public interface IHistoricalDataService
 {
-    Task<HystoricalWeatherDataDto> GetData(string WsName, string SensorName);
+    Task<HystoricalWeatherDataDto> GetData(string wsName, string sensorName, long startDate, long endDate);
   
 }

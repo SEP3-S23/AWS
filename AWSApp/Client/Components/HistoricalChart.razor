@@ -14,32 +14,50 @@
     
     [Parameter] 
     public string selectedSensor { get; set;}
+    private string _selectedSensor { get; set; }
     [Parameter] 
     public string selectedWS { get; set;}
+    
     [Parameter]
-    public bool changedSelection { get; set; }
-    [Parameter]
-    public HystoricalWeatherDataDto temperatureData { get; set; }
+    public HystoricalWeatherDataDto? WeatherData { get; set; }
+    private HystoricalWeatherDataDto _WeatherData { get; set; }
 
     public HistoricalDataService HistoricalDataService = new HistoricalDataService();
     
+    
     LineChart<double> lineChart;
-
+    
+    
+    protected override void OnInitialized()
+    {
+        _WeatherData = WeatherData;
+        _selectedSensor = selectedSensor;
+    }
+    
+    protected override async void OnParametersSet()
+    {
+        if (_selectedSensor!=selectedSensor)
+        {
+            _selectedSensor = selectedSensor;
+            await HandleRedraw();
+        }
+        
+        if (_WeatherData != WeatherData)
+        {
+            _WeatherData = WeatherData;
+            if (WeatherData!=null)
+            {
+                await HandleRedraw();
+            }
+        }
+    }
+    
     protected override async Task OnAfterRenderAsync( bool firstRender )
     {
         
-        if (firstRender || changedSelection)
+        if (firstRender)
         {
             await HandleRedraw();
-            changedSelection = false;
-            try
-            {
-                temperatureData = await HistoricalDataService.GetData(selectedWS, selectedSensor);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
         }
     }
     
@@ -47,8 +65,7 @@
     async Task HandleRedraw()
     {
         await lineChart.Clear();
-
-        await lineChart.AddLabelsDatasetsAndUpdate( temperatureData.GetDates(), GetLineChartDataset() );
+        await lineChart.AddLabelsDatasetsAndUpdate( WeatherData.GetDates(), GetLineChartDataset() );
     }
 
     LineChartDataset<double> GetLineChartDataset()
@@ -56,8 +73,8 @@
         var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedSensor));
         return new LineChartDataset<double>
         {
-            Label = "# of randoms",
-            Data = temperatureData.GetValues(),
+            Label = selectedSensor,
+            Data = WeatherData.GetValues(),
             BackgroundColor = backgroundColors[index],
             BorderColor = borderColors[index],
             Fill = true,

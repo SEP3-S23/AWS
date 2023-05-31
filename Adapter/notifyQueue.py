@@ -1,5 +1,5 @@
 import requests
-
+from config import NOTIFY_URL;
 
 def notify(queue, exchange):
 

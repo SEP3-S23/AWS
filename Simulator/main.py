@@ -32,24 +32,20 @@ class Simulator:
         self.weather_condition_counter = 10
 
     def get_temperature(self):
-        self.temperature += self.random.randrange(-10, 10, 1)/10
-        return Data("temperature", self.temperature, "°C")
+        return Data("temperature", self.temperature + self.random.randrange(-10, 10, 1)/10, "°C")
 
     def get_humidity(self):
-        self.humidity += self.random.randrange(-10, 10, 1)/10
-        return Data("humidity", self.humidity, "%")
+        return Data("humidity", self.humidity + self.random.randrange(-10, 10, 1)/10, "%")
 
     def get_UV_index(self):
         value = self.random.randrange(1, 11, 1)
         return Data("UV index", value, "")
 
     def get_wind_speed(self):
-        self.wind_speed += self.random.randrange(-20, 20, 1)/10
-        return Data("wind speed", self.wind_speed, "m/s")
+        return Data("wind speed", self.wind_speed + self.random.randrange(-20, 20, 1)/10, "m/s")
 
     def get_pressure(self):
-        self.pressure += self.random.randrange(-5, 5, 1)
-        return Data("pressure", self.pressure, "mm")
+        return Data("pressure", self.pressure + self.random.randrange(-5, 5, 1), "mm")
 
     def get_wind_direction(self):
         value = self.random.randrange(0, 360, 1)
@@ -61,7 +57,7 @@ class Simulator:
             self.rain_quantity = 0
 
         if _ < 0.4:
-            self.rain_quantity = self.random.randrange(-10, 10, 1)/10 + self.rain_quantity
+            self.rain_quantity = self.random.randrange(-10, 10, 1)/10
 
         return Data("rain quantity", max(self.rain_quantity, 0), "mm")
 
