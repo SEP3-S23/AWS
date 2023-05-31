@@ -14,19 +14,48 @@
 
 <LineChart @ref="horizontalLineChart" TItem="LiveDataPoint" OptionsObject="@horizontalLineChartOptions">
             <ChartStreaming TItem="LiveDataPoint"
-                            Options="new ChartStreamingOptions { Delay = 1000 }"
+                            Options="new ChartStreamingOptions { Delay = 2000 }"
                             Refreshed="@OnHorizontalLineRefreshed" />
         </LineChart>
 
 @code {
 
     [Parameter] 
-    public string selectedValue { get; set;}
+    public string SelectedValue { get; set;}
+    private string _SelectedValue { get; set; }
+
     [Parameter]
-    public bool changedSelection { get; set; }
+    public WeatherDataDTO? WeatherDataDto { get; set; }
+    private WeatherDataDTO? _WeatherDataDto { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        _WeatherDataDto = WeatherDataDto;
+        _SelectedValue = SelectedValue;
+    }
     
+    protected override async void OnParametersSet()
+    {
+        if (_SelectedValue!=SelectedValue)
+        {
+            _SelectedValue = SelectedValue;
+            await Task.WhenAll(
+                HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
+        }
+        
+        if (_WeatherDataDto != WeatherDataDto)
+        {
+            _WeatherDataDto = WeatherDataDto;
+            if (WeatherDataDto!=null && WeatherDataDto.name == SelectedValue)
+            {
+                Value = Convert.ToDouble(WeatherDataDto.value);
+            }
+        }
+    }
+    
+
     double Value { get; set; }
-    WeatherDataDTO? WeatherDataDto { get; set; }
     DateTime Date { get; set; }
     
     LineChart<LiveDataPoint> horizontalLineChart;
@@ -37,42 +66,11 @@
     
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender || changedSelection)
+        if (firstRender)
         {
             await Task.WhenAll(
                 HandleRedraw( horizontalLineChart, GetLineChartDataset1 ) );
-            await JSRuntime.InvokeVoidAsync("import", "/js/sse.js");
-
-            changedSelection = false;
         }
-    }
-    
-    protected override async Task OnInitializedAsync()
-    {
-        await SetupSseConnection();
-    }
-    
-    
-    private async Task SetupSseConnection()
-    {
-        await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/ws1");
-    }
-    
-    [JSInvokable]
-    public void HandleSseMessage(string message)
-    {
-        WeatherDataDto = JsonConvert.DeserializeObject<WeatherDataDTO>(message);
-        if (WeatherDataDto.name == selectedValue)
-        {
-            Value = Convert.ToDouble(WeatherDataDto.value);
-            Date = WeatherDataDto.getDateFormat();
-        }
-    }
-    
-    [JSInvokable]
-    public void HandleSseError()
-    {
-        
     }
     
     public struct LiveDataPoint
@@ -115,12 +113,12 @@
 
     LineChartDataset<LiveDataPoint> GetLineChartDataset1()
     {
-        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(selectedValue));
+        var index = Array.FindIndex(WeatherChoice.Choices, row => row.Contains(SelectedValue));
         
         return new LineChartDataset<LiveDataPoint>
         {
             Data = new List<LiveDataPoint>(),
-            Label = selectedValue,
+            Label = SelectedValue,
             BackgroundColor = backgroundColors[index] ,
             BorderColor = borderColors[index],
             Fill = true,
@@ -135,7 +133,7 @@
             Y = Value,
             X = DateTime.Now
         };
-        Console.WriteLine(Date);
+        
         return Task.CompletedTask;
     }
 }

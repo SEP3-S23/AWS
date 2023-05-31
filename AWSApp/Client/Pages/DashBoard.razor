@@ -7,13 +7,20 @@
 @using global::Shared.Model
 @using Newtonsoft.Json
 @using System.ComponentModel.DataAnnotations
+@using BackEnd.Services.Authentication
 
 @inject IDialogService DialogService
 @inject IJSRuntime JSRuntime
 
 
 <PageTitle>DashBoard</PageTitle>
-<MudText Typo="Typo.h3" GutterBottom="true">Weather forecast</MudText>
+<MudText Typo="Typo.h3" GutterBottom="true">Weather Station</MudText>
+        <MudSelect ValueChanged="value => ChangedWS(value)" MultiSelection="false" @bind-SelectedValues="optionsWS" T="string" Label="Select WS to view" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+            @foreach (var choich in WSList)
+            {
+                <MudSelectItem T="string" Value="@choich">@choich</MudSelectItem>
+            }
+        </MudSelect>
 <MudGrid Spacing="10" Class="ma-2" Justify="Justify.SpaceEvenly">
     <MudItem xs="2" lg="2" Style="min-width: 20vh; min-height: 20vh">
         <MudPaper >
@@ -127,7 +134,7 @@
     <MudItem Class="mud-elevation-1 rounded" xs="12">
         @if (!LiveDataIsSelected)
         {
-            <HistoricalChart changedSelection="changedSelection" selectedValue="@SelectedSensor" temperatureData="temperatureData"/>
+            <HistoricalChart SelectedSensor="@SelectedSensor" WeatherData="@HistoricalWeatherData"/>
             <MudButton OnClick="@(() => LiveDataIsSelected = true)" Variant="Variant.Filled" Color="Color.Secondary">
                 View Live Data
             </MudButton>
@@ -143,7 +150,7 @@
         }
         @if (LiveDataIsSelected)
         {
-            <LiveChart selectedValue="@SelectedSensor" changedSelection="@changedSelection"  />
+            <LiveChart SelectedValue="@SelectedSensor" WeatherDataDto="@WeatherData"/>
             <MudButton OnClick="OpenDialog" Variant="Variant.Filled" Color="Color.Primary">
                 View historical Data
             </MudButton>
@@ -178,15 +185,16 @@
 
 @code {
     
-    private string SelectedSensor { get; set; } = WeatherChoice.WindSpeed;
+    private string SelectedSensor { get; set; } = WeatherChoice.Temperature;
+    private string SelectedWS { get; set; }
     private IEnumerable<string> options { get; set; }
-    private bool changedSelection { get; set; }
+    private IEnumerable<string> optionsWS { get; set; }
     private bool LiveDataIsSelected { get; set; } = true;
     private MudDateRangePicker _picker;
     private DateRange _dateRange = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(5).Date);
     private bool _autoClose;
     private string ValidationMessage { get; set; }
-    HystoricalWeatherDataDto temperatureData;
+    HystoricalWeatherDataDto HistoricalWeatherData;
     private DialogOptions dialogOptions = new() { FullWidth = true };
     private bool visible;
     private int rating;
@@ -199,28 +207,29 @@
     private double WindSpeed { get; set; } = 0.0;
     private double HeatIndex { get; set; } = 0;
     private string WeatherCondition { get; set; } = "partly-cloudy-day-hail";
-   
+    private String[] WSList { get; set; } = {};
+    private HistoricalDataService HistoricalDataService = new HistoricalDataService();
+    private bool swchanged { get; set; }
     
 
     
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (firstRender )
         {
             await JSRuntime.InvokeVoidAsync("import", "/js/sse.js");
+            WSList = await HistoricalDataService.GetWSList();
+            swchanged = false;
+            SetupSseConnection(WSList[0]);
         }
     }
-    
-    protected override async Task OnInitializedAsync()
+
+
+    private async Task SetupSseConnection(string wsName)
     {
-        await SetupSseConnection();
+        await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/"+wsName);
     }
     
-    
-    private async Task SetupSseConnection()
-    {
-        await JSRuntime.InvokeVoidAsync("sse.setupSseConnection", DotNetObjectReference.Create(this), "http://localhost:8101/ws/ws1");
-    }
     
     [JSInvokable]
     public void HandleSseMessage(string message)
@@ -268,7 +277,7 @@
     }
     
     
-    public void GenerateHistoricalData()
+    private async void GenerateHistoricalData()
     {
         ValidationMessage = "";
         if (_dateRange.Start > DateTime.Now)
@@ -276,14 +285,49 @@
             ValidationMessage = "Select a Valid date Range";
             return;
         }
-    //TODO generate the data 
-        temperatureData = JsonConvert.DeserializeObject<HystoricalWeatherDataDto>(json);
+        if (SelectedWS==null)
+        {
+            ValidationMessage = "Select a Valid Station";
+        }
+        if (SelectedSensor==null)
+        {
+            ValidationMessage = "Select a Valid Sensor";
+        }
+
+        await GetHistoricalData();
     }
 
+    private async Task GetHistoricalData()
+    {
+        try
+        {
+            long startDate = ((DateTimeOffset)_dateRange.Start).ToUnixTimeSeconds();
+            long endDate = ((DateTimeOffset)_dateRange.End).ToUnixTimeSeconds();
+            HistoricalWeatherData = await HistoricalDataService.GetData(SelectedWS, SelectedSensor,startDate,endDate );
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+    
+    
+    
+    
+    
+    
     void Changed(string value)
     {
-        changedSelection = true;
         this.SelectedSensor = value;
+    }
+    
+    void ChangedWS(string value)
+    {
+        this.SelectedWS = value;
+        SetupSseConnection(this.SelectedWS);
+        swchanged = true;
+        StateHasChanged();
     }
     
     static string json = @"{
