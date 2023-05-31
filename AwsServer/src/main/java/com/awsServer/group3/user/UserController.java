@@ -31,4 +31,10 @@ public class UserController {
         return ResponseEntity.ok("BANNED");
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/report/list")
+    public ResponseEntity<List<User>> banUser() {
+        return ResponseEntity.ok(userService.getAllReportedUser());
+    }
+
 }
