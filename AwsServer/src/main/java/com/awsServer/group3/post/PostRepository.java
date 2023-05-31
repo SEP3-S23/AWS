@@ -1,0 +1,10 @@
+package com.awsServer.group3.post;
+
+import org.jetbrains.annotations.NotNull;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface PostRepository extends JpaRepository<Post, Integer> {
+    @NotNull List<Post> findAllBy();
+}

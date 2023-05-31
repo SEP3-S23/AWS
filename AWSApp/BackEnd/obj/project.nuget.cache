@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PWF8iz3+MQsjuUUK419rJrlkIhi0NHl5g42V7uKEZrf2VITkLuXbYGU0flLJYzRYRJ4sdOw8u7uufMm0thJqdA==",
+  "dgSpecHash": "9Cl9AF9DxCDv91yvu6R2t8uW4Cbb15K1rAnXaJWcq8NUkKnBfYIdDCHl76KarHjgfYWnfSwypr+KXx5DGY5+YQ==",
   "success": true,
   "projectFilePath": "/Users/fdepalma/Desktop/AWS/AWSApp/BackEnd/BackEnd.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "/Users/fdepalma/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/microsoft.jsinterop/7.0.0/microsoft.jsinterop.7.0.0.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/microsoft.jsinterop.webassembly/7.0.0/microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
+    "/Users/fdepalma/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"

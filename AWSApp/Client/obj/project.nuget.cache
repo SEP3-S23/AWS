@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/9jphYgVxBvNhDOjn/yfjD5Sf3V0G440Cez3XkYvJgMu1jc8oWhCh5j+PHZx3eVmVAKjYF7ratpqedRLO7/SZg==",
+  "dgSpecHash": "7MeqDtC6prsmVCUCaRfRlEm3ti7Mt28xZdLzzkdEJR2Np3lDl+DN7CSkfKGbV/m65Yjlue24ljDaZKbd5yzg5Q==",
   "success": true,
   "projectFilePath": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/Client.csproj",
   "expectedPackageFiles": [
@@ -45,12 +45,5 @@
     "/Users/fdepalma/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
     "/Users/fdepalma/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.1/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/fdepalma/Desktop/AWS/AWSApp/Client/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

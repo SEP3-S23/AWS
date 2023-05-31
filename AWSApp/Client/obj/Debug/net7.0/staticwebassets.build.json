@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Dvvc+UEx73UD6fgDCaO4agym5Dk/tMA6k4dIvZyRRHU=",
+  "Hash": "5FsqdXhqgJ1qq7OYwp5XXs8oGUwNyftYZ9pEujHbrqw=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8260,6 +8260,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/wwwroot/js/localstorage.js",
+      "SourceId": "Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "js/localstorage.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/localstorage.js"
     },
     {
       "Identity": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/wwwroot/js/sse.js",

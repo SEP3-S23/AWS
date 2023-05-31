@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
+      "Id": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/wwwroot/js/localstorage.js",
+      "PackagePath": "staticwebassets/js/localstorage.js"
+    },
+    {
       "Id": "/Users/fdepalma/Desktop/AWS/AWSApp/Client/wwwroot/js/sse.js",
       "PackagePath": "staticwebassets/js/sse.js"
     },
