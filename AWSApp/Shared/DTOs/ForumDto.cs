@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace Shared.DTOs;
 
 
-public class ForumListDto
+public class ForumDto
 {
     [JsonProperty("timeCreation")]
     public DateTime TimeCreation { get; set; }
@@ -18,13 +18,13 @@ public class ForumListDto
     [JsonProperty("category")]
     public string Category { get; set; }
 
-    public ForumListDto(DateTime timeCreation, string name, string description, string category)
+    public ForumDto(DateTime timeCreation, string name, string description, string category)
     {
-        TimeCreation = timeCreation;
-        Name = name;
-        Description = description;
-        Category = category;
+        this.TimeCreation = timeCreation;
+        this.Name = name;
+        this.Description = description;
+        this.Category = category;
     }
 
-    public ForumListDto(){}
+    public ForumDto(){}
 }

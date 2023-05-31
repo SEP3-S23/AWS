@@ -7,5 +7,8 @@ public interface IForumService
 {
     
     Task<string> CreateAsync(CreateForumDto dto);
-    Task<List<ForumListDto>> GetAllForumsAsync();
+    Task<List<ForumDto>> GetSubscribedForumsAsync();
+    Task<ForumDto> GetForumByNameAsync(string name);
+    
+    Task<List<ForumDto>> GetAllForumsAsync();
 }

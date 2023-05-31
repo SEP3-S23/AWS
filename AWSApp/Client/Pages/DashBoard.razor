@@ -1,4 +1,4 @@
-﻿@page "/Dashboard"
+﻿@page "/"
 @inject HttpClient Http
 @using Client.Shared
 @using Client.Components
@@ -320,6 +320,7 @@
     void Changed(string value)
     {
         this.SelectedSensor = value;
+        GenerateHistoricalData();
     }
     
     void ChangedWS(string value)
