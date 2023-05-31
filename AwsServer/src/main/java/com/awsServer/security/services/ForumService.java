@@ -61,6 +61,7 @@ public class ForumService {
             List<Forum> followedForums = user.getFollowedForums();
             if (!followedForums.contains(forum)) {
                 user.addForum(forum);
+                forum.addFollower(user);
                 userRepository.save(user);
             }
         }
