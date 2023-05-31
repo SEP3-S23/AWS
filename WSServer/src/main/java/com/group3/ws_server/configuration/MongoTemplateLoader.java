@@ -31,7 +31,8 @@ public class MongoTemplateLoader {
         MongoTemplate mongoTemplate = mongoTemplates.get(dbName);
 
         if (mongoTemplate == null) {
-            MongoClient mongoClient = MongoClients.create("mongodb://" + username + ":" + password + "@" + host + ":" + port);
+            MongoClient mongoClient =
+                    MongoClients.create("mongodb://" + username + ":" + password + "@" + host + ":" + port);
             MongoDatabaseFactory dbFactory = new SimpleMongoClientDatabaseFactory(mongoClient, dbName);
             mongoTemplate = new MongoTemplate(dbFactory);
             mongoTemplates.put(dbName, mongoTemplate);

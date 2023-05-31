@@ -31,8 +31,8 @@ public class SensorDataRepository {
         Query query = new Query();
         query.addCriteria(Criteria.where("date_time").gte(startDate).lte(endDate));
         List<SensorData> data = this.mongoTemplateLoader.get(wsName).find(query, SensorData.class, name);
-        if (data.size()>0 && data.get(0).getValue() instanceof Number){
-            int groupDimension = Math.round(data.size()/100);
+        if (data.size() > 100 && data.get(0).getValue() instanceof Number) {
+            int groupDimension = Math.round(data.size() / 100);
             List<Data> dataAggregated = new ArrayList<>();
             double valueSum = Double.valueOf(data.get(0).getValue().toString());
             long dateSum = data.get(0).getDate_time();
@@ -41,14 +41,15 @@ public class SensorDataRepository {
                 valueSum += Double.valueOf(data.get(i).getValue().toString());
                 dateSum += data.get(i).getDate_time();
                 if (i % groupDimension == 0) {
-                    dataAggregated.add(new Data(valueSum/groupDimension, dateSum/groupDimension));
-                     valueSum = 0;
-                     dateSum = 0;
+                    dataAggregated.add(new Data(valueSum / groupDimension, dateSum / groupDimension));
+                    valueSum = 0;
+                    dateSum = 0;
                 }
-            };
+            }
+            ;
             return Map.entry(dataAggregated, data.get(0).getUnit());
 
         }
-            return Map.entry(new ArrayList<>(), "" );
+        return Map.entry(new ArrayList<>(), "");
     }
 }
