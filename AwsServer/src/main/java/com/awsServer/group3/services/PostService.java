@@ -25,7 +25,7 @@ public class PostService {
     public Post createPost(String username, PostRequest postRequest)
     {
         Optional<User> createdBy = userRepository.findByUserName(username);
-        Optional<Forum> existingForum = forumRepository.findForumByName(postRequest.getForumName());
+        Optional<Forum> existingForum = forumRepository.findByName(postRequest.getForumName());
 
         Forum forum = existingForum.get();
         User user = createdBy.get();

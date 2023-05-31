@@ -1,13 +1,12 @@
-package com.awsServer.security.Tests;
+package com.awsServer.group3.Tests;
 
-import com.awsServer.security.forum.Forum;
-import com.awsServer.security.forum.ForumListDto;
-import com.awsServer.security.forum.ForumRepository;
-import com.awsServer.security.forum.ForumRequest;
-import com.awsServer.security.services.AuthenticationService;
-import com.awsServer.security.services.ForumService;
-import com.awsServer.security.user.User;
-import com.awsServer.security.user.UserRepository;
+import com.awsServer.group3.forum.Forum;
+import com.awsServer.group3.forum.ForumListDto;
+import com.awsServer.group3.forum.ForumRepository;
+import com.awsServer.group3.forum.ForumRequest;
+import com.awsServer.group3.services.ForumService;
+import com.awsServer.group3.user.User;
+import com.awsServer.group3.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -25,13 +24,13 @@ import static org.mockito.Mockito.*;
 class ForumServiceTests {
 
     @Mock
-    private  UserRepository userRepository = mock(UserRepository.class);
+    private UserRepository userRepository = mock(UserRepository.class);
     @Mock
     private ForumRepository forumRepository = mock(ForumRepository.class);
     @Mock
     private  ModelMapper modelMapper = mock(ModelMapper.class);
     @Mock
-    private  ForumService forumService = new ForumService(userRepository, forumRepository, modelMapper);
+    private ForumService forumService = new ForumService(userRepository, forumRepository, modelMapper);
 
     @BeforeEach
     void setUp() {
@@ -50,7 +49,7 @@ class ForumServiceTests {
         existingForum.setName(forumRequest.getName());
 
         when(userRepository.findByUserName(username)).thenReturn(Optional.of(user));
-        when(forumRepository.findForumByName(forumRequest.getName())).thenReturn(Optional.empty());
+        when(forumRepository.findByName(forumRequest.getName())).thenReturn(Optional.empty());
         when(forumRepository.save(any(Forum.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
 
@@ -64,7 +63,7 @@ class ForumServiceTests {
         assertEquals(user, createdForum.getUser());
 
         verify(userRepository).findByUserName(username);
-        verify(forumRepository).findForumByName(forumRequest.getName());
+        verify(forumRepository).findByName(forumRequest.getName());
         verify(forumRepository).save(any(Forum.class));
     }
 
@@ -79,7 +78,7 @@ class ForumServiceTests {
         existingForum.setName(forumRequest.getName());
 
         when(userRepository.findByUserName(username)).thenReturn(Optional.of(user));
-        when(forumRepository.findForumByName(forumRequest.getName())).thenReturn(Optional.of(existingForum));
+        when(forumRepository.findByName(forumRequest.getName())).thenReturn(Optional.of(existingForum));
 
 
         Forum createdForum = forumService.createForum(username, forumRequest);
@@ -88,7 +87,7 @@ class ForumServiceTests {
         assertNull(createdForum);
 
         verify(userRepository).findByUserName(username);
-        verify(forumRepository).findForumByName(forumRequest.getName());
+        verify(forumRepository).findByName(forumRequest.getName());
         verify(forumRepository, never()).save(any(Forum.class));
     }
 

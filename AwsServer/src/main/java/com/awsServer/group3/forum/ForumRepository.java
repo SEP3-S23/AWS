@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ForumRepository extends JpaRepository<Forum, Integer> {
-    Optional<Forum> findForumByName(String name);
+    Optional<Forum> findByName(String name);
     Optional<Forum> findForumById(int id);
     @NotNull List<Forum> findAll();
 }

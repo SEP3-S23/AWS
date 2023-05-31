@@ -22,6 +22,7 @@ public class Forum {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Date timeCreation;
+    @Column(unique=true)
     private String name;
     private String description;
     private String category;

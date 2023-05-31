@@ -1,13 +1,13 @@
-package com.awsServer.security.Tests;
+package com.awsServer.group3.Tests;
 
-import com.awsServer.security.auth.AuthenticationRequest;
-import com.awsServer.security.auth.AuthenticationResponse;
-import com.awsServer.security.auth.RegisterRequest;
-import com.awsServer.security.services.AuthenticationService;
-import com.awsServer.security.services.JwtService;
-import com.awsServer.security.user.Role;
-import com.awsServer.security.user.User;
-import com.awsServer.security.user.UserRepository;
+import com.awsServer.group3.auth.AuthenticationRequest;
+import com.awsServer.group3.auth.AuthenticationResponse;
+import com.awsServer.group3.auth.RegisterRequest;
+import com.awsServer.group3.services.AuthenticationService;
+import com.awsServer.group3.services.JwtService;
+import com.awsServer.group3.user.Role;
+import com.awsServer.group3.user.User;
+import com.awsServer.group3.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

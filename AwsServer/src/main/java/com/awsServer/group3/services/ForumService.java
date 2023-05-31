@@ -25,7 +25,7 @@ public class ForumService {
     public Forum createForum(String username, ForumRequest forumRequest)
     {
         Optional<User> createdBy = userRepository.findByUserName(username);
-        Optional<Forum> isForumExisting = forumRepository.findForumByName(forumRequest.getName());
+        Optional<Forum> isForumExisting = forumRepository.findByName(forumRequest.getName());
 
         if(isForumExisting.isPresent())
         {
@@ -61,7 +61,6 @@ public class ForumService {
             List<Forum> followedForums = user.getFollowedForums();
             if (!followedForums.contains(forum)) {
                 user.addForum(forum);
-                forum.addFollower(user);
                 userRepository.save(user);
             }
         }
@@ -82,7 +81,7 @@ public class ForumService {
     }
 
     public ForumReturned getForumByName(String name) {
-        Optional<Forum> forum = forumRepository.findForumByName(name);
+        Optional<Forum> forum = forumRepository.findByName(name);
         return forum.map(this::convertToForumDto).orElse(null);
 }
 

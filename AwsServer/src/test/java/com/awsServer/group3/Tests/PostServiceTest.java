@@ -1,14 +1,13 @@
-package com.awsServer.security.Tests;
+package com.awsServer.group3.Tests;
 
-import com.awsServer.security.forum.Forum;
-import com.awsServer.security.forum.ForumRepository;
-import com.awsServer.security.post.Post;
-import com.awsServer.security.post.PostRepository;
-import com.awsServer.security.post.PostRequest;
-import com.awsServer.security.services.ForumService;
-import com.awsServer.security.services.PostService;
-import com.awsServer.security.user.User;
-import com.awsServer.security.user.UserRepository;
+import com.awsServer.group3.forum.Forum;
+import com.awsServer.group3.forum.ForumRepository;
+import com.awsServer.group3.post.Post;
+import com.awsServer.group3.post.PostRepository;
+import com.awsServer.group3.post.PostRequest;
+import com.awsServer.group3.services.PostService;
+import com.awsServer.group3.user.User;
+import com.awsServer.group3.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -24,11 +23,11 @@ import static org.mockito.Mockito.when;
 class PostServiceTest {
 
     @Mock
-    private  PostRepository postRepository;
+    private PostRepository postRepository;
     @Mock
-    private  UserRepository userRepository;
+    private UserRepository userRepository;
     @Mock
-    private  ForumRepository forumRepository;
+    private ForumRepository forumRepository;
     @Mock
     private  PostService postService = new PostService(postRepository, userRepository, forumRepository);
 
@@ -48,16 +47,17 @@ class PostServiceTest {
         Forum forum = new Forum();
         forum.setFollowedUsers(new ArrayList<>());
         forum.setId(forumId);
-        forum.getFollowedUsers().add(user);
+        forum.setName("name");
         user.addForum(forum);
+        forum.getFollowedUsers().add(user);
 
         PostRequest postRequest = new PostRequest();
-        postRequest.setId(forumId);
+        postRequest.setForumName("name");
         postRequest.setTitle("Test Post");
         postRequest.setBody("This is a test post");
 
         when(userRepository.findByUserName(username)).thenReturn(Optional.of(user));
-        when(forumRepository.findForumById(forumId)).thenReturn(Optional.of(forum));
+        when(forumRepository.findByName("name")).thenReturn(Optional.of(forum));
         when(postRepository.save(Mockito.any(Post.class))).thenAnswer(invocation -> {
             Post savedPost = invocation.getArgument(0);
             savedPost.setId(1);
@@ -85,14 +85,15 @@ class PostServiceTest {
         Forum forum = new Forum();
         forum.setFollowedUsers(new ArrayList<>());
         forum.setId(forumId);
+        forum.setName("name");
 
         PostRequest postRequest = new PostRequest();
-        postRequest.setId(forumId);
+        postRequest.setForumName("name");
         postRequest.setTitle("Test Post");
         postRequest.setBody("This is a test post");
 
         when(userRepository.findByUserName(username)).thenReturn(Optional.of(user));
-        when(forumRepository.findForumById(forumId)).thenReturn(Optional.of(forum));
+        when(forumRepository.findByName("name")).thenReturn(Optional.of(forum));
 
         Post createdPost = postService.createPost(username, postRequest);
 
