@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\js\\localstorage.js",
+      "PackagePath": "staticwebassets\\js\\localstorage.js"
+    },
+    {
       "Id": "C:\\Users\\walid\\OneDrive - ViaUC\\UNI\\ViaUniversity\\Semester03\\SEP3\\AWS\\AWSApp\\Client\\wwwroot\\js\\sse.js",
       "PackagePath": "staticwebassets\\js\\sse.js"
     },

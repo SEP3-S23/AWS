@@ -1,0 +1,82 @@
+﻿@page "/Forums"
+@using System.ComponentModel.DataAnnotations
+@using BackEnd.Services.Authentication
+@using Backend.Services.Forums
+@using global::Shared.DTOs
+@using global::Shared.Model
+
+@using MudBlazor
+@inject IJSRuntime JSRuntime
+
+
+
+@if (ForumList != null)
+{
+    <MudGrid >
+        
+        <MudItem sm="12">
+            <MudIconButton Class="mx-auto d-flex" Color="Color.Primary" Icon="@Icons.Material.Filled.Refresh" OnClick="GetAllForumsAsync"/> 
+        </MudItem>
+        
+        
+        @foreach (ForumDto forum in ForumList)
+        {
+            <MudItem sm="6" xl="4" md="6" Style="min-height: 10vh; min-width: 10vh;">
+                <MudCard>
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Category: @forum.Category</MudText>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudText> @($"{@forum.TimeCreation:M/d/yyyy}")<MudIcon Icon="@Icons.Material.Filled.AccessTime" Color="Color.Default"/></MudText>
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Color="Color.Primary">@forum.Name</MudText>
+                        <MudText Typo="Typo.body2">@forum.Description</MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        }
+    </MudGrid>
+    }
+@if (ForumList == null)
+{
+    <MudText>No forum to display</MudText>
+}
+
+
+
+@code {
+    
+    List<ForumDto> ForumList { get; set; }
+    
+    private async Task GetAllForumsAsync()
+    {
+        
+        IForumService forumService = new ForumService("http://localhost:8080/api/v1/forums");
+        
+        try
+        {
+            ForumList = await forumService.GetAllForumsAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        StateHasChanged();
+    }
+    
+    
+    
+     protected override async Task OnInitializedAsync()
+     {
+            await Task.Delay(1000);
+            await GetAllForumsAsync();
+     }
+    
+}
