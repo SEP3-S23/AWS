@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -23,38 +25,49 @@ public class LiveDataController {
     @Autowired
     RabbitMQListener rabbitMQListener;
 
-    private final List<SseEmitter> emitters = new ArrayList<>();
-    ExecutorService executor = null;
+    private final Map<String, List<SseEmitter>> emitters = new HashMap<>();
+    private final Map<String, ExecutorService> executors = new HashMap<>();
 
     @GetMapping(value= "/{name}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter sseEndpoint(@PathVariable String name) {
         SseEmitter emitter = new SseEmitter();
-        emitters.add(emitter);
+        List<SseEmitter> _emitters = emitters.get(name);
+        if (_emitters == null) {
+            _emitters = new ArrayList<>();
+            emitters.put(name, _emitters);
+        }
+        _emitters.add(emitter);
 
         // Remove the emitter when it is completed or times out
-        emitter.onCompletion(() -> emitters.remove(emitter));
-        emitter.onError((Throwable e) -> emitters.remove(emitter));
-        emitter.onTimeout(() -> emitters.remove(emitter));
+        emitter.onCompletion(() -> emitters.get(name).remove(emitter));
+        emitter.onError((Throwable e) -> emitters.get(name).remove(emitter));
+        emitter.onTimeout(() -> emitters.get(name).remove(emitter));
 
-        if (executor == null) {
-            executor = Executors.newSingleThreadExecutor();
-            executor.execute(() -> {
-                rabbitMQListener.addListener(name, this::sendMessage);
+        ExecutorService _executor = executors.get(name);
+
+        if (_executor == null) {
+            _executor = Executors.newSingleThreadExecutor();
+            _executor.execute(() -> {
+                rabbitMQListener.addListener(name, (PropertyChangeEvent evt) -> this.sendMessage(evt, name));
             });
+            executors.put(name, _executor);
         }
 
         return emitter;
     }
 
-    private void sendMessage(PropertyChangeEvent evt) {
+    private void sendMessage(PropertyChangeEvent evt, String name) {
         Gson gson = new Gson();
         String data = gson.toJson(evt.getNewValue());
 
-        for (SseEmitter emitter : emitters) {
-            try {
-                emitter.send(data);
-            } catch (IOException e) {
-                emitter.completeWithError(e);
+        List<SseEmitter> _emitters = emitters.get(name);
+        if (_emitters != null) {
+            for (SseEmitter emitter : _emitters) {
+                try {
+                    emitter.send(data);
+                } catch (IOException e) {
+                    emitter.completeWithError(e);
+                }
             }
         }
     }
