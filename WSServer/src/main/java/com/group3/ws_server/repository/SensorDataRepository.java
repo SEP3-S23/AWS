@@ -31,7 +31,7 @@ public class SensorDataRepository {
         Query query = new Query();
         query.addCriteria(Criteria.where("date_time").gte(startDate).lte(endDate));
         List<SensorData> data = this.mongoTemplateLoader.get(wsName).find(query, SensorData.class, name);
-        if (data.size() > 0 && data.get(0).getValue() instanceof Number) {
+        if (data.size() > 0 && (data.get(0).getValue() instanceof Number || !Double.valueOf(data.get(0).getValue().toString()).isNaN())) {
             if (data.size() > 500) {
                 int groupDimension = Math.round(data.size() / 100);
                 List<Data> dataAggregated = new ArrayList<>();
