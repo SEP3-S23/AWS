@@ -1,4 +1,4 @@
-package com.awsServer.group3.post;
+package com.awsServer.group3.comment;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PostRequest
-{
-    private String forumName;
-    private String title;
-    private String body;
+public class CommentRequest {
+    private String postName;
+    private String text;
 }

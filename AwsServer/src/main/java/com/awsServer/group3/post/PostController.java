@@ -43,4 +43,14 @@ public class PostController {
         }
         else return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Your session has expired. Please login again");
     }
+
+    @GetMapping("/{title}/like/add")
+    public ResponseEntity<?> addLike(@PathVariable("title") String title) {
+        try {
+            postService.addLike(title);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
 }

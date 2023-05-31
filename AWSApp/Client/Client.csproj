@@ -5,6 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<TargetFramework>net7.0</TargetFramework>
 		<ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -24,6 +25,12 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\BackEnd\BackEnd.csproj" />
 	  <ProjectReference Include="..\Shared\Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="..\.dockerignore">
+	    <Link>.dockerignore</Link>
+	  </Content>
 	</ItemGroup>
 	
 	

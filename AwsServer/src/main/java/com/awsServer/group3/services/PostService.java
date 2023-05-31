@@ -25,7 +25,7 @@ public class PostService {
     public Post createPost(String username, PostRequest postRequest)
     {
         Optional<User> createdBy = userRepository.findByUserName(username);
-        Optional<Forum> existingForum = forumRepository.findForumById(postRequest.getId());
+        Optional<Forum> existingForum = forumRepository.findForumByName(postRequest.getForumName());
 
         Forum forum = existingForum.get();
         User user = createdBy.get();
@@ -50,5 +50,19 @@ public class PostService {
     public List<Post> getAllPosts()
     {
         return postRepository.findAll();
+    }
+
+    public void addLike(String title) throws Exception {
+        Optional<Post> postOpt = postRepository.findByTitle(title);
+        if (postOpt.isPresent()) {
+            Post post = postOpt.get();
+
+            Integer likes = post.getLike();
+            post.setLike(likes + 1);
+
+            postRepository.save(post);
+        } else {
+            throw new Exception("Post not found");
+        }
     }
 }
