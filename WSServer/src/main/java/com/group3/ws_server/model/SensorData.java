@@ -1,5 +1,6 @@
 package com.group3.ws_server.model;
 
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 

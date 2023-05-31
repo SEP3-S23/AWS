@@ -8,7 +8,6 @@ public static string UVIndex = "UV index";
 public static string WindSpeed = "wind speed";
 public static string WindDirection = "wind direction";
 public static string Pressure = "pressure";
-public static string Day = "day";
 public static string RainQuantity = "rain quantity";
 
 public static string[] Choices =
@@ -19,7 +18,6 @@ public static string[] Choices =
     "wind speed",
     "wind direction",
     "pressure",
-    "day",
     "rain quantity",
 };
 

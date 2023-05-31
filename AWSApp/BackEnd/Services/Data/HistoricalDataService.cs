@@ -14,11 +14,11 @@ public class HistoricalDataService : IHistoricalDataService
         _httpClient = new HttpClient();
     }
 
-    public async Task<HystoricalWeatherDataDto> GetData(string wsName, string sensorName)
+    public async Task<HystoricalWeatherDataDto> GetData(string wsName, string sensorName, long startDate, long endDate)
     {
+        var dateRangeDto = new DateRangeDto(startDate, endDate);
+        var response = await _httpClient.PostAsJsonAsync("http://localhost:8101/historical/" + wsName + "/" + sensorName,dateRangeDto );
         
-        var response = await _httpClient.GetAsync("http://localhost:8101/historical/" + wsName + "/" + sensorName);
-
         if (response.IsSuccessStatusCode)
         {
             Console.WriteLine(response.Content.ToString());
