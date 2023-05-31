@@ -59,7 +59,7 @@ class Simulator:
         if _ < 0.4:
             self.rain_quantity = self.random.randrange(-10, 10, 1)/10
 
-        return Data("rain quantity", self.rain_quantity, "mm")
+        return Data("rain quantity", max(self.rain_quantity, 0), "mm")
 
     def get_weather_condition(self):
         if self.weather_condition_counter == 0:
